@@ -1,0 +1,3 @@
+<p>Os arquivos de Auditoria cont&ecirc;m informa&ccedil;&otilde;es referentes &agrave;s conex&otilde;es ao CDRView Web.</p> 
+<p>Para visualizar um arquivo de Auditoria, defina o Dia da Semana, a hora de In&iacute;cio e a hora de Fim, na tela ao lado e, em seguida, clique no bot&atilde;o Listar.</p>
+<p>O n&iacute;vel das informa&ccedil;&otilde;es apresentadas no menu Auditoria dever&aacute; ser configurado no menu Op&ccedil;&otilde;es>N&iacute;vel de Log</p>

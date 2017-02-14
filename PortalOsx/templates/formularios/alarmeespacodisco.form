@@ -1,0 +1,132 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para configura&ccedil;&atilde;o de alarme de espa&ccedil;o em disco
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 16/03/2004
+#
+
+table,545,0,0,0
+   form,form1,post, 
+   hidden,mensagem,$ARG;
+   hidden,opcaosms,$ARG;
+   hidden,habilitado,$ARG;
+   tr
+      td,left, ,2, , 
+         <b>Espa&ccedil;o Livre(em GBytes): &nbsp;</b>
+         text,espaco,$ARG;,3,10,onBlur="Processa(1)" class="inputtext"
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         <b>Periodicidade(em s): &nbsp;</b>
+         text,periodicidade,$ARG;,3,10,onBlur="Processa(2)" class="inputtext"
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2,272, 
+         <b>Habilita: &nbsp;</b>
+         checkbox,habilita, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+  tr
+#----------------------------------------------------------------
+#            DESCOMENTAR SE O CLIENTE FOR CLARO
+#----------------------------------------------------------------
+#      td,left, , ,272, 
+#        <b>Envia SMS: &nbsp;</b>
+#         select,sms,1, , class="lista"
+#            option,Nao,N&atilde;o
+#            option,Sim,Sim
+#         /select
+#      /td
+#      td,left, , , , 
+#        <b>Telefone(s): &nbsp;</b>
+#         text,telefones,$ARG;,3,35,class="inputtext"
+#      /td
+#----------------------------------------------------------------
+#                       FIM DO BLOCO
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+#            			DEMAIS CLIENTES
+#----------------------------------------------------------------
+
+   	   <input type="hidden" name="sms">
+       hidden,telefones,$ARG;
+
+#----------------------------------------------------------------
+#                       FIM DO BLOCO
+#----------------------------------------------------------------      
+   /tr   
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,salvaAlarme
+            hidden,tipoalr,1
+            hidden,espaco, 
+            hidden,periodicidade, 
+            hidden,habilita, 
+            hidden,sms, 
+            hidden,telefones, 
+            image,/PortalOsx/imagens/configuraralarme.gif,onClick="return ValidaForm()"
+         /form
+      /td
+      td,left, , ,60, 
+         &nbsp;
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

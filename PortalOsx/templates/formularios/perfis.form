@@ -1,0 +1,85 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para inclus&atilde;o/exclus&atilde;o de perfis
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 29/01/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisNomes,$ARG;
+      hidden,ListaPerfisIds,$ARG;
+      hidden,ListaPerfisModosDeAcesso,$ARG;
+      hidden,Relacionamento,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left, , ,273, 
+         <b>Perfis: &nbsp;</b>
+         select,ListaPerfis,1, ,onChange="Processa(4)"
+         /select
+      /td
+      td,left, , ,272, 
+         <b>Acesso: &nbsp;</b>
+         select,ListaModosDeAcesso,1, , 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr>
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , 36
+         <b>Novo Perfil: &nbsp;</b>
+         text,perfil, , , , 
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,incPerfilAntigo
+            hidden,perfil, 
+            hidden,acesso, 
+            image,/PortalOsx/imagens/incluir.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,60, 
+         form,form3,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,excPerfil
+            hidden,perfil, 
+            hidden,id, 
+            image,/PortalOsx/imagens/excluir.gif,onClick="return Processa(2)"
+         /form
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

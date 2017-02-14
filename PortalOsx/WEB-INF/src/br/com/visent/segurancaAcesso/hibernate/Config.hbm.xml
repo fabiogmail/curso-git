@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="br.com.visent.segurancaAcesso.domain.Config" table="CONFIG_SISTEMA">
+	
+		<id name="id"
+			column="ID_CONFIG_SISTEMA" >
+			<generator class="native"/>		
+		</id>
+			
+		<property name="nome" column="NOME"/>
+		<property name="valor" column="VALOR"/>
+		
+						
+	</class>
+
+</hibernate-mapping>

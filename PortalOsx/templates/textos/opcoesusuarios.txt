@@ -1,0 +1,8 @@
+<p>Quantidade M&aacute;xima de Usu&aacute;rios - configure a quantidade de usu&aacute;rios que o CDRView Web pode atender simultaneamente. Se este valor for igual a zero, o sistema ser&aacute; disponibilizado apenas para o administrador.</p>
+<p>N&iacute;vel de Log - configure o tipo de informa&ccedil;&atilde;o desejado a ser registrado nos arquivos de Auditoria do CDRView Web.</p>
+<ul>
+<li><b>Informa&ccedil;&otilde;es B&aacute;sicas:</b> Mostra somente as informa&ccedil;&otilde;es de Logon e Logout. </li>
+<li><b>Informa&ccedil;&otilde;es Detalhadas:</b> Mostra as informa&ccedil;&otilde;es de Logon, Logout, IP e Host da m&aacute;quina do usu&aacute;rio e avisos como senha inv&aacute;lida.</li>
+<li><b>Informa&ccedil;&otilde;es Detalhadas e Avisos:</b> Mostra as informa&ccedil;&otilde;es de Logon, Logout, IP e Host da m&aacute;quina do usu&aacute;rio e avisos como, senha inv&aacute;lida e usu&aacute;rio n&atilde;o cadastrado.</li>
+</ul>
+<p>Para ativar a configura&ccedil;&atilde;o, clique em Salvar.</p>

@@ -1,0 +1,83 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para detalhes de processos
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 19/03/2002
+#
+
+table,390,0,0,0
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Processo</b></font>
+      /td
+   /th      
+   tr
+      td,left, , , , 
+         table,390,0,0,0
+            tr
+               td,left, , , , 
+                  <b>Nome:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>PID:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Host:</b>&nbsp;$ARG;
+               /td
+            /tr
+            tr
+               td,left, , , , 
+                  <b>Usu&aacute;rio:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  &nbsp;
+               /td
+               td,left, , , , 
+                  <b>Perfil:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Caracter&iacute;sticas</b></font>
+      /td
+   /th
+   tr
+      td,left, , , , 
+         table,390,0,0,0
+            tr
+               td,left, , , , 
+                  <b>In&iacute;cio:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Último Acesso:</b>&nbsp;$ARG;
+               /td
+            /tr
+            tr
+               td,left, ,2, , 
+                  <b>Mem&oacute;ria:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         <a href="" onclick="window.close()"><img src="/PortalOsx/imagens/fechar.gif" border="0"></a>
+      /td
+   /tr
+/table

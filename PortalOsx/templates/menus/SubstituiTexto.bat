@@ -1,0 +1,1 @@
+java -cp "C:\Arquivos de programas\Apache Software Foundation\Tomcat 4.1\webapps\PortalOsx\WEB-INF\lib\cLibjava.jar" libjava.arquivos.SubstituiTexto %1 %2

@@ -1,0 +1,4 @@
+<p>A lista ao lado apresenta os processos em execu&ccedil;&atilde;o no Servidor e que s&atilde;o monitorados pelo ServCtrl(Servcli e Servcfg).</p>
+<p>Para obter detalhes de um processo, clique no Id do mesmo.</p>
+<p>Para finalizar um processo, selecione o processo desejado e clique no bot&atilde;o Finalizar. Para finalizar todos os processos, clique no bot&atilde;o Marcar Todos e, em seguida, clique no bot&atilde;o Finalizar, localizados abaixo da lista de processos.</p>
+<p>OBS: a finaliza&ccedil;&atilde;o de um processo pode demorar um pouco.</p>

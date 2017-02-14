@@ -1,0 +1,1 @@
+<p>A Lista de Mensagens apresenta as mensagens recebidas por voc&ecirc;.</p> <p>Para ler uma mensagem, clique no Assunto da mesma. Para apagar uma mensagem, clique no &iacute;cone correspondente, na coluna Apagar.</p> <p>Para apagar todas as mensagens, clique no bot&atilde;o Marcar Todos e, em seguida, clique no bot&atilde;o Apagar, localizados abaixo da lista de mensagens.</p>

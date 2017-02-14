@@ -1,0 +1,105 @@
+// Decompiled by DJ v3.5.5.77 Copyright 2003 Atanas Neshkov  Date: 21/06/2010 17:19:00
+// Home Page : http://members.fortunecity.com/neshkov/dj.html  - Check often for new version!
+// Decompiler options: packimports(3) 
+// Source File Name:   Customizer.java
+
+import java.text.DecimalFormat;
+import net.sf.jasperreports.engine.JRDefaultScriptlet;
+import net.sf.jasperreports.engine.JRScriptletException;
+
+public class Customizer extends JRDefaultScriptlet
+{
+
+    public Customizer()
+    {
+    }
+
+    public void beforeReportInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void afterReportInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void beforePageInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void afterPageInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void beforeColumnInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void afterColumnInit()
+        throws JRScriptletException
+    {
+    }
+
+    public void beforeGroupInit(String s)
+        throws JRScriptletException
+    {
+    }
+
+    public void afterGroupInit(String s)
+        throws JRScriptletException
+    {
+    }
+
+    public void beforeDetailEval()
+        throws JRScriptletException
+    {
+    }
+
+    public void afterDetailEval()
+        throws JRScriptletException
+    {
+    }
+
+    public String teste()
+        throws JRScriptletException
+    {
+        return "testando";
+    }
+
+    public Double calculaMediana(Double valorUm, Double valorDois, Double valorTres, Double valorQuatro)
+    {
+        Double aux = Double.valueOf((new Double(valorUm.doubleValue() + valorDois.doubleValue() + valorTres.doubleValue() + valorQuatro.doubleValue())).doubleValue() / 4D);
+        return formatar(aux);
+    }
+
+    public Double calculaVariacao(Double valorAtual, Double mediana)
+    {
+        Double aux = Double.valueOf((valorAtual.doubleValue() / mediana.doubleValue()) * 100D);
+        return formatar(aux);
+    }
+
+    public int getRestoDiv(Double dividendo, Double divisor)
+    {
+        return (int)(dividendo.doubleValue() % divisor.doubleValue());
+    }
+
+    public Double formatar(Double valor)
+    {
+        DecimalFormat format = new DecimalFormat("#0.00");
+        return new Double(format.format(valor).replace(",", "."));
+    }
+
+    public Integer geraLink(Integer valorUm, Integer valorDois)
+    {
+        if((valorUm == null) & (valorDois == null))
+            return Integer.valueOf(0);
+        if(valorUm != null && valorUm.intValue() > 0 || valorDois != null && valorDois.intValue() > 0)
+            return Integer.valueOf(1);
+        else
+            return Integer.valueOf(0);
+    }
+}

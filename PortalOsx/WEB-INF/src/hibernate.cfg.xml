@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.gjt.mm.mysql.Driver</property>
+        <property name="connection.url">jdbc:mysql://eclipse:3306/matriz</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect 
+			br.com.visent.matraf.dao.hibernate.MySQLInnoDBDialectPlus
+			org.hibernate.dialect.HSQLDialect -->
+        <property name="dialect">br.com.visent.matraf.dao.hibernate.MySQLInnoDBDialectPlus</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+		
+		
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="hibernate.cache.use_query_cache">false</property>
+		<property name="hibernate.cache.use_second_level_cache">false</property>
+		
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+		
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/CentralRef.hbm.xml"/>
+
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/GrupoCelula.hbm.xml"/>
+        <mapping resource="br/com/visent/matraf/dao/hibernate/conf/Central.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/Celula.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/Operadora.hbm.xml"/>
+	
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/Rota.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/TipoAssinante.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/RelacaoTrafego.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/LinhaRelatorio.hbm.xml"/>
+		
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/Periodo.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/DataPeriodo.hbm.xml"/>
+		<mapping resource="br/com/visent/matraf/dao/hibernate/conf/Relatorio.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>

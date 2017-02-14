@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="br.com.visent.segurancaAcesso.domain.RegistroAcesso" table="REGISTRO_ACESSO">
+		
+		<id name="id" column="ID_REGISTRO_ACESSO" type="int">
+			<generator class="native"/>
+        </id>
+        
+		<property name="usuario" column="USUARIO"/>
+		<property name="perfil" column="PERFIL"/>
+		<property name="ipMaquina" column="IP"/>
+		<property name="modulo" column="MODULO"/>
+		<property name="evento" column="EVENTO"/>
+		<property name="dtRegistro" column="DT_REGISTRO"/>
+		<property name="motivo" column="MOTIVO_ACESSO"/>
+		<property name="tempoAcesso" column="TEMPO_ACESSO"/>
+		
+	</class>
+
+</hibernate-mapping>

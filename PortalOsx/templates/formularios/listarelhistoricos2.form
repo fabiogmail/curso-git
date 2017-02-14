@@ -1,0 +1,38 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem de mensagens existentes
+# Observar a sintaxe correta!
+# Autor: Marcele Meireles
+# Última Altera&ccedil;&atilde;o: 05/09/2002
+#
+
+table,545,0,0,0
+   form,form1,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao,apagaRelHistoricos
+      hidden,relatorios, 
+      hidden,qtdrelatorios,$ARG;
+      hidden,arquivos,$ARG;
+      hidden,perfil,$ARG;
+      hidden,tiporel,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         image,/PortalOsx/imagens/voltar.gif,onClick="history.back(); return false;"
+      /td
+   /tr
+/table

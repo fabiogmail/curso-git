@@ -1,0 +1,80 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem de relat&oacute;rios agendados
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 18/02/2002
+# perfilAtual e  perfilAdminFraude são gatos para usuario fraude
+
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisArg,$ARG;
+      hidden,ListaPerfisIdArg,$ARG;
+      hidden,ListaPermissoesArg,$ARG;
+      hidden,ListaTipoRelArg,$ARG;
+      hidden,MensagemArg,$ARG;
+      hidden,perfilAtual,$ARG;
+      hidden,perfilAdminFraude,$ARG;
+   tr
+      td,left,middle, ,105, 
+         <b>Perfil: &nbsp;</b>
+      /td
+      td,left,middle, ,440, 
+         select,ListaPerfis,1, ,onChange="AtualizaTipoRel()" 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr>
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,middle, ,105, 
+         <b>Tipo de Relat&oacute;rio: &nbsp;</b>
+      /td
+      td,left,middle, ,440, 
+         select,ListaTipoRel,1, , 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr>
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,65, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao, 
+            hidden,perfil, 
+            hidden,tiporel, 
+            image,/PortalOsx/imagens/listarrelatorios.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/table

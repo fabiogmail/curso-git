@@ -1,0 +1,2 @@
+<p>Para configurar o alarme de Quantidade de Arquivos a Consumir no diret&oacute;rio In, defina a Quantidade de Arquivos m&aacute;xima permitida e a Periodicidade para verifica&ccedil;&atilde;o da mesma. Em seguida, habilite o alarme selecionando <b>Habilita</b> e clique no bot&atilde;o Configurar Alarme.</p>
+<p>O alarme ser&aacute; gerado quando a quantidade de arquivos a serem processados pelo(s) conversor(es) for maior que o configurado.</p>

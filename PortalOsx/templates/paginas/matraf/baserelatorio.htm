@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>Selec&ccedil;&atilde;o de Per&iacute;odos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" type="text/JavaScript">
+<!--
+function AbreJanela(event,Tipo, Features)
+{
+   var NovaJanela;
+   var CoordX, CoordY;
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   TipoRelatorio = "Matraf";
+
+   CoordX = event.screenX;
+   CoordY = event.screenY;
+
+   if (Tipo == "periodos")
+   {
+      CoordX -= 100;
+      CoordY -= 230;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagperiodos&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += "resizable=no,status=no,menubar=no,scrollbars=yes,width=250,height=190";
+
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Paginas', Features);
+   }
+   else if (Tipo == "indicadores")
+   {
+      CoordX -= 160;
+      CoordY -= 380;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagindicadores&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY+",resizable=yes,status=no,menubar=yes,scrollbars=yes,width=750,height=315";
+      NovaJanela = window.open(URLStr, 'Indicadores', Features);
+   }
+   else if (Tipo == "logs")
+   {
+      CoordX -= 230;
+      CoordY -= 330;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=paglogs&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Logs', Features);
+   }
+   else if (Tipo == "download")
+   {
+      CoordX -= 70;
+      CoordY -= 220;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=download&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Download', Features);
+   }
+   else if (Tipo == "configuracao")
+   {
+      CoordX -= 160;
+      CoordY -= 220;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagconfiguracao&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Configuracao', Features);
+   }
+   NovaJanela.focus();
+   return false;
+}
+
+function Download()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+   var Pag = document.icones2.paginacao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+
+   //
+   // altera o "location" da janela de relat&oacute;rio
+   //
+   JanelaRelatorio = window.parent.frames[1];
+   JanelaRelatorio.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=download&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+}
+
+function RemoveAgenda()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   TipoRelatorio = "Matraf";
+
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=removeagenda&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+
+   for (i = 0; i < 700; i ++)
+      for (j = 0; j < 700; j++);
+}
+//-->
+</script>
+<style type="text/css">  
+#divUpControl{
+	position:absolute;
+	width:68px;
+	left:431px;
+	top:317px;
+	z-index:1;
+	text-align: right;
+	height: 19px;
+} 
+#divDownControl{
+	position:absolute;
+	width:17px;
+	left:379px;
+	top:11px;
+	z-index:1;
+	text-align: right;
+	height: 47px;
+} 
+#divContainer{
+	position:absolute;
+	width:550px;
+	height:41px;
+	overflow:hidden;
+	top:9px;
+	left:18px;
+	clip:rect(0,560,41,0);
+	visibility: visible;
+} 
+#divContent{
+	position:absolute;
+	top:0;
+	left:0;
+} 
+</style>
+</head>
+
+<body bgcolor="#BBBDBB" text="#000000" onUnload="RemoveAgenda()">
+
+<div id="Layer1" style="position:absolute; left:625px; top:6px; width:105px; height:46px; z-index:2">
+   <img src="/PortalOsx/imagens/iconesrelmatraf.gif" border="0" usemap="#Map2">
+
+<form name="icones" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+<input type="hidden" name="operacao" value="apresentaRelHistoricoTrafego">
+<input type="hidden" name="suboperacao" value="">
+  <map name="Map2">
+  <area shape=rect coords="0,0,19,18"    href="#" alt="Download"                   OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'download','resizable=no,status=no,scrollbars=no,width=260,height=180')">
+  <area shape=rect coords="22,0,109,18"  href="#" alt="Indicadores"                OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'indicadores','resizable=no,status=no,scrollbars=no,width=305,height=335')">
+  <area shape=rect coords="112,0,131,18" href="#" alt="Configura&ccedil;&atilde;o" OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'configuracao','resizable=no,status=no,scrollbars=no,width=280,height=185')">
+  <area shape=rect coords="134,0,153,18" href="#" alt="Logs"                       OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'logs','resizable=no,status=no,scrollbars=yes,width=400,height=285')">
+<!--
+     <area shape=rect coords="0,0,19,18"    href="#" alt="Download"    OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'download','resizable=no,status=no,scrollbars=no,width=260,height=180')">
+     <area shape=rect coords="22,0,109,18"  href="#" alt="Indicadores" OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'indicadores','resizable=no,status=no,scrollbars=no,width=305,height=335')">
+     <area shape=rect coords="112,0,131,18" href="#" alt="Logs"        OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela(event,'logs','resizable=no,status=no,scrollbars=yes,width=400,height=285')">
+-->
+  </map>
+</form>
+</div>
+
+</body>
+</html>

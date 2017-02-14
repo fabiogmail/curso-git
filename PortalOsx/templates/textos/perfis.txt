@@ -1,0 +1,4 @@
+<p>Um Perfil define o tipo de acesso e permiss&otilde;es associados aos usu&aacute;rios.</p>
+<p>Para incluir um perfil, defina o nome do perfil no campo “Novo Perfil”, os tipos de tecnologias permitidas, o tipo de acesso no campo “Acesso” e, em seguida, clique no bot&atilde;o Incluir.</p>
+<p>Para excluir um perfil existente, selecione o perfil desejado no campo Perfis e, em seguida, clique no bot&atilde;o Excluir.</p>
+<p>ATEN&Ccedil;&Atilde;O: o perfil "admin" &eacute; &uacute;nico, portanto n&atilde;o pode ser exclu&iacute;do. O Sistema permite apenas um usu&aacute;rio com tipo de acesso igual a "admin".</p>

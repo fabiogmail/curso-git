@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="br.com.visent.segurancaAcesso.domain.RegistroUso" table="REGISTRO_USO">
+	
+		<id name="id" column="ID_REGISTRO_USO" type="int">
+			<generator class="native"/>		
+		</id>
+			
+		<property name="usuario" column="USUARIO"/>
+		<property name="perfil" column="PERFIL"/>		
+		<property name="modulo" column="MODULO"/>
+		
+		<!--  bag name="filtros" table="FILTRO" lazy="false">
+			<key column="ID_REGISTRO_USO"/>			
+			<one-to-many class="br.com.visent.segurancaAcesso.domain.Filtro"/>
+		</bag>-->
+		
+		<property name="resultado" column="COD_RESULTADO"/>
+		<property name="tempoExec" column="TEMPO_EXEC"/>
+		
+		<property name="dtRegistro" column="DT_REGISTRO"/>
+		<property name="tipoRelat" column="TIPO_RELAT"/>
+		<property name="dtIni" column="DATA_INI"/>
+		<property name="dtFim" column="DATA_FIM"/>
+		
+	</class>
+
+</hibernate-mapping>

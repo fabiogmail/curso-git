@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>CDRView: $ARG;</title>
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1">
+var da = (document.all) ? 1 : 0;
+var pr = (window.print) ? 1 : 0;
+var mac = (navigator.userAgent.indexOf("Mac") != -1);
+
+
+function DizNome()
+{
+alert (window.parent.name);
+}
+
+function Imprime()
+{
+alert ("Imprime")
+  if (pr) // NS4, IE5
+    window.print();
+  else if (da && !mac) // IE4 (Windows)
+    vbPrintPage();
+  else // other browsers
+    alert("Desculpe! Seu navegador n&atilde;o suporta impress&atilde;o autom&aacute;tica");
+  return false;
+}
+
+if (da && !pr && !mac) with (document) {
+  writeln('<OBJECT ID="WB" WIDTH="0" HEIGHT="0" CLASSID="clsid:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>');
+  writeln('<' + 'SCRIPT LANGUAGE="VBScript">');
+  writeln('Sub window_onunload');
+  writeln('  On Error Resume Next');
+  writeln('  Set WB = nothing');
+  writeln('End Sub');
+  writeln('Sub vbPrintPage');
+  writeln('  OLECMDID_PRINT = 6');
+  writeln('  OLECMDEXECOPT_DONTPROMPTUSER = 1');
+  writeln('  OLECMDEXECOPT_PROMPTUSER = 1');
+  writeln('  On Error Resume Next');
+  writeln('  WB.ExecWB OLECMDID_PRINT, OLECMDEXECOPT_DONTPROMPTUSER');
+  writeln('End Sub');
+  writeln('<' + '/SCRIPT>');
+}
+</script>
+</head>
+<body>
+
+<p>
+<b>OSx Telecom - CDRView <sup>&reg;</sup> - $ARG;</b><br>
+<b><small><small>Copyright 1999 - 2003<small></small></b>
+</p>
+
+<!-- In&iacute;cio da tabela contendo o cabe�alho -->
+$ARG;
+<!-- Fim da tabela contendo o cabe�alho -->
+
+<!-- In&iacute;cio da tabela contendo o relat&oacute;rio -->
+$ARG;
+<!-- Fim da tabela contendo o relat&oacute;rio -->
+
+<br>
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+$ARG;
+   <tr>
+      <td colspan="2">&nbsp;</td>
+   </tr>
+$ARG;
+</table>
+$ARG;
+</body>
+</html>

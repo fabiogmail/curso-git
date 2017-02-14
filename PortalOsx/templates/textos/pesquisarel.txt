@@ -1,0 +1,2 @@
+<p>Esta op&ccedil;&atilde;o dará ao usu&aacute;rio a op&ccedil;&atilde;o de pesquisar o relat&oacute;rio desejado, por meio dos tr&ecirc;s campos existentes e, em seguida clicar no bot&atilde;o "listar Relat&oacute;rios" para pesquisa.</p>
+<p>ATEN&Ccedil;&Atilde;O: O bot&atilde;o "limpar" tem a fun&ccedil;&atilde;o de apagar qualquer sele&ccedil;&atilde;o que seja realizada na pesquisa de Relat&oacute;rios, já o bot&atilde;o Avan&ccedil;ada &eacute; uma op&ccedil;&atilde;o de pesquisa mais detalhada.</p>

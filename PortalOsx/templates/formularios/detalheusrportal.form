@@ -1,0 +1,86 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para detalhes de usu&aacute;rio conectado ao portal
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 11/04/2002
+#
+
+table,330,0,0,0
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Usu&aacute;rio</b></font>
+      /td
+   /th      
+   tr
+      td,left, , , , 
+         table,330,0,0,0
+            tr
+               td,left, , , , 
+                  <b>Nome:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Perfil:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Origem</b></font>
+      /td
+   /th
+   tr
+      td,left, , , , 
+         table,330,0,0,0
+            tr
+               td,left, , , , 
+                  <b>IP:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Host:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Sess&atilde;o ID:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Outras Informa&ccedil;&otilde;es</b></font>
+      /td
+   /th
+   tr
+      td,left, , , , 
+         table,330,0,0,0
+            tr
+               td,left, , , , 
+                  <b>Logon:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>P&aacute;gina:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         <a href="" onclick="window.close()"><img src="/PortalOsx/imagens/fechar.gif" border="0"></a>
+      /td
+   /tr
+/table

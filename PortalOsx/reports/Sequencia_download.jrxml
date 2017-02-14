@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Sequencia" pageWidth="685" pageHeight="439" columnWidth="683" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1" scriptletClass="Customizer">
+	<style name="cabecalho" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#000066" hAlign="Center" fontName="Arial" fontSize="5"/>
+	<style name="estilo" isDefault="false" mode="Opaque" forecolor="#000000" backcolor="#ECECEC" hAlign="Center" fontName="Arial">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean( ($P{REPORT_SCRIPTLET}.getRestoDiv(new Double($V{LINHA}.doubleValue()),new Double(2))) == 0 )]]></conditionExpression>
+			<style isDefault="false" style="estilo" backcolor="#FFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="IMAGEM" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="IMAGEM_TOPO" class="java.lang.String" isForPrompting="false"/>
+	<field name="bilhetador" class="java.lang.String"/>
+	<field name="primeiroArquivo" class="java.lang.Integer"/>
+	<field name="numFaltantes" class="java.lang.Integer"/>
+	<field name="numRepetidos" class="java.lang.Integer"/>
+	<field name="ultimoArquivo" class="java.lang.Integer"/>
+	<field name="qntArquivos" class="java.lang.Integer"/>
+	<field name="qtdNumRepetidos" class="java.lang.Integer"/>
+	<field name="tipo" class="java.lang.String"/>
+	<variable name="LINHA" class="java.math.BigDecimal" resetType="Page" incrementType="Group" incrementGroup="bilhetador" calculation="Count">
+		<variableExpression><![CDATA[$V{LINHA}.add(new BigDecimal(1))]]></variableExpression>
+	</variable>
+	<variable name="VALOR" class="java.lang.Integer" calculation="Count"/>
+	<variable name="SUM_FALTANTE" class="java.lang.Integer" resetType="Group" resetGroup="bilhetador" calculation="Sum">
+		<variableExpression><![CDATA[( $F{numFaltantes}.intValue() > 0 ? 
+   new Integer(1) : new Integer(0))]]></variableExpression>
+	</variable>
+	<variable name="SUM_REPETIDO" class="java.lang.Integer" resetType="Group" resetGroup="bilhetador" calculation="Sum">
+		<variableExpression><![CDATA[( $F{numRepetidos}.intValue() > 0 ? 
+   new Integer(1) : new Integer(0))]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_REPETIDOS" class="java.lang.Integer" incrementType="Group" incrementGroup="bilhetador" calculation="Sum">
+		<variableExpression><![CDATA[$V{SUM_REPETIDO}]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_FALTANTES" class="java.lang.Integer" incrementType="Group" incrementGroup="bilhetador" calculation="Sum">
+		<variableExpression><![CDATA[$V{SUM_FALTANTE}]]></variableExpression>
+	</variable>
+	<variable name="LISTA_BIL_FALTANTE" class="java.lang.String" incrementType="Group" incrementGroup="bilhetador">
+		<variableExpression><![CDATA[( $V{SUM_FALTANTE}.intValue() > 0 ? 
+    $V{LISTA_BIL_FALTANTE}+";"+$F{bilhetador} :
+    $V{LISTA_BIL_FALTANTE})]]></variableExpression>
+	</variable>
+	<variable name="LISTA_BIL_REPETIDO" class="java.lang.String">
+		<variableExpression><![CDATA[( $V{SUM_REPETIDO}.intValue() > 0 ? 
+     $V{LISTA_BIL_REPETIDO}+";"+$F{bilhetador} :
+     $V{LISTA_BIL_REPETIDO})]]></variableExpression>
+	</variable>
+	<variable name="GERAL_PRIMEIRO_ARQ" class="java.lang.Integer" calculation="Lowest">
+		<variableExpression><![CDATA[$F{primeiroArquivo}]]></variableExpression>
+	</variable>
+	<variable name="GERAL_ULTIMO_ARQ" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{ultimoArquivo}]]></variableExpression>
+	</variable>
+	<group name="bilhetador">
+		<groupExpression><![CDATA[$F{bilhetador}]]></groupExpression>
+		<groupHeader>
+			<band isSplitAllowed="false"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="21">
+				<textField>
+					<reportElement style="estilo" x="448" y="0" width="79" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$V{SUM_REPETIDO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="estilo" x="371" y="0" width="77" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$V{SUM_FALTANTE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="estilo" x="0" y="0" width="178" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{bilhetador}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="Clip" hyperlinkType="Reference">
+					<reportElement style="estilo" x="527" y="0" width="75" height="20">
+						<printWhenExpression><![CDATA[new Boolean($V{SUM_FALTANTE}.intValue() >0)]]></printWhenExpression>
+					</reportElement>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMAGEM}]]></imageExpression>
+				</image>
+				<image hyperlinkType="Reference">
+					<reportElement style="estilo" x="602" y="0" width="83" height="20">
+						<printWhenExpression><![CDATA[new Boolean($V{SUM_REPETIDO}.intValue() >0)]]></printWhenExpression>
+					</reportElement>
+					<imageExpression class="java.lang.String"><![CDATA[$P{IMAGEM}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement style="estilo" x="527" y="0" width="75" height="20">
+						<printWhenExpression><![CDATA[new Boolean($V{SUM_FALTANTE}.intValue() <=0)]]></printWhenExpression>
+					</reportElement>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="estilo" x="602" y="1" width="83" height="20">
+						<printWhenExpression><![CDATA[new Boolean($V{SUM_REPETIDO}.intValue() <= 0)]]></printWhenExpression>
+					</reportElement>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField>
+					<reportElement style="estilo" x="178" y="1" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{primeiroArquivo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="estilo" x="278" y="1" width="93" height="20"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ultimoArquivo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band/>
+	</title>
+	<pageHeader>
+		<band height="64">
+			<image>
+				<reportElement x="0" y="0" width="95" height="38"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{IMAGEM_TOPO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="1" y="38" width="205" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Visent - CDRView ® Copyright 1999 - 2010]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="0" width="178" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bilhetador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="371" y="0" width="77" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtd. Faltantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="448" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtd. Repetidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="527" y="0" width="75" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arq. Faltantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="602" y="0" width="83" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arq. Repetidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="178" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Primeiro Arq.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="278" y="0" width="93" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Último Arq.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band isSplitAllowed="false"/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<lastPageFooter>
+		<band/>
+	</lastPageFooter>
+	<summary>
+		<band height="86">
+			<textField>
+				<reportElement style="estilo" x="371" y="65" width="77" height="21" backcolor="#FFFFFF"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{TOTAL_FALTANTES}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="25" width="685" height="20" forecolor="#000000" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consolidação dos dados]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="estilo" x="448" y="65" width="79" height="21" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{TOTAL_REPETIDOS}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle" hyperlinkType="Reference">
+				<reportElement style="estilo" x="527" y="65" width="75" height="21" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean($V{TOTAL_FALTANTES}.intValue() >0)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.lang.String"><![CDATA[$P{IMAGEM}]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle" hyperlinkType="Reference">
+				<reportElement style="estilo" x="602" y="65" width="81" height="21" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean($V{TOTAL_REPETIDOS}.intValue() >0)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.lang.String"><![CDATA[$P{IMAGEM}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="cabecalho" x="448" y="45" width="79" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tot.Repetidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="527" y="45" width="75" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arq. Faltantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="602" y="45" width="83" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Arq. Repetidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="371" y="45" width="77" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tot. Faltantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="45" width="178" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bilhetador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="178" y="45" width="100" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Primeiro Arq.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="278" y="45" width="93" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Último Arq]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="estilo" x="0" y="66" width="178" height="20" backcolor="#FFFFFF"/>
+				<textElement/>
+				<text><![CDATA[TODOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="estilo" x="178" y="66" width="100" height="20" backcolor="#FFFFFF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{GERAL_PRIMEIRO_ARQ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="278" y="66" width="93" height="20" backcolor="#FFFFFF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{GERAL_ULTIMO_ARQ}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,33 @@
+  <OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH=82 HEIGHT=18 NAME="CDRView" codebase="http://$ARG;/PortalOsx/plugin/jre-1_2_2_011-win-i.exe">
+         <PARAM NAME=CODE VALUE="cCDRView2.class">
+         <PARAM NAME=CODEBASE VALUE="/PortalOsx/lib">
+         <PARAM NAME=ARCHIVE VALUE = "sCDRView2.jar,sInterfaces2.jar">
+         <PARAM NAME=NAME VALUE="CDRView">
+        
+         <PARAM NAME="type" VALUE="application/x-java-applet;version=1.2">
+         <PARAM NAME="USUARIO" VALUE="$ARG;">
+         <PARAM NAME="PERFIL" VALUE="$ARG;">
+         <PARAM NAME="IOR" VALUE="$ARG;">
+       </OBJECT>
+
+
+<APPLET CODEBASE="http://$ARG;/PortalOsx/lib/"
+	CODE="cCDRView2.class"
+	ARCHIVE="sCDRView2.jar,sInterfaces2.jar,cLibjava.jar,jfreechart-0.9.8.jar,jcommon-0.8.2a.jar,junit.jar,xerces.jar" 
+	WIDTH=82 
+	HEIGHT=18 
+	USUARIO=$ARG; 
+	PERFIL=$ARG; 
+	IOR=$ARG;>
+</APPLET>
+
+  <OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH=82 HEIGHT=18 NAME="CDRView">
+         <PARAM NAME=CODEBASE VALUE="http://$ARG;/PortalOsx/lib/">
+         <PARAM NAME=CODE VALUE="cCDRView2.class">
+         <PARAM NAME=ARCHIVE VALUE = "sCDRView2.jar,sInterfaces2.jar,cLibjava.jar,jfreechart-0.9.8.jar,jcommon-0.8.2a.jar,junit.jar,xerces.jar">
+         <PARAM NAME=NAME VALUE="CDRView">        
+         <PARAM NAME="type" VALUE="application/x-java-applet;">
+         <PARAM NAME="USUARIO" VALUE="$ARG;">
+         <PARAM NAME="PERFIL" VALUE="$ARG;">
+         <PARAM NAME="IOR" VALUE="$ARG;">
+  </OBJECT>

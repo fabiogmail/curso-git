@@ -1,0 +1,149 @@
+a:visited,a:link,a:active{ 
+	color:#1A4256;
+	text-decoration:none 
+}
+a:hover{
+	text-decoration:underline;
+	text-align: right;
+	color:#1A4256;
+}
+td {
+	font-family: verdana;
+	font-size: 7.5pt;
+	color: 1A4256;
+
+}
+.estiloTituloRelatorio {
+	color: #FF0000;
+}
+.link {
+	text-decoration: none;
+	color: 1A4256;
+
+}
+input {
+	background-color: #EFEEEF;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+	font-family: verdana;
+	font-size: 8pt;
+}
+
+.selectBoxNormal {background-color: #C6DAE9; color: black; font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif }
+.selectOver{background-color: #D7F4FE; color: black; font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif }
+.selectBoxNormal1 {background-color: #F7F7F7; color: #1A4256; font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif }
+.selectOver1{background-color: #FFFFFF; color: #1A4256; font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif }
+.selectBoxNormalMax {background-color: #F7F7F7; width:145; color: #1A4256; font-size:10px;font-family: Verdana, Arial, Helvetica, sans-serif }
+
+texto {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+
+.titulo {
+	border: 1px solid #000000;
+}
+.titulo1 {
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.titulo2 {
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.titulo3 {
+	border-left: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.titulo4 {
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+.dicas {
+	text-align: justify;
+}
+div#help {
+	position:absolute;
+	left: 600px;
+	top: 81px;
+	width:300px;
+	height:400px;
+	background:#FFFFFF;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
+	border-bottom: 1px solid #000000;
+	font-family: verdana;
+	font-size: 7.5pt;
+	color: 1A4256;
+	z-index:100;
+}
+div#helptext {
+	height:267;
+	overflow: auto;
+	scrollbar-arrow-color:#000000;
+	scrollbar-3dlight-color:#000000;
+	scrollbar-highlight-color:#DEE7EF;
+	scrollbar-face-color:#DEE7EF;
+	scrollbar-shadow-color:#000000;
+	scrollbar-darkshadow-color:#DEE7EF;
+	scrollbar-track-color:#FFFFFF;
+}
+
+#divMenu a       {font-size:10px;}
+#divMenu a:hover {font-size:10px;}
+
+#divBg           {
+	position:absolute;
+	z-index:11;
+	width:450px;
+	left:30px;
+	height:100px;
+	clip:rect(0px 10px 10px 0px);
+	top: 125px;
+}
+#divMenu         {
+	position:absolute;
+	z-index:11;
+	left:300px;
+	top:2px;
+	font-size:12px;
+	font-family:verdana,arial,helvetica,sans-serif;
+	height: 1px;
+}
+#divArrowLeft    {
+	position:absolute;
+	z-index:12;
+	width:20px;
+	height:20px;
+	left:0px;
+	top:0px;
+}
+#divArrowRight   {
+	position:absolute;
+	z-index:12;
+	width:20px;
+	height:20px;
+	top:0px;
+	visibility:inherit;
+}
+.tooltipe {
+	position:absolute;
+	height: 20;
+	z-index:13;	
+	left:20;
+	top:81px;
+}
+.box2 {
+	height: 20px;
+	width: 400px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	border: 1px solid #b5c3ce;
+	background-color: #FFFFFF;
+	overflow: auto;
+}

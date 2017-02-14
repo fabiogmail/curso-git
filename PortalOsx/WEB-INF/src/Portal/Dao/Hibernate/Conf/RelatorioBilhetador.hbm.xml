@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Portal.Dto.Bilhetador" table = "bilhetador">
+        
+        <id name="idBilhetador" column="ID_BILHETADOR" type="int" />
+        <property name="nome" column="NOME"/>
+		<property name="mascara" column="MASCARA"/> 
+		<property name="arqConfig" column="ARQ_CONFIG"/>
+		<property name="delay" column="DELAY"/>
+		<property name="dataHoraVolCham" column="DATA_HORA_VOL_CHAM"/>
+		
+    </class>
+</hibernate-mapping>

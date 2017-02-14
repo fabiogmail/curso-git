@@ -1,0 +1,3 @@
+<p>Para iniciar um Conversor, selecione a configura&ccedil;&atilde;o desejada e clique no bot&atilde;o Iniciar.</p>
+<p>Para terminar um Conversor, no campo "configura&ccedil;&otilde;es", selecione a configura&ccedil;&atilde;o desejada e clique no bot&atilde;o Finalizar ou Terminar. "Finalizar" p&aacute;ra o processo corretamente, ap&oacute;s o t&eacute;rmino do processamento do arquivo de CDRs brutos, j&aacute; a op&ccedil;&atilde;o"Terminar" &eacute; equivalente a finalizar (kill) o processo imediatamente.</p>
+<p>ATEN&Ccedil;&Atilde;O: N&atilde;o &eacute; poss&iacute;vel iniciar uma mesma configura&ccedil;&atilde;o de Conversor mais de uma vez.</p>

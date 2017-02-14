@@ -1,0 +1,2 @@
+<p>Atrav&eacute;s do Envio de Mensagens voc&ecirc; poder&aacute; enviar mensagens para usu&aacute;rios espec&iacute;ficos ou para todos os usu&aacute;rios de um determinado perfil do Sistema.</p>
+<p>Para enviar mensagens para usu&aacute;rios espec&iacute;ficos, selecione apenas os nomes dos Usu&aacute;rios; para enviar mensagens para todos os usu&aacute;rios de um Perfil, selecione apenas o Perfil.</p> <p>OBS: Tags HTML podem ser utilizadas no corpo da mensagem.</p>

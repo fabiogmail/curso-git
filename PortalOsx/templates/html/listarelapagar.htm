@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Exclus&atilde;o de Relat&oacute;rios</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script type="text/javascript" language="JavaScript" charset="ISO-8859-1" $ARG; type="text/JavaScript"></script>
+</head>
+
+<body $ARG;>
+<form name="form1" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="operacao" value="listaRelApagar">
+<input type="hidden" name="suboperacao" value="apagar">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tipoarmazenamento" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="relatoriosaapagar" value="">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="/PortalOsx/imagens/$ARG;"></td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Selecione os relat&oacute;rios que deseja excluir:</font>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+$ARG;
+</table>
+  <p><input type="reset" name="limpar" value="   Limpar   " class="button">&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Apagar" class="button" onClick="return ApagaRelatorios()"> </p>
+</form>
+</body>
+</html>

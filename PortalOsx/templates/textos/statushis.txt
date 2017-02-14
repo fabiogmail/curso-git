@@ -1,0 +1,1 @@
+<p>Apresenta informa&ccedil;ões referentes &agrave; S&eacute;ries Hist&oacute;ricas programadas pelos usu&aacute;rios do Sistema, que se encontram em execu&ccedil;&atilde;o.</p>

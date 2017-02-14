@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="br.com.visent.segurancaAcesso.domain.Filtro" table="FILTRO">
+	
+		<id name="id"
+			column="ID_FILTRO" >
+			<generator class="native"/>		
+		</id>
+			
+		<property name="nomeFiltro" column="NOME_FILTRO"/>
+		<property name="nomeGrupo" column="NOME_GRUPO"/>
+		<property name="tipoFiltro" column="TIPO_FILTRO"/>
+		
+		<many-to-one name="registroUso"
+			class="br.com.visent.segurancaAcesso.domain.RegistroUso"
+			column="ID_REGISTRO_USO"
+			not-null="false"/>
+			
+		<property name="valoresFiltro" column="VALORES_FILTRO"/>
+						
+	</class>
+
+</hibernate-mapping>

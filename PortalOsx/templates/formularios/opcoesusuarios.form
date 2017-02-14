@@ -1,0 +1,85 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para op&ccedil;&otilde;es de configura&ccedil;&atilde;o de usu&aacute;rios
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 29/01/2002
+#
+
+table,545,0,0,0
+   form,form1,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao,opcoesUsuarios
+      hidden,opcao,salvar
+      hidden,mensagem,$ARG;
+      hidden,multi,$ARG;
+      hidden,nivellog,$ARG;
+#   tr
+#      td,left, , ,273, 
+#         <b>Multisess&atilde;o: &nbsp;</b>
+#         select,MultiSessao,1, , 
+#            option,0,N&atilde;o
+#            option,1,Sim
+#         /select
+#      /td
+#   /tr
+#   tr
+#      td,left, ,2, , , 
+#         &nbsp;
+#      /td
+#   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , ,272, 
+         <b>Quantidade M&aacute;xima de Usu&aacute;rios: &nbsp;</b>
+         text,qtdmax,$ARG;,5,10,onBlur="VerificaQtd()"
+         #text,qtdmax,$ARG;,5,10,onBlur="VerificaQtd()" class="forms" style="border:1px solid black"
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , ,272, 
+         <b>N&iacute;vel de log: &nbsp;</b>
+            select,NivelDeLog,1, , 
+            option,0,Informa&ccedil;&otilde;es B&aacute;sicas
+            option,1,Informa&ccedil;&otilde;es Detalhadas
+            option,2,Informa&ccedil;&otilde;es Detalhadas e Avisos
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+#         submit,Salva, Salva ,onClick="return ValidaForm(1)"
+         image,/PortalOsx/imagens/salvar.gif,onClick="return ValidaForm(1)"
+      /td
+   /tr
+   /form
+/table

@@ -1,0 +1,389 @@
+<html>
+<head>
+<title>Matraf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">   
+a:visited,a:link,a:active{
+	color:#000000;
+	text-decoration:none
+}
+a:hover{
+	text-decoration:underline;
+	text-align: right;
+	color:#000000;
+}
+
+table {
+  border-collapse: collapse;
+}
+th {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.tabela {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-align: left;	
+}
+.paginacao {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;
+	
+	
+}
+input { 
+	background-color: #FFFFFF; 
+	font: 10px verdana, arial, helvetica, sans-serif;
+	color:#003399;
+	border:1px solid #000000;
+}
+.recursos {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	
+	background-color: #FFFFFF;
+}
+
+.info {
+	font-family: verdana; 
+	font-size: 11px;
+	border-left: 1px solid #9FB1BC;	
+	border-bottom: 1px solid #9FB1BC;
+	border-right: 1px solid #9FB1BC;
+	border-top:1px solid #9FB1BC;
+}
+
+</style>
+
+<script type='text/javascript' src='/PortalOsx/dwr/engine.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/util.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/CelulaManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/CentralManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/OperadoraManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/Pesquisa.js'></script>
+<script type='text/javascript' src='tabela.js'></script>
+
+<script type="text/javascript">
+<!--
+
+ehOrigem = false;
+tabela = new tabela('tabela');
+numColunas = 0;
+numPaginas = 0;
+paginaAtual = 1;
+tipo = '';
+var recursos = new Array();
+
+function $(id) {
+	return document.getElementById(id);
+}
+
+function init(){
+	Pesquisa.ehOrigem(verificaRef);
+	Pesquisa.getCentralRef(centralRef);
+	Pesquisa.getNomeBilhetador(nomeBilhetador);
+	Pesquisa.getNumPaginas(paginas);
+	Pesquisa.getListaRecursos(getListaRecursos);
+	$('tabela').innerHTML = "Criando a tabela...";
+	Pesquisa.getRelatorio(resultado,1,[0],false);	
+}
+
+function getListaRecursos(valor){
+	for(var i = 0; i < valor.length; i++){
+		if(valor[i] == 'relacao_trafego') {
+			$('recursos').options.add(new Option('Relação de Tráfego','relacao_trafego'));
+		}else if(valor[i] == 'tipo_assinante'){
+			$('recursos').options.add(new Option('Tipo de Assinante','tipo_assinante'));
+		}else if(valor[i] == 'origem_destino'){
+			$('recursos').options.add(new Option('Origem ou Destino','origem_destino'));
+		}else if(valor[i] == 'rotae'){
+			$('recursos').options.add(new Option('Rota de Entrada','rotae'));
+		}else if(valor[i] == 'rotas'){
+			$('recursos').options.add(new Option('Rota de Saída','rotas'));
+		}else if(valor[i] == 'celulae'){
+			$('recursos').options.add(new Option('Celula de Entrada','celulae'));
+		}else if(valor[i] == 'celulas'){
+			$('recursos').options.add(new Option('Celula de Saída','celulas'));
+		}
+	}
+	for(var i = 0; i < $('recursos').options.length;i++){
+		recursos[i] = $('recursos').options[i];
+	}
+}
+
+function centralRef(valor){
+	$('centralbase').innerHTML = 'Central: <font color="#FF0000">'+valor.nome+'</font>';
+}
+
+function nomeBilhetador(valor){
+	ref = '';
+	if(ehOrigem){
+		ref = 'Origem';
+	}else{
+		ref = 'Destino';
+	}
+	$('nomeBilhetador').innerHTML = ref+': <font color="#FF0000">'+valor+'</font>';
+}
+
+function verificaRef(valor){
+	if(valor){
+		ehOrigem = true;
+	}else{
+		ehOrigem = false;
+	}
+}
+
+function paginas(valor){
+	numPaginas = valor;
+	var paginacao = '';
+	paginacao += '<form name="form1" method="post" onSubmit="return navegar($(\'pag\').value)">';
+	//paginacao += '<input type="image" src="pag.jpg" onClick="navegar($(\'pag\').value)" style="border:0"/>&nbsp;'
+	//paginacao += '<a href="#" onClick="navegar($(\'pag\').value)"><img src="pag.jpg" border="0" align="absmiddle"></img></a>&nbsp;';
+	paginacao += '<input type="text" size="3" value="1" id="pag"> de '+numPaginas+" &nbsp;&nbsp;";
+	paginacao += '<a href="#" onClick="navegar('+1+')"><img src="inicio.jpg" border="0" align="absmiddle" alt="Primeira página"></img></a>&nbsp;';
+	paginacao += '<a href="#" onClick="navegar(\'-\')"><img src="anterior.jpg" border="0" align="absmiddle" alt="Página anterior"></img></a>&nbsp;';
+	paginacao += '<a href="#" onClick="navegar(\'+\')"><img src="proxima.jpg" border="0" align="absmiddle" alt="Próxima página"></img></a>&nbsp;';
+	paginacao += '<a href="#" onClick="navegar('+valor+')"><img src="fim.jpg" border="0" align="absmiddle" alt="Última página"></img></a>&nbsp;';
+	paginacao += '&nbsp;<a href="#" onClick="mostrarTudo()">Mostrar Tudo</a>';
+	$('paginacao').innerHTML = paginacao;
+}
+function navegar(tipo){
+	if(tipo == '+'){
+		paginaAtual = paginaAtual-(-1);
+		if(paginaAtual > numPaginas){
+			paginaAtual = numPaginas;
+		}
+		getPagina(paginaAtual);
+		
+	}else if(tipo == '-'){
+		paginaAtual = paginaAtual-1;
+		if(paginaAtual <= 0){
+			paginaAtual = 1;
+		}
+		getPagina(paginaAtual);
+	}else{
+		if(tipo > numPaginas){
+			alert('Número Inválido');
+			return false;
+		}else{
+			paginaAtual = tipo;
+			getPagina(tipo);
+		}
+		
+	}
+	$('pag').value = paginaAtual;
+	return false;
+}
+
+function mostrarTudo(){
+	$('tabela').innerHTML = "<br>Carregando...";
+	Pesquisa.getRelatorioOrdenado(resultado,0);
+}
+function getPagina(pagina){
+	Pesquisa.getRelatorioOrdenado(resultado,pagina);
+}
+function resultado(valor){
+	$('tabela').innerHTML = valor;
+}
+
+function excluirRecurso(){
+	for(var i = 0; i < recursos.length; i++){
+		for(var j = 0; j < $('recursos').options.length; j++){
+			if($('recursos').options[j].selected){
+				$('recursos').options.remove(j);
+			}
+		}
+	}
+}
+
+function atualizarRecurso(){
+	var lista = new Array();
+	for(var i = 0; i < recursos.length; i++){
+		lista[i] = recursos[i];
+	}
+	
+	while($('recursos').options.length > 0){
+		$('recursos').options.remove(0);
+	}
+	for(var i = 0; i < recursos.length; i++){
+		$('recursos').options.add(recursos[i]);
+	}
+}
+
+function ordenaRecurso(ordem){
+	var posicao = 0;
+	for(var i = 0; i < $('recursos').options.length; i++){
+		if($('recursos').options[i].selected){
+			posicao = i;
+		}
+	}
+
+	if(ordem == 0){
+		if(posicao-1 >= 0){
+			auxoption = $('recursos').options[posicao-1];
+			$('recursos').options.remove(posicao-1);
+			$('recursos').options.add(auxoption,posicao);
+		}
+	}else{
+		if(posicao+1 < $('recursos').options.length){
+			
+			auxoption = $('recursos').options[posicao+1];
+			$('recursos').options.remove(posicao+1);
+			$('recursos').options.add(auxoption,posicao);
+		}
+	}
+}
+
+function atualizar(){
+	listarecursos = new Array();
+	for(var i = 0; i < $('recursos').options.length; i++){
+		listarecursos[listarecursos.length] = $('recursos').options[i].value;
+	}
+	if(listarecursos.length == 0){
+		for(var i = 0; i < recursos.length; i++)
+    	listarecursos[i] = recursos[i].value;;
+	}
+	$('tabela').innerHTML = '<br>Carregando...'
+	Pesquisa.atualizar(resatualizar,listarecursos,1);
+}
+function resatualizar(valor){
+	paginaAtual = 1;
+	Pesquisa.getNumPaginas(paginas);
+	$('tabela').innerHTML = valor;
+}
+
+-->
+</script>
+
+</head>
+
+<body background="#FFFFFF" onLoad="init();" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="800" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+ 
+  <tr>
+    <td width="800" height="100" valign="top">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="800" height="100" valign="top"><img alt="" src="bannermatraf.png" width="800" height="100"></img></td>
+      </tr>
+    </table>	</td>
+  </tr>
+  
+  
+  <tr>
+    <td height="448" valign="top">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	    <!--DWLayoutTable-->
+
+	    <tr>
+	      
+	      <td width="800" height="66" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	        <!--DWLayoutTable-->
+	        <tr>
+	          <td width="16" height="19"></td>
+                <td width="290" valign="middle" class="recursos">
+                <font style="font-family:Verdana, Arial, Helvetica, sans-serif;font-size:10px;font-weight:bold">
+                <a href="matraf.html">VOLTAR</a></font>
+				</td>
+                <td width="290">&nbsp;</td>
+                <td width="8"></td>
+                <td width="181" rowspan="3" valign="top">
+                  
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <!--DWLayoutTable-->
+                    
+                    <tr>
+                      <td width="19" height="33" align="center" valign="middle">
+                        <a href="#" onClick="ordenaRecurso(0)"><img src="setapracima.jpg" width="15" height="15" border="0"></a>
+					  </td>
+                      <td width="141" rowspan="2" align="right" valign="bottom">
+					  <select name="recursos" id="recursos" size="5" multiple class="recursos">
+                         
+                      </select>
+					  </td>
+			          <td width="21" align="center" valign="middle">
+		                <a href="#" onClick="excluirRecurso()"><img src="excluir.jpg" width="15" height="15" border="0"></a>
+					  </td>
+                    </tr>
+                    
+  			      <tr>
+			          <td height="33" align="center" valign="middle">
+		                <a href="#" onClick="ordenaRecurso(1)"><img src="setaprabaixo.jpg" width="15" height="15" border="0"></a>
+					  </td>
+                      <td align="center" valign="middle">
+                        <a href="#" onClick="atualizarRecurso()"><img src="refresh.jpg" width="15" height="15" border="0"></a>
+					  </td>
+                    </tr>
+                </table></td>
+                <td width="15"></td>
+	          </tr>
+	        
+	        <tr>
+	          <td height="30"></td>
+	            <td align="center" valign="middle" class="info">
+                  <div id="centralbase"></div></td>
+                <td align="center" valign="middle" class="info"> <div id="nomeBilhetador"></div></td>
+	            <td>&nbsp;</td>
+                <td></td>
+	          </tr>
+	        <tr>
+	          <td height="17"></td>
+	            <td></td>
+	            <td></td>
+	            <td></td>
+	            <td></td>
+	          </tr>
+			  
+          </table></td>
+	    </tr>
+	    <tr>
+	      <td height="382" valign="top">
+		  
+		    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		      <!--DWLayoutTable-->
+		      <tr>
+		        <td width="15" height="1"></td>
+		        <td width="590"></td>
+		        <td width="180"></td>
+		        <td width="15"></td>
+	          </tr>
+		      <tr>
+		        <td height="23"></td>
+		        <td valign="middle" class="paginacao" id="paginacao"><!--DWLayoutEmptyCell-->&nbsp;</td>
+                <td align="center" valign="top" class="recursos"><a href="javascript:atualizar();">ATUALIZAR</a></td>
+		        <td></td>
+	          </tr>
+		      
+		      <tr>
+		        <td height="343"></td>
+		        <td colspan="2" align="center" valign="top" class="tabela" id="tabela"><!--DWLayoutEmptyCell-->&nbsp;</td>
+                <td></td>
+	          </tr>
+		      <tr>
+		        <td height="15"></td>
+		        <td></td>
+		        <td></td>
+		        <td></td>
+	          </tr>
+		      <!--DWLayoutTable-->
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  
+  <tr>
+    <td height="20" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#0D1237">
+      <!--DWLayoutTable-->
+      <tr>
+        <td width="800" height="20">&nbsp;</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

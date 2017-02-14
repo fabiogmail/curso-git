@@ -1,0 +1,54 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#   
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+# 
+# Todas as linhas iniciadas pelo caracter '#' serão ignoradas
+# Todos os espaços contidos entre as opções dos menus serão ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+MP,top0,Executar
+ SMF,sub00,top0,CDRView An&aacute;lise,javascript:{AbreJanela("cliente2");}
+ SMF,sub01,top0,CDRView Detec&ccedil;&atilde;o,javascript:{AbreJanela("clienteAlr");}
+
+MP,top1,Relat&oacute;rios
+ SML,sub10,top1,Sele&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=relAgendados
+ SML,sub11,top1,Pesquisa,/PortalOsx/servlet/Portal.cPortal?operacao=pesquisaRelatorios
+
+MP,top2,Ferramentas
+ SM,sub20,top2,Exportar CDRs
+#  SML,sub200,sub20,Exporta&ccedil;&atilde;o de Base,/PortalOsx/servlet/Portal.cPortal?operacao=formExportaBase
+  SML,sub201,sub20,Lista Bases Exportadas,/PortalOsx/servlet/Portal.cPortal?operacao=listaRelExportados
+ SM,sub21,top2,Monitorar Coleta
+  SML,sub210,sub21,&Uacute;ltima Coleta,/PortalOsx/servlet/Portal.cPortal?operacao=ultimaColeta
+  SML,sub211,sub21,Resumo Di&aacute;rio,/PortalOsx/servlet/Portal.cPortal?operacao=resumoDiario
+  SML,sub212,sub21,Monitorar Base CDRs,/PortalOsx/servlet/Portal.cPortal?operacao=listarBaseCDR
+
+MP,top3,Manuten&ccedil;&atilde;o
+ SML,sub30,top3,Java Plug-in,/PortalOsx/templates/paginas/plugin.htm
+ SML,sub31,top3,Certifica&ccedil;&atilde;o,/PortalOsx/templates/paginas/certifica.htm
+ SML,sub32,top3,Altera&ccedil;&atilde;o de Senha,/PortalOsx/servlet/Portal.cPortal?operacao=formAlteraSenha
+
+MP,top4,Mensagens
+ SML,sub40,top4,L&ecirc;,/PortalOsx/servlet/Portal.cPortal?operacao=listaMensagens
+ SML,sub41,top4,Envia,/PortalOsx/servlet/Portal.cPortal?operacao=formEnviaMensagem
+
+MP,top5,Documento
+ SML,sub50,top5,Sele&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=documento
+ 
+MP,top6,Informa&ccedil;&otilde;es
+ SML,sub61,top6,Agenda,/PortalOsx/servlet/Portal.cPortal?operacao=statusAgn&tipo=Agenda
+# SML,sub62,top6,S&eacute;ries Hist&oacute;ricas,/PortalOsx/servlet/Portal.cPortal?operacao=statusAgn&tipo=Historico
+ 

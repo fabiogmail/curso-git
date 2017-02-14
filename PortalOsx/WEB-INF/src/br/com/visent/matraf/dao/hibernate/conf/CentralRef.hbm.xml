@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.CentralRef" table="centralref">
+		
+        <id name="id" column="ID_CENTRALREF" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="nome"/>
+		<property name="tipoTec" column="TIPO_TEC"/>
+		
+		<bag name="grupoCelulas" table="CENTRALREF_GRUPO_CELULA" lazy="false">
+			<key column="ID_CENTRALREF"/>
+			<many-to-many class="br.com.visent.matraf.domain.GrupoCelula" column="ID_GRUPO_CELULA"/>
+		</bag>
+		
+		<bag name="centrais" table="CENTRALREF_CENTRAL" lazy="false">
+			<key column="ID_CENTRALREF"/>
+			<many-to-many class="br.com.visent.matraf.domain.Central" column="ID_CENTRAL"/>
+		</bag>
+		
+		<bag name="operadoras" table="CENTRALREF_OPERADORA" lazy="false">
+			<key column="ID_CENTRALREF"/>
+			<many-to-many class="br.com.visent.matraf.domain.Operadora" column="ID_OPERADORA"/>
+		</bag>
+
+    </class>
+
+</hibernate-mapping>

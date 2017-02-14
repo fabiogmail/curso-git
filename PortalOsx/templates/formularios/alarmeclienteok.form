@@ -1,0 +1,27 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para inicializa&ccedil;&atilde;o do Alarme Cliente
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 21/10/2002
+#
+         
+       #<OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH=82 HEIGHT=18 NAME="Alarme" codebase="http://$ARG;/plugin/jre-1_2_2_011-win-i.exe#Version=1,2,0,0">
+         <OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH=100% HEIGHT=100% NAME="Alarme">
+	         <PARAM NAME=CODE VALUE="cAlarme.class">
+	         <PARAM NAME=CODEBASE VALUE="http://$ARG;/PortalOsx/lib/">
+	         <PARAM NAME=ARCHIVE VALUE = "sAlarme.jar" >
+	         <PARAM NAME=NAME VALUE="Alarme">
+	         <PARAM NAME="type" VALUE="application/x-java-applet;">
+	         <PARAM NAME="USUARIO" VALUE="$ARG;">
+	         <PARAM NAME="IPSERV" VALUE="$ARG;">
+	         <PARAM NAME="PORTSERV" VALUE="$ARG;">
+	         <PARAM NAME="IOR" VALUE="$ARG;">
+   	         <PARAM NAME="PERFIL" VALUE="$ARG;">
+         </OBJECT>

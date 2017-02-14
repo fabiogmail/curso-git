@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.Operadora" table="operadora">
+        <id name="id" column="ID_OPERADORA" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="nome"/>
+		<property name="descricao"/>
+		<bag name="listaCentralRef" table="CENTRALREF_OPERADORA" lazy="false">
+			<key column="ID_OPERADORA"/>
+			<many-to-many class="br.com.visent.matraf.domain.CentralRef" column="ID_CENTRALREF"/>
+		</bag>
+
+    </class>
+
+</hibernate-mapping>

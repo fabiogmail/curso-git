@@ -1,0 +1,3 @@
+<p>Para configurar o alarme de Espa&ccedil;o em Disco defina o Espa&ccedil;o Livre m&iacute;nimo permitido e a Periodicidade para verifica&ccedil;&atilde;o do mesmo.</p>
+<p>Em seguida, habilite o alarme selecionando <b>Habilita</b> e clique no bot&atilde;o Configurar Alarme.</p>
+<p>O alarme ser&aacute; gerado quando o Espa&ccedil;o livre em disco for inferior ao configurado.</p>

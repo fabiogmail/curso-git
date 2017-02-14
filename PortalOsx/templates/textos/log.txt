@@ -1,0 +1,1 @@
+<p>Os arquivos de Log de Processos cont&ecirc;m informa&ccedil;&otilde;es referentes ao funcionamento dos Processos do Sistema.</p> <p>Para visualizar um arquivo de Log de Processos, defina o Processo desejado, o Dia da Semana, a hora de In&iacute;cio e a hora de Fim, na tela ao lado e, em seguida, clique no bot&atilde;o Listar.</p>

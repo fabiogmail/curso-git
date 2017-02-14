@@ -1,0 +1,108 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+
+
+$ARG;
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" type="text/JavaScript">
+
+var TipoOperacao = "";
+
+function GetCoord()
+{
+   var CoordX, CoordY;
+   var Tipo = "", MaisMenos = "", Tp = "";
+
+   TipoOperacao = document.grafico.zoom.value;
+   if (TipoOperacao == "")
+      return;
+
+   if (event.shiftKey == true)
+      MaisMenos = "-";
+   else
+      MaisMenos = "_";   // Para poder passar para o servlet
+
+   CoordX = event.offsetX;
+   CoordY = event.offsetY;
+   Tp = TipoOperacao+"-"+CoordX+"-"+CoordY+"-"+MaisMenos;
+
+   AlteraLocation("zoom", Tp);
+
+}
+
+function Zoom(p_TipoOperacao)
+{
+   TipoOperacao = p_TipoOperacao;
+}
+
+function AlteraLocation(Operacao, TipoOperacao)
+{
+   var Perfil = document.grafico.perfil.value;
+   var TipoRel = document.grafico.tiporel.value;
+   var IdRel = document.grafico.idrel.value;
+   var NomeArquivo = document.grafico.arquivo.value;
+   var NomeRelatorio = document.grafico.nomerel.value;
+   var DataGeracao = document.grafico.datageracao.value;
+   var Atualiza = document.grafico.atualizaGrafico.value;
+   
+   //alert ("/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&tipo="+TipoOperacao)
+   //window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&tipo="+TipoOperacao+"&atualizaGrafico="+Atualiza;
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&atualizaGrafico="+Atualiza+"&tipo="+TipoOperacao+"&datageracao="+DataGeracao;
+}
+
+function AlteraArquivoDosFormularios()
+{
+	document.body.style.overflow=''
+}
+
+function AtualizaGrafico()
+{
+   document.grafico.atualizaGrafico.value = "true";
+   AlteraLocation("meiorelatorioesquerda","AtualizaGrafico");
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&tipo="+TipoOperacao+"&atualizaGrafico="+"true";
+
+}
+function ParaAtualizacao()
+{
+   document.grafico.atualizaGrafico.value = "false";
+   AlteraLocation("meiorelatorioesquerda","PararAtualizacao");
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&atualizaGrafico="+"false";
+}
+
+</script>
+</head>
+
+<body bgcolor="D8D8D8" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="AlteraArquivoDosFormularios(); ">
+
+<form name="grafico" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<center><font face="verdana" size=1><b>$ARG;</b></font></center>
+<center><font face="verdana" size=1><b>$ARG;</b></font></center>
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+<input type="hidden" name="alteraarquivoform" value="$ARG;">
+<input type="hidden" name="indicadores" value="">
+<input type="hidden" name="zoom" value="">
+<input type="hidden" name="operacao" value="apresentaRelHistorico">
+<input type="hidden" name="suboperacao" value="">
+<input type="hidden" name="atualizaGrafico" value="">
+
+<table width="100%" height="70%" border="0" cellpadding="0" cellspacing="0">
+  $ARG;	  
+  <tr>
+    <td align="center" colspan="2">
+    	<img src="/PortalOsx/imagens/historico/$ARG;" width="580" height="429" onClick="GetCoord(); ">
+    </td>
+  </tr>
+</table>
+
+</form>
+</body>
+</html>

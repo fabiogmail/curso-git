@@ -1,0 +1,1 @@
+<p>Para cada Bilhetador &eacute apresentada a quantidade de CDRs processados por hora, de 00:00h (0) a 23:59hs (23). </p> <p>Ao final da tabela &eacute; apresentada a quantidade total de CDRs processada pelo Sistema, durante o dia selecionado.</p>

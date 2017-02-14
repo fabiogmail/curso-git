@@ -1,0 +1,44 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem de processos em execu&ccedil;&atilde;o
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 31/01/2002
+#
+
+table,545,0,0,0
+   form,form1,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao,Finaliza
+      hidden,processos, 
+      hidden,usuarios, 
+      hidden,tipo,$ARG;
+      hidden,tipo2,$ARG;
+      hidden,posini,$ARG;
+      hidden,qtdprocessos,$ARG;
+      hidden,processosid,$ARG;
+      hidden,usuariosnomes,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , , , 
+         image,/PortalOsx/imagens/marcartodos.gif,onClick="return Processa(1)"
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         image,/PortalOsx/imagens/finalizar.gif,onClick="return Processa(2)"
+      /td
+   /tr
+   /form
+/table

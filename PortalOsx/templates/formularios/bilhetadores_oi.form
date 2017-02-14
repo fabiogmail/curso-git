@@ -1,0 +1,148 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para inclus&atilde;o/exclus&atilde;o de bilhetadores
+# Observar a sintaxe correta!
+# Autor: Paulo Roberto Correa Dutra
+# Última Altera&ccedil;&atilde;o: 27/10/2003
+
+
+
+table,100%,0,0,0
+   form,form1,post, 
+      hidden,ListaBilhetadoresNomes,$ARG;
+      hidden,Apelidos,$ARG;
+      hidden,Fases,$ARG;
+      hidden,ListaTecnologiasNomes,$ARG;
+      hidden,Relacionamento,$ARG;
+      hidden,mensagem,$ARG;
+      hidden,ListaOperadorasNomes,$ARG;
+      hidden,OpRelacionamento,$ARG;
+      hidden,ListaServidoresNomes,$ARG;
+      hidden,ServRelacionamento,$ARG;
+           
+   tr
+      td,left, , , , 
+         <b>Bilhetadores: &nbsp;</b>
+         select,ListaBilhetadores,1, ,onChange="Processa(3)" 
+         /select
+      /td
+      td,left, , , , 
+         <b>Tecnologia: &nbsp;</b>
+         select,ListaTecnologias,1, , 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td, , ,3, , 
+         table, ,0, , ,
+            tr              
+               td,left, ,2,278,  
+                  <b>Apelido: &nbsp;</b>
+                  text,apelido, ,15,15, 
+               /td
+               td,left, ,2,267,  
+                  <b>Status: &nbsp;</b>
+                  select,Fase,1, , 
+                     option,0,Produ&ccedil;&atilde;o
+                     option,1,Teste
+                  /select
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,3, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td, , ,3, , 
+      table, ,0, , ,
+            tr              
+               td,left, ,2,278,  
+                  <b>Novo Bilhetador: &nbsp;</b>
+                  text,bilhetador, ,15,15, 
+               /td
+               td,left, ,2,267,  
+                 <b>Servidor: &nbsp;</b>
+                 select,ListaServidores,1, , 
+                 /select
+               /td
+            /tr
+      /table
+      /td
+   /tr
+   tr
+      td,left, ,3, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, ,  
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,incBilhetador
+            hidden,bilhetador, 
+            hidden,tecnologia, 
+            hidden,operadora, 
+            hidden,servidor, 
+            hidden,apelido, 
+            hidden,fase, 
+            image,/PortalOsx/imagens/incluir.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,60, 
+         form,form3,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,excBilhetador
+            hidden,bilhetador, 
+            imagens,/PortalOsx/imagens/excluir.gif,onClick="return Processa(2)"
+         /form
+      /td
+      td,left, , ,60, 
+         form,form4,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,altBilhetador
+            hidden,bilhetador, 
+            hidden,bilhetador_novo, 
+            hidden,tecnologia, 
+            hidden,operadora, 
+            hidden,servidor, 
+            hidden,apelido, 
+            hidden,fase, 
+            imagens,/PortalOsx/imagens/alterar.gif,onClick="return Processa(4)"
+         /form
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

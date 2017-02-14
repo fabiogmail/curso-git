@@ -1,0 +1,3 @@
+<p>Os Parsers s&atilde;o agrupados em configura&ccedil;&otilde;es, de forma a distribuir o processamento dos arquivos de CDRs.</p>
+<p>Para incluir uma configura&ccedil;&atilde;o de Parser, &eacute; necess&aacute;rio definir o nome de uma nova configura&ccedil;&atilde;o no campo "Nova Configuração", selecionar os bilhetatadores/centrais que ser&atilde;o contemplados por esta configura&ccedil;ão e, em seguida selecionar o Parser e o Servidor que esta configuração far&aacute; parte, e clicar no bot&atilde;o incluir.</p>
+<p>Para excluir ou alterar uma configura&ccedil;&atilde;o existente, selecione-a no campo Configura&ccedil;&otilde;es e, em seguida, clique no bot&atilde;o Excluir ou Alterar, respectivamente.</p>

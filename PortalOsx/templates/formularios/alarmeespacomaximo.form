@@ -1,0 +1,101 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para configura&ccedil;&atilde;o de alarmes de espa&ccedil;o m&aacute;ximo em diret&oacute;rios 
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 14/10/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+   hidden,mensagem,$ARG;
+   hidden,opcaosms,$ARG;
+   hidden,diretorios,$ARG;
+   hidden,qtd,$ARG;
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+#----------------------------------------------------------------
+#            DESCOMENTAR SE O CLIENTE FOR CLARO
+#----------------------------------------------------------------   
+#      td,left, , ,272, 
+#         <b>Envia SMS: &nbsp;</b>
+#         select,sms,1, , class="lista"
+#            option,Nao,N&atilde;o
+#            option,Sim,Sim
+#         /select
+#      /td
+#      td,right, , , , 
+#         <b>Telefone(s): &nbsp;</b>
+#         text,telefones,$ARG;,3,35,class="inputtext"
+#      /td
+#----------------------------------------------------------------
+#                       FIM DO BLOCO
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+#            			DEMAIS CLIENTES
+#----------------------------------------------------------------
+
+   	   <input type="hidden" name="sms">
+       hidden,telefones,$ARG;
+
+#----------------------------------------------------------------
+#                       FIM DO BLOCO
+#---------------------------------------------------------------- 
+
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,salvaAlarme
+            hidden,tipoalr,2
+            hidden,diretorios, 
+            hidden,limites, 
+            hidden,periodicidades, 
+            hidden,habilitacao, 
+            hidden,sms, 
+            hidden,telefones, 
+           image,/PortalOsx/imagens/salvar.gif,onClick="return ValidaForm()"
+         /form
+      /td
+      td,left, , ,60, 
+         &nbsp;
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

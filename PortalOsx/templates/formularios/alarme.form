@@ -1,0 +1,39 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para visualiza&ccedil;&atilde;o de alarme
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 13/03/2002
+#
+
+table,545,0,0,0
+   form,form1,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao,apagaAlarmes
+      hidden,alarmes,$ARG;
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         image,/PortalOsx/imagens/apagar.gif,onClick="return Apaga()"
+      /td
+   /tr
+   /form
+/table

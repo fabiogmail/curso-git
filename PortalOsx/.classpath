@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dwr.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jasperreports-1.3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jasperreports-1.3.0-applet.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jasperreports-1.3.0-javaflow.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-0.8.2a.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-0.9.8.jar"/>
+	<classpathentry kind="lib" path="lib/sAlarme.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-0.9.8-demo.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="lib/servlet.jar"/>
+	<classpathentry kind="lib" path="lib/sInterfaces2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dbdeteccao.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ClienteJava"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LibJava"/>
+	<classpathentry kind="src" path="work"/>
+	<classpathentry kind="lib" path="lib/ServAgenda.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

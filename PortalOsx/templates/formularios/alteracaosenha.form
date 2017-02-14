@@ -1,0 +1,110 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+# image,source,metodos
+
+#
+# Formul&aacute;rio para altera&ccedil;&atilde;o de senha
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 07/03/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+   hidden,mensagem,$ARG;
+   hidden,user,$ARG;
+   hidden,cliente,$ARG;
+   tr
+      td,left, ,2, , 
+         <b>Usu&aacute;rio:&nbsp;</b>$ARG;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , ,135, 
+         <b>Senha Atual: &nbsp;</b>
+      /td
+      td,left, , , , 
+         password,senhaatual, ,10,12, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , ,135, 
+         <b>Nova Senha: &nbsp;</b>
+      /td
+      td,left, , , , 
+         password,senha1, ,10,12, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , ,135, 
+         <b>Confirma&ccedil;&atilde;o de Senha: &nbsp;</b>
+      /td
+      td,left, , , , 
+         password,senha2, ,10,12, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,alteraSenha
+            hidden,senhaold, 
+            hidden,senhanew, 
+            image,/PortalOsx/imagens/alterar.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,60, 
+         &nbsp;
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

@@ -1,0 +1,496 @@
+<html>
+<head>
+<title>Selec&ccedil;&atilde;o de Per&iacute;odos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" type="text/JavaScript">
+<!--
+function AbreJanela(Tipo, Features)
+{
+   var NovaJanela = null;
+   var CoordX, CoordY;
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "24")
+      TipoRelatorio = "DistribuicaoDeFrequencia";
+   else if (TipoRel == "25")
+      TipoRelatorio = "Perseveranca";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+      TipoRelatorio = "PesquisaIMEI";
+   else if (TipoRel == "31")
+      TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+      TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+      TipoRelatorio = "DestinosComuns";
+   else if (TipoRel == "34")
+      TipoRelatorio = "PesquisaPorERB";
+   else if (TipoRel == "35")
+      TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+      TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+      TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+         TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+   else if (TipoRel == "50")
+       TipoRelatorio = "AnatelSMP3e4";
+   else if (TipoRel == "51")
+       TipoRelatorio = "AnatelSmp8e9";
+
+   CoordX = event.screenX;
+   CoordY = event.screenY;
+
+   if (Tipo == "paginas")
+   {
+/*
+      if (document.icones.qtdperiodos == "1")
+      {
+         CoordX -=  90;
+         CoordY -= 190;
+         URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagselecaopaginas&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo
+         //  +"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao ;
+         Features += "resizable=no,status=no,scrollbars=no,width=265,height=145";
+      }
+      else
+      {
+*/
+         CoordX =  0;
+         CoordY = 0;
+         URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagrelatoriofinal&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+         Features += "resizable=yes,status=no,menubar=yes,scrollbars=yes,width=600,height=550";
+//      }
+
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Paginas', Features);
+   }
+   else if (Tipo == "configuracao")
+   {
+      CoordX -= 190;
+      CoordY -= 300;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagconfiguracao&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Configuracao', Features);
+   }
+   else if (Tipo == "indicadores")
+   {
+   	if(TipoRel != 24){
+      CoordX -= 160;
+      CoordY -= 380;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=pagindicadores&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY+",resizable=yes,status=no,menubar=yes,scrollbars=yes,width=750,height=315";
+      NovaJanela = window.open(URLStr, 'Indicadores', Features);
+      }else{
+      	alert("Esses indicadores não são compativeis com esse relatorio.");
+      }
+   }
+   else if (Tipo == "logs")
+   {
+      CoordX -= 230;
+      CoordY -= 330;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=paglogs&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Logs', Features);
+   }
+   else if (Tipo == "download")
+   {
+      CoordX -= 70;
+      CoordY -= 220;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=download&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Logs', Features);
+   }
+   if(NovaJanela != null){
+	   NovaJanela.focus();
+	}
+   return false;
+}
+
+function Pagina(Tipo)
+{
+   var Perfil = document.icones.perfil.value;;
+   var TipoRel = document.icones.tiporel.value;;
+   var IdRel = document.icones.idrel.value;;
+   var NomeArquivo = document.icones.arquivo.value;;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "24")
+      TipoRelatorio = "DistribuicaoDeFrequencia";
+   else if (TipoRel == "25")
+      TipoRelatorio = "Perseveranca";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+      TipoRelatorio = "PesquisaIMEI";
+   else if (TipoRel == "31")
+      TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+      TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+      TipoRelAgendado = "DestinosComuns";
+   else if (TipoRel == "34")
+      TipoRelatorio = "PesquisaPorERB";
+   else if (TipoRel == "35")
+      TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+      TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+      TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+         TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+
+   //
+   // altera o "location" da janela de relat&oacute;rio
+   //
+   JanelaRelatorio = window.parent.frames[1];
+   JanelaRelatorio.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=meiorelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&navega="+Tipo;
+
+   //
+   // altera o "location" da janela de icones
+   //
+   JanelaIcones = window.parent.frames[2];
+   JanelaIcones.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=baserelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+   return false;
+}
+
+function Home(Tipo)
+{
+   var Perfil = document.icones.perfil.value;;
+   var TipoRel = document.icones.tiporel.value;;
+   var IdRel = document.icones.idrel.value;;
+   var NomeArquivo = document.icones.arquivo.value;;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "24")
+      TipoRelatorio = "DistribuicaoDeFrequencia";
+   else if (TipoRel == "25")
+      TipoRelatorio = "Perseveranca";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+         TipoRelatorio = "PesquisaIMEI";
+  else if (TipoRel == "31")
+         TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+         TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+         TipoRelatorio = "DestinosComuns";
+   else if (TipoRel == "34")
+         TipoRelatorio = "PesquisaPorERB";
+   else if (TipoRel == "35")
+         TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+         TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+         TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+         TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+
+   //
+   // altera o "location" da janela de relat&oacute;rio
+   //
+   JanelaRelatorio = window.parent.frames[1];
+   JanelaRelatorio.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=home&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&tipo="+Tipo;
+
+   //
+   // altera o "location" da janela de icones
+   //
+   JanelaIcones = window.parent.frames[2];
+   JanelaIcones.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=baserelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+   return false;
+}
+
+function MudaPagina()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+   var Pag = document.icones2.paginacao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "24")
+      TipoRelatorio = "DistribuicaoDeFrequencia";
+   else if (TipoRel == "25")
+      TipoRelatorio = "Perseveranca";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+         TipoRelatorio = "PesquisaIMEI";
+  else if (TipoRel == "31")
+         TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+         TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+         TipoRelatorio = "DestinosComuns";
+   else if (TipoRel == "34")
+         TipoRelatorio = "PesquisaPorERB";
+   else if (TipoRel == "35")
+         TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+      TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+      TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+         TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+
+   //
+   // altera o "location" da janela de relat&oacute;rio
+   //
+   JanelaRelatorio = window.parent.frames[1];
+   JanelaRelatorio.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=meiorelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&navega="+Pag;
+
+   //
+   // altera o "location" da janela de icones
+   //
+   JanelaIcones = window.parent.frames[2];
+   JanelaIcones.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=baserelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+   return false;
+}
+
+function Download()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+   var Pag = document.icones2.paginacao.value;
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "24")
+      TipoRelatorio = "DistribuicaoDeFrequencia";
+   else if (TipoRel == "25")
+      TipoRelatorio = "Perseveranca";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+         TipoRelatorio = "PesquisaIMEI";
+  else if (TipoRel == "31")
+         TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+         TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+         TipoRelatorio = "DestinosComuns";
+   else if (TipoRel == "34")
+         TipoRelatorio = "PesquisaPorERB";
+   else if (TipoRel == "35")
+         TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+         TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+         TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+         TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+
+   //
+   // altera o "location" da janela de relat&oacute;rio
+   //
+   JanelaRelatorio = window.parent.frames[1];
+   JanelaRelatorio.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=download&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+}
+//-->
+</script>
+<style type="text/css">
+#divUpControl{
+	position:absolute;
+	width:68px;
+	left:431px;
+	top:317px;
+	z-index:1;
+	text-align: right;
+	height: 19px;
+}
+#divDownControl{
+	position:absolute;
+	width:17px;
+	left:379px;
+	top:11px;
+	z-index:1;
+	text-align: right;
+	height: 47px;
+}
+#divContainer{
+	position:absolute;
+	width:550px;
+	height:41px;
+	overflow:hidden;
+	top:9px;
+	left:18px;
+	clip:rect(0,560,41,0);
+	visibility: visible;
+}
+#divContent{
+	position:absolute;
+	top:0;
+	left:0;
+}
+</style>
+</head>
+
+<body bgcolor="#BBBDBB" text="#000000">
+
+<div id="Layer1" style="position:absolute; left:605px; top:7px; width:105px; height:46px; z-index:2">
+   <img src="/PortalOsx/imagens/iconesrelagendado.gif" border="0" usemap="#Map2">
+
+<form name="icones" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+<input type="hidden" name="qtdperiodos" value="$ARG;">
+<input type="hidden" name="operacao" value="apresentaRelHistoricoTrafego">
+<input type="hidden" name="suboperacao" value="">
+  <map name="Map2">
+     <area shape=rect coords="0,0,19,18"     href="#"  alt="Visualiza relat&oacute;rio"                       OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela('paginas','')">
+     <area shape=rect coords="43,0,131,18"   href="#"  alt="Indicadores"                                      OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela('indicadores','resizable=no,status=no,scrollbars=no,width=345,height=335')">
+     <area shape=rect coords="134,0,153,18"  href="#"  alt="Logs"                                             OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela('logs','resizable=no,status=no,scrollbars=yes,width=350,height=285')">
+     <area shape=rect coords="156,0,175,18"  href="#"  alt="Configura&ccedil;&atilde;o de visualiza&ccedil;&atilde;o" OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela('configuracao','resizable=no,status=no,scrollbars=no,width=245,height=260')">
+     <area shape=rect coords="22,0,41,18"    href="#"  alt="Download"                                         OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="AbreJanela('download','resizable=no,status=no,scrollbars=no,width=260,height=180')">
+     <area shape=rect coords="0,21,19,39"    href="#"  alt="Vai para o in&iacute;cio"                         OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="Home('inicio')">
+     <area shape=rect coords="22,21,41,39"   href="#"  alt="P&aacute;gina anterior"                           OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="Pagina('anterior')">
+     <area shape=rect coords="134,21,153,39" href="#"  alt="Pr&oacute;xima p&aacute;gina"                     OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="Pagina('proxima')">
+     <area shape=rect coords="156,21,175,39" href="#"  alt="Vai para o fim"                                   OnMouseOut="window.status=''; return true"  OnMouseOver="window.status=''; return true" onClick="Home('fim')">
+  </map>
+</form>
+</div>
+
+<div id="Layer1" style="position:absolute; left:649px; top:27px; width:30px; height:46px; z-index:2">
+<form name="icones2" method="" action="" onSubmit="return MudaPagina()">
+   <input type="text" name="paginacao" value="$ARG;" class="inputtext" style="border:1px solid black" size="15" onBlur="MudaPagina()">
+</form>
+</div>
+</body>
+</html>

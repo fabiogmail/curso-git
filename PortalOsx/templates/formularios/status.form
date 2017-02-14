@@ -1,0 +1,54 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para visualiza&ccedil;&atilde;o do status do sistema
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 11/04/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+   tr
+      td,left, , , , 
+         Usu&aacute;rios conectados ao portal:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Usu&aacute;rios utilizando CDRView:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Arquivos a serem processados:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Alarmes a serem verificados:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Espa&ccedil;o total do disco:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Espa&ccedil;o livre do disco:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         Espa&ccedil;o ocupado do disco:&nbsp;<b>$ARG;</b>
+      /td
+   /tr
+   /form
+/table
+

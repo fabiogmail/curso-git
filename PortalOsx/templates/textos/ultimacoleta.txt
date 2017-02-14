@@ -1,0 +1,1 @@
+<p>A tabela de &Uacute;ltima Coleta apresenta informa&ccedil;&otilde;es do &uacute;ltimo arquivo processado pelo conversor para cada Bilhetador configurado no Sistema.</p>

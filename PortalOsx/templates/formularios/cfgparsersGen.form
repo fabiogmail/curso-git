@@ -1,0 +1,130 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para inclus&atilde;o/exclus&atilde;o de configura&ccedil;&otilde;es de parsers
+# Observar a sintaxe correta!
+# Autor: Erick Rodrigo
+# Última Altera&ccedil;&atilde;o: 20/04/2006
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaConfiguracoesNomes,$ARG;
+      hidden,ListaServidoresNomes,$ARG;
+      hidden,ListaParsersNomes,$ARG;
+      hidden,ListaBilhetadoresNomes,$ARG;
+      hidden,Relacionamento,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left, , ,273, 
+         <b>Configura&ccedil;&otilde;es: &nbsp;</b>
+         select,ListaConfiguracoes,1, ,onChange="Processa(4)"
+         /select
+      /td
+      td,left, , ,272, 
+         <b>Servidor: &nbsp;</b>
+         select,ListaServidores,1, , 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2 , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,top, ,273, 
+         <b>Parser: &nbsp;</b>
+         select,ListaParsers,1, , 
+         /select
+      /td
+      td,left,top, ,272, 
+         table,100%,0,0,0
+            tr
+               td,left,top, ,80, 
+                  <b>Bilhetadores:</b>
+               /td
+               td,left, , , , 
+                  select,ListaBilhetadores,6,multiple, 
+                  /select
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         <b>Nova Configura&ccedil;&atilde;o: &nbsp;</b>
+         text,configuracao, ,30,30, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,65, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,incCfgParserGen
+            hidden,tipo,inclui
+            hidden,configuracao, 
+            hidden,servidor, 
+            hidden,parser, 
+            hidden,bilhetadores, 
+            image,/PortalOsx/imagens/incluir.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,65, 
+         form,form3,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,excCfgParserGen
+            hidden,configuracao, 
+            hidden,servidor, 
+            image,/PortalOsx/imagens/excluir.gif,onClick="return Processa(2)"
+         /form
+      /td
+      td,left, , ,65, 
+         form,form4,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,incCfgParserGen
+            hidden,tipo,altera
+            hidden,configuracao, 
+            hidden,servidor, 
+            hidden,parser, 
+            hidden,bilhetadores, 
+            image,/PortalOsx/imagens/alterar.gif,onClick="return Processa(3)"
+         /form
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

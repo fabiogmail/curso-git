@@ -1,0 +1,3 @@
+<p>Aguarde a carga inicial do "applet" para iniciar o CDRView An&aacute;lise.</p>
+<p>Uma vez carregado o "applet", o bot&atilde;o "Iniciar Cliente" ficar&aacute; dispon&iacute;vel.</p>
+<p>Clique nesse bot&atilde;o e aguarde o t&eacute;rmino da carga do "applet".</p>

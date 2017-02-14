@@ -1,0 +1,66 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para verifica&ccedil;&atilde;o/corre&ccedil;&atilde;o de inconsistência do CfgUsr
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 01/02/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisNomes,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left,top, ,40, 
+         <b>Perfis: &nbsp;</b>
+      /td
+      td,left,top, ,273, 
+         select,ListaPerfis,8,multiple, 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,80, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,inconsistencia
+            hidden,opcao,verificacao
+            hidden,perfis, 
+#            submit,verifica,Verifica,onClick="return Processa(1)"
+            image,/PortalOsx/imagens/verificar.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,80, 
+         form,form3,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,inconsistencia
+            hidden,opcao,correcao
+            hidden,perfis, 
+#            submit,corrige,Corrige,onClick="return Processa(2)"
+            image,/PortalOsx/imagens/corrigir.gif,onClick="return Processa(2)"
+         /form
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

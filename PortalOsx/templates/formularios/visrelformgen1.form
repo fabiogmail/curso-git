@@ -1,0 +1,114 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para visualiza&ccedil;&atilde;o de relat&oacute;rios
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 13/03/2003
+#
+
+table,540,0,0,0
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Origem</b></font>
+      /td
+   /th      
+   tr
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left, ,2, , 
+                  <b>Relat&oacute;rio:</b>&nbsp;$ARG;
+               /td
+            /tr
+            tr
+               td,left, , , , 
+                  <b>Bilhetador:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Data de Gera&ccedil;&atilde;o:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Per&iacute;odo</b></font>
+      /td
+   /th
+   tr
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left, , , , 
+                  <b>In&iacute;cio:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Fim:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Recursos</b></font>
+      /td
+   /th      
+   tr
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left, , , , 
+                  <b>Origem:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Destino:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Encaminhado:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   th,#000033
+      td,left, , , , 
+         <font color="#FFFFFF"><b>Rotas/Troncos</b></font>
+      /td
+   /th      
+   tr
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left, , , , 
+                  <b>Rota Entrada:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Rota Sa&iacute;da:</b>&nbsp;$ARG;
+               /td
+            /tr
+            tr
+               td,left, , , , 
+                  <b>Tronco Entrada:</b>&nbsp;$ARG;
+               /td
+               td,left, , , , 
+                  <b>Tronco Sa&iacute;da:</b>&nbsp;$ARG;
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , , 

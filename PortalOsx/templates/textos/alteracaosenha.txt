@@ -1,0 +1,2 @@
+<p>A senha &eacute; a sua seguran&ccedil;a e n&atilde;o deve ser divulgada. Ela permite que voc&ecirc; acesse o Sistema. </p> 
+<p>Para alterar a sua senha, preencha os campos apresentados ao lado e, em seguida, clique em Alterar.</p>

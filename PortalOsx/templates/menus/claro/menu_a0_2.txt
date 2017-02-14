@@ -1,0 +1,70 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+# 
+# Todas as linhas iniciadas pelo caracter '#' serão ignoradas
+# Todos os espaços contidos entre as opções dos menus serão ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+MP,top0,Executar
+ SMF,sub00,top0,CDRView An&aacute;lise,javascript:{AbreJanela("cliente3");}
+#  SML,sub01,top0,CDRView An&aacute;lise,/PortalOsx/servlet/Portal.cPortal?operacao=cliente2
+ SMF,sub01,top0,CDRView Detec&ccedil;&atilde;o,{AbreDeteccao("appl03:8083@Deteccao");}
+ SMF,sub02,top0,Matriz de Interesse,javascript:{AbreMatraf("matraf");}
+ SMF,sub03,top0,Easy View,javascript:{AbreEasyView("passat:8080@easyview");}
+
+MP,top1,Relat&oacute;rios
+ SM,sub10,top1,Agendados
+   SML,sub100,sub10,Sele&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=relAgendados
+   SML,sub101,sub10,Pesquisa,/PortalOsx/servlet/Portal.cPortal?operacao=pesquisaRelatorios
+ SML,sub11,top1,Sequencia,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioSequencia
+ SML,sub12,top1,Volumetria,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioVolumetria
+ 
+MP,top2,Ferramentas
+ SM,sub20,top2,Exportar CDRs
+ # SML,sub200,sub20,Exporta&ccedil;&atilde;o de Base,/PortalOsx/servlet/Portal.cPortal?operacao=formExportaBase
+  SML,sub201,sub20,Lista Bases Exportadas,/PortalOsx/servlet/Portal.cPortal?operacao=listaRelExportados
+ SM,sub21,top2,Monitorar Coleta
+  SM,sub210,sub21,&Uacute;ltima Coleta
+    SML,sub2101,sub210,i30,/PortalOsx/servlet/Portal.cPortal?operacao=ultimaColeta&servidor=i30
+    SML,sub2102,sub210,Fusca,/PortalOsx/servlet/Portal.cPortal?operacao=ultimaColeta&servidor=Fusca
+    SML,sub2103,sub210,appl03,/PortalOsx/servlet/Portal.cPortal?operacao=ultimaColeta&servidor=appl03
+  SM,sub211,sub21,Resumo Di&aacute;rio
+    SML,sub2111,sub211,i30,/PortalOsx/servlet/Portal.cPortal?operacao=resumoDiario&servidor=i30
+    SML,sub2112,sub211,Fusca,/PortalOsx/servlet/Portal.cPortal?operacao=resumoDiario&servidor=Fusca
+    SML,sub2113,sub211,appl03,/PortalOsx/servlet/Portal.cPortal?operacao=resumoDiario&servidor=appl03
+  SM,sub212,sub21,Monitorar Base CDRs
+    SML,sub2121,sub212,i30,/PortalOsx/servlet/Portal.cPortal?operacao=listarBaseCDR&servidor=i30
+    SML,sub2122,sub212,Fusca,/PortalOsx/servlet/Portal.cPortal?operacao=listarBaseCDR&servidor=Fusca
+    SML,sub2123,sub212,appl03,/PortalOsx/servlet/Portal.cPortal?operacao=listarBaseCDR&servidor=appl03
+
+ 
+MP,top3,Manuten&ccedil;&atilde;o
+ SML,sub30,top3,Java Plug-in,/PortalOsx/templates/paginas/plugin.htm
+ SML,sub31,top3,Certifica&ccedil;&atilde;o,/PortalOsx/templates/paginas/certifica.htm
+ SML,sub32,top3,Altera&ccedil;&atilde;o de Senha,/PortalOsx/servlet/Portal.cPortal?operacao=formAlteraSenha
+
+MP,top4,Mensagens
+ SML,sub40,top4,L&ecirc;,/PortalOsx/servlet/Portal.cPortal?operacao=listaMensagens
+ SML,sub41,top4,Envia,/PortalOsx/servlet/Portal.cPortal?operacao=formEnviaMensagem
+
+MP,top5,Documentos
+ SML,sub50,top5,Sele&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=documento
+ 
+MP,top6,Informa&ccedil;&otilde;es
+ SML,sub61,top6,Agenda,/PortalOsx/servlet/Portal.cPortal?operacao=AgendaRMI&tipo=Agenda
+ SML,sub62,top6,S&eacute;ries Hist&oacute;ricas,/PortalOsx/servlet/Portal.cPortal?operacao=AgendaRMI&tipo=Historico
+ 

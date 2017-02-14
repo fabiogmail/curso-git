@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="Portal.Dto.ArquivosFaltantes" table = "seq_num_arq">
+        
+        <composite-id>
+        	<key-property name="idBilhetador" column="ID_BILHETADOR" type="int" />
+        	<key-property name="data" column="DATA"/>
+        </composite-id>	
+        
+			<property name="idPrimeiroArquivo" column="ID_PRIMEIRO_ARQ"/> 		
+			<property name="idUltimoArquivo" column="ID_ULTIMO_ARQ"/>
+			<property name="qntArquivos" column="QTD_ARQS"/>	
+    </class>
+    
+</hibernate-mapping>

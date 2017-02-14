@@ -1,0 +1,1 @@
+<p>Para administra&ccedil;&atilde;o do espa&ccedil;o em disco, &eacute; apresentado um resumo da utiliza&ccedil;&atilde;o do disco pelos diret&oacute;rios do Sistema.</p>

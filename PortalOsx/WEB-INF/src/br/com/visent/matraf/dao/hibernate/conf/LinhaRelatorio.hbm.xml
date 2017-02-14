@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.LinhaRelatorio" table="linha_relatorio">
+        <id name="idPeriodo" column="ID_PERIODO"/>
+		<property name="idCentralRef" column="ID_CENTRALREF" not-null="false"/>
+		<property name="referencial" column="REFERENCIAL" not-null="false"/>
+		<property name="idTipoAssinante" column="ID_TIPO_ASSINANTE" not-null="false"/>
+		<property name="idRelacaoTrafego" column="ID_RELACAO_TRAFEGO" not-null="false"/>
+		<property name="idCelulaE" column="ID_CELULAE" not-null="false"/>
+		<property name="idCelulaS" column="ID_CELULAS" not-null="false"/>
+		<property name="idRotaS" column="ID_ROTAS" not-null="false"/>
+		<property name="idRotaE" column="ID_ROTAE" not-null="false"/>
+        <property name="numChamadas" column="NUM_CHAMADAS"/>
+		<property name="okt" column="OKT"/>
+		<property name="ttc" column="TTC"/>
+		<property name="tto" column="TTO"/>
+		<property name="chamConv" column="CHAM_CONV"/>
+    </class>
+
+</hibernate-mapping>

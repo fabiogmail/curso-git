@@ -1,0 +1,764 @@
+<html>
+<head>
+<title>Matraf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">   
+<!--
+a:visited,a:link,a:active{ 
+	color:#000000;
+	text-decoration:none
+}
+a:hover{
+	text-decoration:underline;
+	text-align: right;
+	color:#000000;
+}
+
+body{
+        font-family: verdana, sans-serif;
+        font-size: 10px;
+		padding:0px;
+        background: #eeeeee;
+		
+}
+
+select { 
+		font-size: 11px; 
+		background-color:#FFFFFF ; 
+		color: #000000;
+		
+} 
+
+/* Box */
+.box {
+	height: 400px;
+	width: 200px;
+	font-size: 11px;
+	margin: 0;
+	border-top: 1px solid #9FB1BC;
+	border-bottom: 1px solid #9FB1BC;
+	border-left: 1px solid #9FB1BC;
+	border-right: 1px solid #9FB1BC;
+	overflow: auto;
+	scrollbar-arrow-color:#000000;
+	scrollbar-3dlight-color:#000000;
+	scrollbar-highlight-color:#9FB1BC;
+	scrollbar-face-color:#9FB1BC;
+	scrollbar-shadow-color:#000000;
+	scrollbar-darkshadow-color:#9FB1BC;
+	scrollbar-track-color:#FFFFFF;	
+}
+.divbox {
+	overflow: auto;
+	scrollbar-arrow-color:#000000;
+	scrollbar-3dlight-color:#000000;
+	scrollbar-highlight-color:#9FB1BC;
+	scrollbar-face-color:#9FB1BC;
+	scrollbar-shadow-color:#000000;
+	scrollbar-darkshadow-color:#9FB1BC;
+	scrollbar-track-color:#FFFFFF;
+}
+.tabnav {
+	height: 20px;	
+	margin: 0;	
+	padding-left: 0px;
+}
+
+.tabnav li {
+	margin: 0; 
+	padding: 0;
+	display: inline;	
+	list-style-type: none;
+}
+
+.tabnav a:link, .tabnav a:visited {	
+	background: #f3f3f3;
+	font-size: 10px;	
+	line-height: 14px;	
+	font-weight: bold;
+	padding: 2px 10px 2px 10px;
+	margin-right: 0px;	
+	border: 1px solid #ccc;	
+	text-decoration: none;	
+	color: #666;
+	border-bottom: 1px solid #fff;
+}
+
+.tabnav a:link.active, .tabnav a:visited.active {
+	border-bottom: 1px solid #fff;
+	background: #fff;	
+	color: #000;
+}
+
+.tabnav a:hover	{
+	background: #fff;
+}
+
+.tabnavdis {
+	height: 20px;	
+	margin: 0;	
+	padding-left: 0px;	
+	padding: 2px 10px 2px 10px;
+	margin-right: 0px;
+	font-size: 10px;	
+	line-height: 14px;	
+	font-weight: bold
+}
+.tabnavdis li {
+	margin: 0; 
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+	background: #f3f3f3;
+	font-size: 10px;	
+	line-height: 14px;	
+	font-weight: bold;
+	padding: 2px 10px 2px 10px;
+	margin-right: 0px;	
+	border: 1px solid #ccc;	
+	text-decoration: none;	
+	color: #666;
+	border-bottom: 1px solid #fff;
+}
+
+.lista {  font-family: verdana; font-size: 9px}
+
+.centralref {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	border-top: 1px solid #9FB1BC;
+	border-bottom: 1px solid #9FB1BC;
+	background-color: #FEF0B3;
+}
+.resumoTabela {
+	height: 275px;
+	width: 190px;
+	overflow: auto;
+	scrollbar-arrow-color:#000000;
+	scrollbar-3dlight-color:#000000;
+	scrollbar-highlight-color:#9FB1BC;
+	scrollbar-face-color:#9FB1BC;
+	scrollbar-shadow-color:#000000;
+	scrollbar-darkshadow-color:#9FB1BC;
+	scrollbar-track-color:#FFFFFF;
+	vertical-align: middle;
+}
+
+table {
+  border-collapse: collapse;
+}
+th {
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.tabela {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;		
+}
+.processar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	background-color: #FEF0B3;
+	border-top: 1px solid #9FB1BC;
+	border-bottom: 1px solid #9FB1BC;
+}
+.resumobotao {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	background-color: #FEF0B3;
+	border-top: 1px solid #9FB1BC;
+	border-bottom: 1px solid #9FB1BC;
+	border-left: 1px solid #9FB1BC;
+	
+}
+.resumoDestino {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	border-left: 1px solid #9FB1BC;
+	background: #f3f3f3;
+}
+.resumoOrigem {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	background: #f3f3f3;
+}
+.resumoDestino {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	border-left: 1px solid #9FB1BC;
+}
+.resumoOrigem {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+}
+.visresumo_o {
+	font-family: verdana; 
+	font-size: 9px;
+	border-bottom: 1px solid #9FB1BC;
+}
+.visresumo_d {
+	font-family: verdana; 
+	font-size: 9px;
+	border-left: 1px solid #9FB1BC;	
+	border-bottom: 1px solid #9FB1BC;
+}
+
+
+-->
+</style>
+
+<script type='text/javascript' src='/PortalOsx/dwr/engine.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/util.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/CelulaManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/GrupoCelulaManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/CentralManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/OperadoraManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/PeriodoManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/CentralRefManager.js'></script>
+<script type='text/javascript' src='/PortalOsx/dwr/interface/Pesquisa.js'></script>
+
+<script type="text/javascript">
+<!--
+function init()
+{
+	DWRUtil.useLoadingMessage();
+	openTipos(false);
+	openResumoBotao(false);
+	getListas();
+	getDatas();
+	$('referencia').value = '';
+	$('tipo').value = '';
+	$('bilhetador').value = '';
+}
+
+function getDatas(){
+	PeriodoManager.getListaDatas(loaddatas);
+}
+
+function getListas(){
+	CentralRefManager.getLista(loadcentralref);
+} 
+
+function loaddatas(data){
+	DWRUtil.addOptions("periodo_data", data);
+	carregarPeriodos();	
+}
+function loadcentralref(data){
+	DWRUtil.addOptions("centralref", data, "id", "nome");	
+}	
+function $(id) {
+	return document.getElementById(id);
+}
+
+function mostrar(idObjeto) {
+	var estilo = $(idObjeto).style;
+	estilo.display="block";
+}
+
+function ocultar(idObjeto) {
+	var estilo = $(idObjeto).style;
+	estilo.display="none";
+}
+
+function trocar(de,para){
+	ocultar(de);
+	mostrar(para);
+}
+
+function indicar(valor){
+	$('tipo').value = valor;
+}
+
+function flag(local,texto,valor,tipo)
+{
+	$('flag').innerHTML = texto;
+	$('tipo').value = tipo;
+			
+	if(local == 'origem'){
+		$('flag').innerHTML = "Origem: "+texto;
+		$('bilhetador').value = valor;
+		$('referencia').value = 'origem';
+	}else{
+		$('flag').innerHTML = "Destino: "+texto;
+		$('bilhetador').value = valor;
+		$('referencia').value = 'destino';
+	}
+}
+
+function mostrarTecs(tec,id,local,tipo) {
+	
+	div = $(id);
+	var html = "&nbsp;<br>";
+	var lista;
+
+	for (i=0;i < tec.length ;i++) {
+		var strNome = '';
+		if(tipo == 'operadora'){
+			strNome =	tec[i].descricao;
+			if(strNome == null){
+				strNome = tec[i].nome
+			}
+		}else{
+			strNome =	tec[i].nome;	
+		}
+		
+		html+="&nbsp;&nbsp;"
+		html+="<a href='#' onClick=\"javascript:flag('"+local+"','" + strNome + "','" + tec[i].id + "','"+tipo+"')\">"+strNome+"</a><br>\n";
+	}
+	
+	div.innerHTML = html;	
+}
+
+function carregarPeriodos(){
+	var sel = $('periodo_data');
+	if(sel.options.length > 0){
+		PeriodoManager.getListaByData(loadperiodos,sel.options[sel.selectedIndex].value);
+	}
+}
+function loadperiodos(data){
+	DWRUtil.removeAllOptions("periodo_hora");
+	DWRUtil.addOptions("periodo_hora", data,"id","intervalo");	
+}
+
+
+<!-- /////////////////////FUNÇÃO PARA PROCESSAR O RELATORIO///////////////////////// -->
+function processar(){
+	$('stats').innerHTML = 'Aguarde o processamento...';		
+	listarecursos = new Array();
+	listarecursos[0] = 'relacao_trafego';
+	listarecursos[1] = 'tipo_assinante';
+	listarecursos[2] = 'origem_destino';
+		
+	if(document.form1.tipo.value == 'grupocelula'){
+		if(document.form1.referencia.value == 'origem'){
+			listarecursos[3] = 'rotas';
+			listarecursos[4] = 'celulae';
+		}else{
+			listarecursos[3] = 'rotae';
+			listarecursos[4] = 'celulas';
+		}
+	}else{
+		if(document.form1.referencia.value == 'origem'){
+			listarecursos[3] = 'rotae';
+			listarecursos[4] = 'rotas';
+			listarecursos[5] = 'celulas';
+		}else{
+			listarecursos[3] = 'rotae';
+			listarecursos[4] = 'rotas';
+			listarecursos[5] = 'celulae';
+		}
+	}
+	
+	if(document.form1.centralref.value == ''){
+		$('stats').innerHTML = 'Selecione a Central';
+		return;
+	}
+	if(document.form1.bilhetador.value == ''){
+		$('stats').innerHTML = 'Selecione a Origem ou Destino';
+		return;
+	}
+			
+	Pesquisa.executar(redirect,
+					  document.form1.centralref.value,
+					  document.form1.referencia.value,
+					  document.form1.tipo.value,
+					  document.form1.bilhetador.value,
+					  document.form1.periodo_data.value,
+					  document.form1.periodo_hora.value,
+					  listarecursos);				 
+	
+}
+function redirect(valor){
+	if(valor){
+		document.form1.submit();
+	}else{
+		$('stats').innerHTML = 'Dados não encontrados';
+	}
+	return;
+}
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+
+function selcentralref(){
+	var centralsel;
+	for(var i = 0; i < $('centralref').options.length; i++){
+		if($('centralref').options[i].selected){
+			centralsel = $('centralref').options[i].value;
+		}
+	}
+	if(centralsel == ''){
+		openTipos(false);
+		openResumoBotao(false);
+		return;
+	}else{
+		atualizar(centralsel);
+	}
+}
+
+function atualizar(centralsel){
+	CentralRefManager.getCentralRef(retatualizar,centralsel);
+}
+
+function retatualizar(data){
+	mostrarTecs(data.centrais,'listacentral_e','origem','central');
+	mostrarTecs(data.centrais,'listacentral_d','destino','central');	
+	mostrarTecs(data.operadoras,'listaoperadora_e','origem','operadora');
+	mostrarTecs(data.operadoras,'listaoperadora_d','destino','operadora');
+	mostrarTecs(data.grupoCelulas,'listagrupocelula_e','origem','grupocelula');
+	mostrarTecs(data.grupoCelulas,'listagrupocelula_d','destino','grupocelula');
+	openTipos(true);
+	openResumoBotao(true);
+}
+
+function resumo(referencia){
+	listarecursos = new Array();
+	listarecursos[0] = 'relacao_trafego';
+	listarecursos[1] = 'origem_destino';
+	$('resumosel').value = referencia;
+	var tipo = '';
+	if(referencia == 'origem'){
+		tipo = $('origem').value;
+	}else{
+		tipo = $('destino').value;
+	}
+	Pesquisa.executarResumo(mostrarResumo,
+					  		document.form1.centralref.value,
+					  		referencia,
+					  		tipo,
+					  		0,
+							document.form1.periodo_data.value,
+					  		document.form1.periodo_hora.value,
+					  		listarecursos);
+	
+}
+function mostrarResumo(valor){
+	Pesquisa.getResumo(resultado,[0],false);
+	return;
+}
+function resultado(valor){
+	var id = '';
+	if($('resumosel').value == 'origem'){
+		id = 'resumo_o';
+	}else{
+		id = 'resumo_d';
+	}
+	if(valor == ''){
+		$(id).style.background = '#F3F3F3';
+		$(id).innerHTML = 'Dados não encontrados';
+	}else{
+		$(id).style.background = '#FFFFFF';
+		$(id).innerHTML = valor;
+	}
+}
+function tipo(referencia,tipo){
+	$(referencia).value = tipo;
+	limparResumo(referencia);
+}
+
+function openResumoBotao(abrir){
+	if(abrir){
+		$('resorigem').innerHTML = '<a href="#" onClick="resumo(\'origem\')">Visualizar Resumo</a>';
+		$('resorigem').style.background = '#FFFFFF';
+		$('resdestino').innerHTML = '<a href="#" onClick="resumo(\'destino\')">Visualizar Resumo</a>';
+		$('resdestino').style.background = '#FFFFFF';
+	}else{
+		$('resorigem').innerHTML = 'Visualizar Resumo';$('resorigem').style.background ='#F3F3F3';
+		$('resdestino').innerHTML = 'Visualizar Resumo';$('resdestino').style.background ='#F3F3F3';
+	}
+}
+function openTipos(abrir){
+	if(abrir){
+		ocultar('bilhetador_e');ocultar('bilhetador_d');
+		mostrar('operadora_e');mostrar('operadora_d');
+		ocultar('central_e');ocultar('central_d');
+		ocultar('celula_e');ocultar('celula_d');
+		$('origem').value = 'operadora';
+		$('destino').value = 'operadora';
+	}else{
+		mostrar('bilhetador_e');mostrar('bilhetador_d');
+		ocultar('operadora_e');ocultar('operadora_d');
+		ocultar('central_e');ocultar('central_d');
+		ocultar('celula_e');ocultar('celula_d');
+	}
+}
+function limparResumo(referencia){
+	if(referencia == 'origem'){
+		$('resumo_o').style.background = '#F3F3F3';$('resumo_o').innerHTML = '';
+	}else{
+		$('resumo_d').style.background = '#F3F3F3';$('resumo_d').innerHTML = '';
+	}
+}
+function processarRes(id,referencial,tipo){
+	$('bilhetador').value = id;
+	$('referencia').value = referencial;
+	$('tipo').value = tipo;
+	processar();
+}
+-->
+</script>
+</head>
+
+<body background="#FFFFFF" onLoad="init();" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="800" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <!--DWLayoutTable-->
+  <tr>
+    <td height="100" colspan="3" valign="top">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="800" height="100" valign="top"><img alt="" src="bannermatraf.png" width="800" height="100"></img></td>
+      </tr>
+    </table>	</td>
+  </tr>
+  
+  <tr>
+    <td width="210" height="30" align="center" valign="middle"><img src="origem.png" width="210" height="30"></td>
+    <td width="380" align="center" valign="top"><!--DWLayoutEmptyCell-->&nbsp;	</td>
+    <td width="210" align="center" valign="middle"><img src="destino.png" width="210" height="30"></td>
+  </tr>
+  
+  
+  <tr>
+    <td height="100%" colspan="3" valign="top">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+	    
+	    <tr>
+	      <td width="10" height="422">&nbsp;</td>
+          <td width="200" valign="top">
+<!--///////////////////////////////DISABLE///////////////////////////////////// -->
+		 	 <div id="bilhetador_e">
+			 
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+					<ul class="tabnav">
+							<li><a href="#">PSTN</a></li>
+							<li><a href="#">REDE</a></li>
+							<li><a href="#">BSC</a></li>
+					</ul>					
+					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top">						
+						<div id="listabilhetador_e" class="box" style="background: #f3f3f3;"></div>					</td>
+				</tr>
+				</table>
+			</div>
+		  
+<!--///////////////////////////////PSTN///////////////////////////////////// -->
+			<div id="operadora_e">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a class="active" href="#">PSTN</a></li>
+							<li><a href="#" onClick="trocar('operadora_e','central_e');tipo('origem','central');">REDE</a></li>
+							<li><a href="#" onClick="trocar('operadora_e','celula_e');tipo('origem','grupocelula');">BSC</a></li>
+						</ul>					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top">						
+						<div id="listaoperadora_e" class="box"></div>					</td>
+				</tr>
+				</table>
+			</div>
+<!--//////////////////////////////ATL//////////////////////////////////////// -->	
+			<div id="central_e">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a href="#" onClick="trocar('central_e','operadora_e');tipo('origem','operadora');">PSTN</a></li>
+							<li><a class="active" href="#">REDE</a></li>
+							<li><a href="#" onClick="trocar('central_e','celula_e');tipo('origem','grupocelula');">BSC</a></li>
+						</ul>					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top">
+						<div id="listacentral_e" class="box"></div>					</td>
+				</tr>
+				</table>
+			</div>	
+<!--///////////////////////////////ERB/////////////////////////////////////// -->	
+			<div id="celula_e">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a href="#" onClick="trocar('celula_e','operadora_e');tipo('origem','operadora');">PSTN</a></li>
+							<li><a href="#" onClick="trocar('celula_e','central_e');tipo('origem','central');">REDE</a></li>
+							<li><a class="active" href="#">BSC</a></li>
+						</ul>					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top" >
+						<div id="listagrupocelula_e" class="box"></div>					</td>
+				</tr>
+				</table>
+			</div>		
+<!--////////////////////////////////////////////////////////////////////////// -->		</td>
+		
+		<td width="380" valign="top">
+		<form action="relmatraf.html" name="form1">
+			<input id="tipo" type="hidden" name="tipo" value="">
+			<input id="referencia"  type="hidden" name="referencia" value="">
+			<input id="bilhetador"  type="hidden" name="bilhetador" value="">
+			<input id="origem"  type="hidden" name="origem" value="">
+			<input id="destino" type="hidden" name="destino" value="">
+			<input id="resumosel" type="hidden" name="resumosel" value="">
+			
+		  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+		    <!--DWLayoutTable-->
+		  	<tr>
+			<td width="381" height="22" align="center" valign="top" >
+			<font style="font-size:11px;font-weight:bold;color:#CC0000">
+				<div id="stats"></div>
+            </font>			</td>          
+			<tr>
+				<td height="25" align="center" valign="middle" class="centralref"> 
+					<font style="font-size:11px;font-weight:bold">CENTRAL: </font>              
+					<SELECT id="centralref" NAME="centralref" SIZE="1" onChange="selcentralref();">
+						<OPTION value="">Selecione a Central</option>
+				    </SELECT>				</td>
+			</tr>
+			<tr>
+			  <td height="25" align="center" valign="middle">
+			  <font style="font-size:11px;font-weight:bold">
+	 		  <div id="flag"></div>
+    		  </font>
+			  </td>
+			</tr>
+			
+			<tr>
+			  <td height="30" align="center" valign="middle" class="centralref">
+				<font style="font-size:11px;font-weight:bold">PERÍODO: </font>
+				<SELECT id="periodo_data" NAME="periodo_data" SIZE="1" class="lista" onChange="carregarPeriodos()">
+				</SELECT>
+				<SELECT id="periodo_hora" NAME="periodo_hora" SIZE="1" class="lista" >
+				</SELECT>			  </td>
+			</tr>
+			<tr>
+			  <td height="295" valign="top">
+			    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+			      <!--DWLayoutTable-->
+			      <tr>
+			        <td width="190" height="20" align="center" valign="middle" class="visresumo_o" id="resorigem">
+						<a href="#" onClick="resumo('origem')">Visualizar Resumo</a></td>
+			        <td width="191" align="center" valign="middle" class="visresumo_d" id="resdestino">
+						<a href="#" onClick="resumo('destino')">Visualizar Resumo</a></td>
+			        </tr>
+			      <tr>
+			        <td height="275" align="center" valign="middle" class="resumoOrigem">
+					
+			          <div id="resumo_o" class="resumoTabela"></div></td>
+			        <td align="center" valign="middle" class="resumoDestino">
+					
+			          <div id="resumo_d" class="resumoTabela"></div></td>
+			        </tr>
+			      <!--DWLayoutTable-->
+			    </table>			   </td>
+			</tr>		
+			
+			
+			<tr>
+			  <td height="25" align="center" valign="middle" class="processar" id="processar">
+			  	<a href="#" onClick="processar()">PROCESSAR</a></td>
+			</tr>
+          </table>
+		</form>		</td>
+		
+     <td width="200" valign="top">    
+<!--///////////////////////////////DISABLE///////////////////////////////////// -->
+		 	 <div id="bilhetador_d">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+					<ul class="tabnav">
+							<li><a href="#">PSTN</a></li>
+							<li><a href="#">REDE</a></li>
+							<li><a href="#">BSC</a></li>
+					</ul>
+					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top">						
+						<div id="listabilhetador_d" class="box" style="background: #f3f3f3;"></div>					</td>
+				</tr>
+				</table>
+			</div>		  
+<!--///////////////////////////////PSTN///////////////////////////////////// -->
+			<div id="operadora_d">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a class="active" href="#">PSTN</a></li>
+							<li><a href="#" onClick="trocar('operadora_d','central_d');tipo('destino','central');">REDE</a></li>
+							<li><a href="#" onClick="trocar('operadora_d','celula_d');tipo('destino','grupocelula');">BSC</a></li>
+						</ul>
+					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top" >
+						<div id="listaoperadora_d" class="box" ></div>					</td>
+				</tr>
+				</table>
+			</div>
+<!--//////////////////////////////ATL//////////////////////////////////////// 	-->	
+			<div id="central_d">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a href="#" onClick="trocar('central_d','operadora_d');tipo('destino','operadora');">PSTN</a></li>
+							<li><a class="active" href="#">REDE</a></li>
+							<li><a href="#" onClick="trocar('central_d','celula_d');tipo('destino','grupocelula');">BSC</a></li>
+						</ul>					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top" >
+						<div id="listacentral_d" class="box"></div>					</td>
+				</tr>
+				</table>
+			</div>	
+<!--///////////////////////////////ERB/////////////////////////////////////// -->	
+			<div id="celula_d">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="200" height="22" align="left" valign="bottom">
+						<ul class="tabnav">
+							<li><a href="#" onClick="trocar('celula_d','operadora_d');tipo('destino','operadora');">PSTN</a></li>
+							<li><a href="#" onClick="trocar('celula_d','central_d');tipo('destino','central');">REDE</a></li>
+							<li><a class="active" href="#">BSC</a></li>
+						</ul>					</td>
+				</tr>
+             	<tr>
+					<td height="363" align="left" valign="top">
+						<div id="listagrupocelula_d"  class="box"></div>					</td>
+				</tr>
+				</table>
+			</div>
+<!--////////////////////////////////////////////////////////////////////////// -->		</td>
+	    <td width="10">&nbsp;</td>
+        </tr>
+      </table>	  </td>
+  </tr>
+  <tr>
+    <td height="10"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td height="20" colspan="3" valign="top" bgcolor="#0D1237">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

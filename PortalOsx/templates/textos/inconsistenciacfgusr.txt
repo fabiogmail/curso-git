@@ -1,0 +1,3 @@
+<p>O Administrador pode realizar a verifica&ccedil;&atilde;o 
+e corre&ccedil;&atilde;o de inconsist&ecirc;ncias na base de dados de configura&ccedil;&atilde;o do Sistema.</p>
+<p><b>Aten&ccedil;&atilde;o</b>: as opera&ccedil;&otilde;es de verifica&ccedil;&atilde;o e corre&ccedil;&atilde;o das bases de dados de configura&ccedil;&atilde;o podem ser demoradas. <b>Aguarde o t&eacute;rmino das mesmas.</b></p>

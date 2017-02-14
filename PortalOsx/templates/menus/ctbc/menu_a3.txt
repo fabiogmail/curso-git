@@ -1,0 +1,25 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+# 
+# Todas as linhas iniciadas pelo caracter '#' serão ignoradas
+# Todos os espaços contidos entre as opções dos menus serão ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+MP,top0,Executar
+  SMF,sub00,top0,CDRView An&aacute;lise,javascript:{AbreJanela("cliente2");}
+ # SML,sub01,top0,CDRView An&aacute;lise,/PortalOsx/servlet/Portal.cPortal?operacao=cliente2
+

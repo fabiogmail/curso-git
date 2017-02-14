@@ -1,0 +1,87 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio de Pesquisa de Relatorios
+# Observar a sintaxe correta!
+# Autor: Paulo Roberto Correa Dutra
+# Última Altera&ccedil;&atilde;o: 18/12/2003
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisArg,$ARG;
+      hidden,ListaPerfisIdArg,$ARG;
+      hidden,ListaTipoRelArg,$ARG;
+      hidden,MensagemArg,$ARG;
+   tr
+      td,left,midle,3, , 
+         <b>Nome do Relat&oacute;rio: &nbsp;</b>
+         text,NomeRel, , , ,class="inputtext"
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,middle, ,105, 
+         <b>Perfil: &nbsp;</b>
+      /td
+      td,left,middle, ,105, 
+         <b>Tipo de Relat&oacute;rio: &nbsp;</b> 
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,middle, ,440, 
+         select,ListaPerfis,10,multiple,class="lista" 
+         /select
+      /td
+      td,left,middle, ,440, 
+         select,ListaTipoRel,10,multiple,class="lista" 
+         /select
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   form,form2,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao, 
+      hidden,perfil, 
+      hidden,tiporel, 
+   /form
+   tr
+      td,left, ,2, , 
+         image,/PortalOsx/imagens/listarrelatorios.gif,onClick="return Processa(1)"
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         image,/PortalOsx/imagens/limpar.gif,onClick="return Processa(2)"
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         image,/PortalOsx/imagens/pesqavancada.gif,onClick="return Processa(3)"
+      /td
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/table

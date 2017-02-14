@@ -1,0 +1,2 @@
+<p>Para configurar o alarme de Espa&ccedil;o M&aacute;ximo para os diret&oacute;rios de dados, defina o limite de Espa&ccedil;o M&aacute;ximo permitido para cada diret&oacute;rio da lista e a Periodicidade para verifica&ccedil;&atilde;o dos mesmos. Em seguida, habilite cada um dos alarmes selecionando <b>Habilita</b> e clique no bot&atilde;o Salvar.</p>
+<p>O alarme ser&aacute; gerado quando o limite configurado para Espa&ccedil;o M&aacute;ximo for excedido para qualquer um dos diret&oacute;rios da lista.</p>

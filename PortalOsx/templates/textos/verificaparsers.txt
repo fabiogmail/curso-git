@@ -1,0 +1,2 @@
+<p>O Administrador pode realizar a verifica&ccedil;&atilde;o de consist&ecirc;ncia das Configura&ccedil;&otilde;es de Parsers do Sistema.</p>
+<p>O resultado da verifica&ccedil;&atilde;o consiste na identifica&ccedil;&atilde;o de Bilhetadores/Centrais, cadastrados no Sistema, que n&atilde;o pertencem a nenhuma das Configura&ccedil;&otilde;es de Parsers listadas.</p>

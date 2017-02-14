@@ -1,0 +1,11 @@
+body { SCROLLBAR-FACE-COLOR: #666666; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; SCROLLBAR-SHADOW-COLOR: #FFFFFF; SCROLLBAR-3DLIGHT-COLOR: #666666; SCROLLBAR-ARROW-COLOR: #FFFFFF; SCROLLBAR-TRACK-COLOR: #666666; SCROLLBAR-DARKSHADOW-COLOR: #666666; SCROLLBAR-BASE-COLOR: #FFFFFF}
+tr {  font-family: arial; font-size: 7.9pt}
+td {  font-family: arial; font-size: 7.9pt}
+.link {  color: #000000; text-decoration: none}
+.link2 {  color: #FFFFFF; text-decoration: none}
+a:hover {  text-decoration: underline}
+.select {  height: 16px; font-family: verdana; font-size: 9px}
+.lista {  font-family: verdana; font-size: 9px}
+.button {  height: 18px; font-family: verdana; font-size: 9px}
+.inputtext { height: 18px; font-family: verdana; font-size: 9px}
+h3 { font-size: 13px; font-weight:bold; color:#03156b;}

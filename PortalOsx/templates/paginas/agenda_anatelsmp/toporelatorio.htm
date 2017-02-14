@@ -1,0 +1,55 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" src="/PortalOsx/templates/js/anatelsmprecursos.js" type="text/JavaScript"></script>
+</head>
+
+<body bgcolor="#BBBDBB" text="#000000" topmargin="7" marginheight="7">
+<form name="recursos" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+<input type="hidden" name="recursos1" value="$ARG;">
+<input type="hidden" name="recursos2" value="$ARG;">
+<input type="hidden" name="recursos3" value="$ARG;">
+<input type="hidden" name="primelementorecurso1" value="$ARG;">
+<input type="hidden" name="primelementorecurso2" value="$ARG;">
+<input type="hidden" name="primelementorecurso3" value="$ARG;">
+<input type="hidden" name="qtdelementosrecurso1" value="$ARG;">
+<input type="hidden" name="qtdelementosrecurso2" value="$ARG;">
+<input type="hidden" name="qtdelementosrecurso3" value="$ARG;">
+<input type="hidden" name="tipoapresentacao" value="$ARG;">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="4" cellpadding="0">
+          <tr>
+            <td bgcolor="#BBBDBB" width="100%">
+               <font face="Arial, Helvetica, sans-serif" size="2">
+               <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">
+			      <strong>Relat&oacute;rio: $ARG;</strong>
+               </font>
+               </font>
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" align="left">
+               $ARG;&nbsp;&nbsp;
+               $ARG;&nbsp;&nbsp;
+               $ARG;&nbsp;&nbsp;
+              <input type="submit" name="ok" value="  Ok  " class="button" onClick="return SelecionaRecursos()">
+            </td>
+          </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

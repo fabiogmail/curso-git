@@ -1,0 +1,109 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" src="" type="text/JavaScript">
+<!--
+function RemoveAgenda()
+{
+   var Perfil = "$ARG;";
+   var TipoRel = "$ARG;";
+   var IdRel = "$ARG;";
+   var NomeArquivo = "$ARG;";
+   var NomeRelatorio = "$ARG;";
+   var DataGeracao = "$ARG;"; 
+
+   if (TipoRel == "0")
+      TipoRelatorio = "Desempenho";
+   else if (TipoRel == "1")
+      TipoRelatorio = "Pesquisa";
+   else if (TipoRel == "2")
+      TipoRelatorio = "DetalheChamadas";
+   else if (TipoRel == "7")
+      TipoRelatorio = "IndicadoresSMP";
+   else if (TipoRel == "22")
+      TipoRelatorio = "MinutosDeUso";
+   else if (TipoRel == "23")
+      TipoRelatorio = "Chamadas";
+   else if (TipoRel == "26")
+      TipoRelatorio = "AuditoriaChamadas";
+   else if (TipoRel == "30")
+         TipoRelatorio = "PesquisaIMEI";
+  else if (TipoRel == "31")
+         TipoRelatorio = "ChamadasLongaDuracao";
+   else if (TipoRel == "32")
+         TipoRelatorio = "DestinosEspecificos";
+   else if (TipoRel == "33")
+         TipoRelatorio = "DestinosComuns";
+   else if (TipoRel == "34")
+         TipoRelatorio = "PesquisaPorERB";
+      else if (TipoRel == "35")
+         TipoRelatorio = "PrefixosDeRisco";
+   else if (TipoRel == "36")
+      TipoRelatorio = "DesempenhoDeRede";
+   else if (TipoRel == "37")
+      TipoRelatorio = "QoS";
+   else if (TipoRel == "49")
+      TipoRelatorio = "Agrupado";
+   else if (TipoRel == "48")
+         TipoRelatorio = "Despesa";
+   else if (TipoRel == "47")
+         TipoRelatorio = "ITXReceita";
+   else if (TipoRel == "46")
+         TipoRelatorio = "GRE";
+   else if (TipoRel == "45")
+         TipoRelatorio = "TrendAnalysis";
+   else if (TipoRel == "43")
+         TipoRelatorio = "DWGPRS";
+   else if (TipoRel == "44")
+         TipoRelatorio = "DWGERAL";
+   else if (TipoRel == "50")
+       TipoRelatorio = "AnatelSMP3e4";
+   else if (TipoRel == "51")
+       TipoRelatorio = "AnatelSmp8e9";
+   
+
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelAgendado"+TipoRelatorio+"&suboperacao=removeagenda&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+
+   var thetime=new Date();
+	var seconds = thetime.getSeconds();
+	
+	var secNow = seconds;
+	while (seconds != ((secNow+1)%60))
+	{
+		thetime = new Date();
+		seconds = thetime.getSeconds();
+	}
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#BBBDBB" text="#000000" topmargin="7" marginheight="7" onUnLoad="RemoveAgenda()">
+<form name="recursos" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td> 
+      <table width="100%" border="0" cellspacing="4" cellpadding="0">
+          <tr>
+            <td bgcolor="#BBBDBB" width="100%">
+			      <strong>Relat&oacute;rio: $ARG;</strong>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<strong>Data de Refer&ecirc;ncia: $ARG;</strong>&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;<strong>Data de Gera&ccedil;&atilde;o: $ARG;</strong>
+
+            </td>
+          </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

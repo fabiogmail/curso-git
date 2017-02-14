@@ -1,0 +1,84 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para inicializa&ccedil;&atilde;o do CDRView Cliente
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 21/10/2002
+#
+
+table,300,0,0,0
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         Aguarde a carga inicial do applet e clique no bot&atilde;o abaixo.
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+<OBJECT classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93" WIDTH=82 HEIGHT=18 NAME="CDRView">
+         <PARAM NAME=CODEBASE VALUE="http://$ARG;/PortalOsx/lib/">
+         <PARAM NAME=CODE VALUE="cCDRView2.class">
+         <PARAM NAME=ARCHIVE VALUE = "sCDRView2.jar,sInterfaces2.jar,cLibjava.jar,jfreechart-0.9.8.jar,jcommon-0.8.2a.jar,junit.jar,xerces.jar">
+         <PARAM NAME=NAME VALUE="CDRView">        
+         <PARAM NAME="type" VALUE="application/x-java-applet;">
+         <PARAM NAME="USUARIO" VALUE="$ARG;">
+         <PARAM NAME="PERFIL" VALUE="$ARG;">
+         <PARAM NAME="IOR" VALUE="$ARG;">
+  </OBJECT>
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,center, ,2, ,  
+         form,fecha,post,/PortalOsx/servlet/Portal.cPortal
+         hidden,operacao,fechacdrview
+         image,/PortalOsx/imagens/fechar.gif,onclick="javascript:Processa(0)"
+         /form
+      /td
+   /tr
+   /form
+/table

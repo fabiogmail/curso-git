@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListaUsuarios" pageWidth="1300" pageHeight="405" orientation="Landscape" columnWidth="1300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="usuario" class="java.lang.String"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="ramal" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="regional" class="java.lang.String"/>
+	<field name="area" class="java.lang.String"/>
+	<field name="responsavel" class="java.lang.String"/>
+	<field name="motivo" class="java.lang.String"/>
+	<field name="perfil" class="java.lang.String"/>
+	<field name="ativacao" class="java.lang.String"/>
+	<field name="ordem" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band/>
+	</title>
+	<pageHeader>
+		<band height="20">
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="usuario" mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Usuário"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('usuario')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="perfil" mode="Opaque" x="200" y="0" width="125" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Nome"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('nome')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="ip" mode="Opaque" x="325" y="0" width="125" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["E-Mail"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('email')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="modulo" mode="Opaque" x="530" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Ramal"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('ramal')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="evento" mode="Opaque" x="610" y="0" width="70" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Regional"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('regional')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="data" mode="Opaque" x="680" y="0" width="125" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Área"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('area')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="modulo-1" mode="Opaque" x="450" y="0" width="80" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Telefone"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('telefone')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="data-1" mode="Opaque" x="805" y="0" width="125" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Responsável"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('responsavel')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="data-2" mode="Opaque" x="930" y="0" width="150" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Motivo"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('motivo')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="usuario-1" mode="Opaque" x="100" y="0" width="100" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Perfil"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('perfil')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="usuario-2" mode="Opaque" x="1080" y="0" width="125" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Dt. Ativação"]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["ordenar"]]></anchorNameExpression>
+				<hyperlinkReferenceExpression><![CDATA["javascript:ordenar('ativacaoDate')"]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1205" y="0" width="95" height="20" forecolor="#FFFFFF" backcolor="#000066"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Verdana" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ordem de Serv.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="0" width="100" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{usuario}.equals("") ? "-" : $F{usuario} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="200" y="0" width="125" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{nome}.equals("") ? "-" : 
+$F{nome} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="325" y="0" width="125" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{email}.equals("") ? "-" : 
+$F{email} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="530" y="0" width="80" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{ramal}.equals("") ? "-" : 
+$F{ramal} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="Reference">
+				<reportElement key="textField" x="610" y="0" width="70" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{regional}.equals("") ? "-" : 
+$F{regional} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="680" y="0" width="125" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{area}.equals("") ? "-" : 
+$F{area} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-1" x="450" y="0" width="80" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{telefone}.equals("") ? "-" : 
+$F{telefone} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="805" y="0" width="125" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{responsavel}.equals("") ? "-" : 
+$F{responsavel} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="930" y="0" width="150" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{motivo}.equals("") ? "-" : 
+$F{motivo} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="100" y="0" width="100" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{perfil}.equals("") ? "-" : 
+$F{perfil} )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="1080" y="0" width="125" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ativacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1205" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{ordem}.equals("") ? "-" : 
+$F{ordem} )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

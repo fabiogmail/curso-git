@@ -1,0 +1,5 @@
+<p>No menu "Administrador", voc&ecirc; ter&aacute; acesso &agrave;s op&ccedil;&otilde;es de administra&ccedil;&atilde;o, configura&ccedil;&atilde;o e manuten&ccedil;&atilde;o do Sistema.</p>
+<p>Acessando o menu "Usu&aacute;rio", atrav&eacute;s do link "Usu&aacute;rio >>", &agrave; direita na barra de menu, voc&ecirc; poder&aacute; atuar como um usu&aacute;rio comum, podendo 
+visualizar relat&oacute;rios e ter acesso &agrave;s interfaces do CDRView cliente.</p>
+<p>Em caso de d&uacute;vida, entre em contato com o nosso Suporte atrav&eacute;s do e-mail 
+suporte@visent.com.br</p>

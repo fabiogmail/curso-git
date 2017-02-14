@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.RelacaoTrafego" table="relacao_trafego">
+        <id name="id" column="ID_RELACAO_TRAFEGO" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="origem"/>
+		<property name="destino"/>
+		<property name="nome"/>
+    </class>
+
+</hibernate-mapping>

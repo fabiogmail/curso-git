@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.Periodo" table="periodo">
+		
+        <id name="id" column="ID_PERIODO" type="int"/>
+        <property name="nome" column="NOME"/>
+		<property name="horaInicial" column="HORA_INICIAL"/>
+		<property name="horaFinal" column="HORA_FINAL"/>
+		
+    </class>
+
+</hibernate-mapping>

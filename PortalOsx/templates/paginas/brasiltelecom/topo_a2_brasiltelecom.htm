@@ -1,0 +1,236 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="/PortalOsx/css/style.css">
+<script type="text/javascript" language="JavaScript" charset="ISO-8859-1">
+<!--
+function Sai()
+{
+  document.logout.submit();
+  setTimeout(top.close,2000);
+}
+
+function AbreJanela(Operacao)
+{
+   var NomeJanela = "Aux"+Operacao;
+
+   if (Operacao == "cliente")
+      URLStr = "/PortalOsx/templates/paginas/clienteindex.htm";
+   else 
+      URLStr = "/PortalOsx/templates/paginas/alarmeindex.htm";
+   
+   auxiliar = window.open(URLStr,NomeJanela,'resizable=no,status=no,menubar=no,scrollbars=no,width=470,height=210');
+   auxiliar.focus();
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onUnLoad="Sai()">
+
+<table width="780" border="0" cellspacing="0" cellpadding="0">
+
+<!-- Formul&aacute;rio para LOGOUT -->
+<form name="logout" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="operacao" value="logout">
+</form>
+
+  <tr> 
+    <td height="1" bgcolor="#FFFFFF"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr> 
+    <td height="74" bgcolor="0D1237"><img src="/PortalOsx/imagens/logo.gif" width="316" height="74" border="0"><img src="/PortalOsx/imagens/meio.gif" width="288" height="74"><img src="/PortalOsx/imagens/direita.gif" width="176" height="74"></td>
+  </tr>
+  <tr> 
+    <td height="1" bgcolor="#FFFFFF"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="9E9E9E"> 
+    <td height="24"> 
+      <table width="780" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="20">&nbsp;</td>
+          <td width="713">Bem-vindo <b>$ARG;</b>!</td>
+          <td width="47"><img src="/PortalOsx/imagens/botoes.gif" width="40" height="18" usemap="#Map" border="0"><map name="Map"><area shape="rect" coords="1,2,18,19"  onMouseOver="MM_showHideLayers('ajuda','','show')" onMouseOut="MM_showHideLayers('ajuda','','hide')" target="frmMain"><area shape="rect" coords="21,2,38,16" href="javascript:" onClick="Sai()" onMouseOver="MM_showHideLayers('sair','','show')" onMouseOut="MM_showHideLayers('sair','','hide')"></map></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="1"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="FFCC00"> 
+    <td height="24"> 
+      <table width="780" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="16">&nbsp;</td>
+          <td width="651"> 
+            <table width="62" border="0" cellspacing="0" cellpadding="0" align="left">
+              <tr bgcolor="FFDB48"> 
+                <td height="20"><b>&nbsp;Usu&aacute;rio:</b></td>
+              </tr>
+            </table>
+            &nbsp;&nbsp; 
+            <script type="text/javascript" language="JavaScript1.2" src="/PortalOsx/templates/js/coolmenus3.js">
+/*****************************************************************************
+Copyright (c) 2001 Thomas Brattli (www.bratta.com)
+
+eXperience DHTML coolMenus - Get it at www.bratta.com
+Version 3.02
+This script can be used freely as long as all copyright messages are
+intact. 
+******************************************************************************/
+</script>
+<script type="text/javascript">
+/*****************************************************************************
+Default browsercheck - Leave this one
+******************************************************************************/
+function lib_bwcheck(){ //Browsercheck (needed)
+	this.ver=navigator.appVersion; this.agent=navigator.userAgent
+	this.dom=document.getElementById?1:0
+	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+	this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom)?1:0;
+	this.ie4=(document.all && !this.dom)?1:0;
+	this.ie=this.ie4||this.ie5||this.ie6
+	this.mac=this.agent.indexOf("Mac")>-1
+	this.opera5=this.agent.indexOf("Opera 5")>-1
+	this.ns6=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+	this.ns4=(document.layers && !this.dom)?1:0;
+	this.bw=(this.ie6 || this.ie5 || this.ie4 || this.ns4 || this.ns6 || this.opera5 || this.dom)
+	return this
+}
+var bw=new lib_bwcheck() //Making browsercheck object
+
+var mDebugging=0 //General debugging variable. Set to 0 for no debugging, 1 for alerts or 2 for status debugging.
+
+oCMenu=new makeCoolMenu("oCMenu") //Making the menu object. Argument: menuname
+oCMenu.useframes=1 //Do you want to use the menus as coolframemenu or not? (in frames or not) - Value: 0 || 1
+oCMenu.frame="frmMain" //The name of your main frame (where the menus should appear). Leave empty if you're not using frames - Value: "main_frame_name"
+
+oCMenu.useclick=0 //If you want the menu to be activated and deactivated onclick only set this to 1. - Value: 0 || 1
+
+/*If you set this to 1 you will get a "hand" cursor when moving over the links in NS4. 
+NOTE: This does not apply to the submenus if the menu is used in frames due some mayor problems with NS4*/
+oCMenu.useNS4links=1  
+
+//After adding the "hover effect" for netscape as well, all styles are lost. But if you want padding add it here.
+oCMenu.NS4padding=2 
+
+//If you have select boxes close to your menu the menu will check for that and hide them if they are in the way of the menu.
+//This feature does unfortunatly not work in NS4!
+oCMenu.checkselect=1
+
+oCMenu.offlineUrl="file:///C|/Inetpub/wwwroot/dhtmlcentral/" //Value: "path_to_menu_file_offline/"
+oCMenu.onlineUrl="http://www.dhtmlcentral.com/coolmenus/examples/withframes/" //Value: "path_to_menu_file_online/"
+
+oCMenu.pagecheck=1 //Do you want the menu to check whether any of the subitems are out of the bouderies of the page and move them in again (this is not perfect but it hould work) - Value: 0 || 1
+oCMenu.checkscroll=1 //Do you want the menu to check whether the page have scrolled or not? For frames you should always set this to 1. You can set this to 2 if you want this feature only on explorer since netscape doesn't support the window.onscroll this will make netscape slower (only if not using frames) - Value: 0 || 1 || 2
+oCMenu.resizecheck=1 //Do you want the page to reload if it's resized (This should be on or the menu will crash in Netscape4) - Value: 0 || 1
+oCMenu.wait=1000 //How long to wait before hiding the menu on mouseout. Netscape 6 is a lot slower then Explorer, so to be sure that it works good enough there you should not have this lower then 500 - Value: milliseconds
+
+//Background do menu
+oCMenu.usebar=1 //If you want to use a background-bar for the top items set this on - Value: 1 || 0
+oCMenu.barcolor="" //The color of the background bar - Value: "color"
+oCMenu.barwidth="780" //The width of the background bar. Set this to "menu" if you want it to be the same width as the menu. (this will change to match the border if you have one) - Value: px || "%" || "menu"
+oCMenu.barheight="10" //The height of the background bar. Set this to "menu" if you want it to be the same height as the menu. (this will change to match the border if you have one) - Value: px || "%" || "menu"
+oCMenu.barx=0 //The left position of the bar. Set this to "menu" if you want it be the same as the left position of the menu. (this will change to match the border if you have one)  - Value: px || "%" || "menu"
+oCMenu.bary=0 //The top position of the bar Set this to "menu" if you want it be the same as the top position of the menu. (this will change to match the border if you have one)  - Value: px || "%" || "menu"
+oCMenu.barinheritborder=0 //Set this to 1 if you want the bar to have the same border as the top menus - Value: 0 || 1
+
+//Posicionamento
+oCMenu.rows=1 //This controls whether the top items is supposed to be laid out in rows or columns. Set to 0 for columns and 1 for row - Value 0 || 1
+oCMenu.fromleft=84 //This is the left position of the menu. (Only in use if menuplacement below is 0 or aligned) (will change to adapt any borders) - Value: px || "%"
+oCMenu.fromtop=103 //This is the left position of the menu. (Only in use if menuplacement below is 0 or aligned) (will change to adapt any borders) - Value: px || "%"
+oCMenu.pxbetween=5 //How much space you want between each of the top items. - Value: px || "%"
+oCMenu.menuplacement="left"
+
+//TOP LEVEL PROPERTIES - ALL OF THESE MUST BE SPESIFIED FOR LEVEL[0]
+oCMenu.level[0]=new Array() 
+oCMenu.level[0].width=77 //Largura da coluna do menu
+oCMenu.level[0].height=20 //Altura da Coluna
+oCMenu.level[0].bgcoloroff="FFDB48" //Cor de fundo off
+oCMenu.level[0].bgcoloron="FFDB48" //Cor de fundo on
+oCMenu.level[0].textcolor="black" //Cor do texto
+oCMenu.level[0].hovercolor="black" //Cor do texto on
+oCMenu.level[0].style="padding:2px; font-family:arial; font-size:7.9pt; font-weight:none" //Fonte
+oCMenu.level[0].border=0 //Tamanho da borda para todos os level[0] (top) items.
+oCMenu.level[0].bordercolor="red" //The border color for all level[0] (top) items. - Value: "color"
+oCMenu.level[0].offsetX=0 //The X offset of the submenus of this item. This does not affect the first submenus, but you need it here so it can be the default value for all levels. - Value: px
+oCMenu.level[0].offsetY=0 //The Y offset of the submenus of this item. This does not affect the first submenus, but you need it here so it can be the default value for all levels. - Value: px
+oCMenu.level[0].NS4font="arial"
+oCMenu.level[0].NS4fontSize="1"
+oCMenu.level[0].bgcoloron="FF9933" //Cor de fundo on
+
+
+oCMenu.level[0].clip=0 
+oCMenu.level[0].clippx=0 
+oCMenu.level[0].cliptim=0 
+oCMenu.level[0].filter=0 //VALUE: 0 || "filter specs"
+oCMenu.level[0].align="bottom" //Value: "top" || "bottom" || "left" || "right" 
+
+//EXAMPLE SUB LEVEL[1] PROPERTIES - You have to spesify the properties you want different from LEVEL[0] - If you want all items to look the same just remove this
+oCMenu.level[1]=new Array() //Add this for each new level (adding one to the number)
+oCMenu.level[1].width=160
+oCMenu.level[1].height=22
+oCMenu.level[1].style="padding:2px; font-family:arial; font-size:7.9pt; font-weight:none"
+oCMenu.level[1].align="bottom" 
+oCMenu.level[1].offsetX=-(oCMenu.level[0].width-2)/2+20
+oCMenu.level[1].offsetY=0
+oCMenu.level[1].border=1 
+oCMenu.level[1].bordercolor="FFCC00"
+
+oCMenu.makeMenu('top0','','&nbsp;&#149;&nbsp;CDRView','','frmMain2')
+   oCMenu.makeMenu('sub00','top0','&nbsp;&#149;&nbsp;CDRView An&aacute;lise','','','','','','','','','','','javascript:{AbreJanela("cliente");}','','')
+//   oCMenu.makeMenu('sub01','top0','&nbsp;&#149;&nbsp;CDRView Detec&ccedil;&atilde;o','','','','','','','','','','','javascript:{AbreJanela("clienteAlr");}','','')
+	oCMenu.makeMenu('sub02','top0','&nbsp;&#149;&nbsp;Java Plug-in','/PortalOsx/templates/paginas/plugin.htm')
+	oCMenu.makeMenu('sub03','top0','&nbsp;&#149;&nbsp;Certifica&ccedil;&atilde;o','/PortalOsx/templates/paginas/certifica.htm')
+	
+oCMenu.makeMenu('top1','','&nbsp;&#149;&nbsp;Relat&oacute;rios','')
+	oCMenu.makeMenu('sub10','top1','&nbsp;&#149;&nbsp;Agendados','/PortalOsx/servlet/Portal.cPortal?operacao=RelAgendados')
+	oCMenu.makeMenu('sub11','top1','&nbsp;&#149;&nbsp;Hist&oacute;ricos','/PortalOsx/servlet/Portal.cPortal?operacao=RelHistoricos')
+	oCMenu.makeMenu('sub12','top1','&nbsp;&#149;&nbsp;Exporta&ccedil;&atilde;o de Base','')
+		oCMenu.makeMenu('sub121','sub12','&nbsp;&#149;&nbsp;Exporta&ccedil;&atilde;o de Base','/PortalOsx/servlet/Portal.cPortal?operacao=formExportaBase')
+		oCMenu.makeMenu('sub122','sub12','&nbsp;&#149;&nbsp;Lista Exportados','/PortalOsx/servlet/Portal.cPortal?operacao=listaRelExportados')
+	
+oCMenu.makeMenu('top2','','&nbsp;&#149;&nbsp;Resumo','')
+	oCMenu.makeMenu('sub20','top2','&nbsp;&#149;&nbsp;&Uacute;ltima Coleta','/PortalOsx/servlet/Portal.cPortal?operacao=ultimaColeta')
+	oCMenu.makeMenu('sub21','top2','&nbsp;&#149;&nbsp;Di&aacute;rio','/PortalOsx/servlet/Portal.cPortal?operacao=resumoDiario')
+
+oCMenu.makeMenu('top3','','&nbsp;&#149;&nbsp;Mensagens','')
+	oCMenu.makeMenu('sub30','top3','&nbsp;&#149;&nbsp;L&ecirc;','/PortalOsx/servlet/Portal.cPortal?operacao=listaMensagens')
+	oCMenu.makeMenu('sub31','top3','&nbsp;&#149;&nbsp;Envia','/PortalOsx/servlet/Portal.cPortal?operacao=formEnviaMensagem')
+
+oCMenu.makeMenu('top4','','&nbsp;&#149;&nbsp;Conta','')
+	oCMenu.makeMenu('sub40','top4','&nbsp;&#149;&nbsp;Altera&ccedil;&atilde;o de Senha','/PortalOsx/servlet/Portal.cPortal?operacao=formAlteraSenha')
+//	oCMenu.makeMenu('sub41','top4','&nbsp;&#149;&nbsp;Mensagens','#')
+
+oCMenu.makeStyle(); oCMenu.construct()			
+</script>
+</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td height="1"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+</table>
+<!-- <div id="marca" style="position:absolute; left:648px; top:3px; width:126px; height:74px; z-index:1"><img src="/PortalOsx/imagens/logo_cliente.gif" width="133" height="68"></div> -->
+<div id="marca" style="position:absolute; left:640px; top:16px; width:126px; height:74px; z-index:1"><img src="/PortalOsx/imagens/logo_cliente.gif"></div>
+<div id="ajuda" style="position:absolute; left:683px; top:81px; width:50px; height:18px; z-index:2; visibility: hidden"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>Ajuda &gt;&gt;</td>
+    </tr>
+  </table>
+</div>
+<div id="sair" style="position:absolute; left:689px; top:81px; width:50px; height:18px; z-index:2; visibility: hidden"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>Sair &gt;&gt; </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

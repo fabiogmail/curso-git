@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Portal.Dto.RecursoVolumetria" table = "recurso_volumetria">
+        
+        <id name="idBilhetador">
+        	<column name="ID_BILHETADOR" />
+			<generator class="assigned" />
+        </id>
+        <many-to-one name="bilhetador" class="Portal.Dto.Bilhetador" update="false" insert="false" fetch="select">
+        	<column name="ID_BILHETADOR" not-null="true" unique="true"/>
+        </many-to-one>
+        <property name="limMaximo" column="LI"/>
+		<property name="limMinimo" column="LS"/> 
+				
+    </class>
+</hibernate-mapping>

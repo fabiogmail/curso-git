@@ -1,0 +1,3 @@
+<p>Para configurar o alarme de ociosidade dos Conversores, defina o tempo m&aacute;ximo permitido de Ociosidade para cada Bilhetador/Central da lista. Em seguida, habilite o alarme selecionando <b>Habilita</b> para cada Bilhetador/Central e clique no bot&atilde;o Salvar.</p>
+<p>O alarme ser&aacute; gerado quando o limite de tempo configurado para Ociosidade for excedido para qualquer um dos Bilhetadores/Centrais da lista.</p>
+

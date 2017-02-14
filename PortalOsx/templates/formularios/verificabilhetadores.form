@@ -1,0 +1,35 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para verifica&ccedil;&atilde;o de bilhetadores cobertos pelos parsers/conversores
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 22/05/2002
+#
+
+table,545,0,0,0
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   th,#000033
+      td,left, ,2, , 
+         <font color="#FFFFFF"><b>Resultado</b></font>
+      /td
+   /th
+   tr
+      td,left, ,2, , , 
+      $ARG;
+      /td
+   /tr
+/table

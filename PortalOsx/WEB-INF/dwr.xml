@@ -1,0 +1,100 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+  <allow>
+	
+	<create creator="new" javascript="CelulaManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.CelulaManager"/>
+	</create>
+	<create creator="new" javascript="GrupoCelulaManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.GrupoCelulaManager"/>
+	</create>
+	<create creator="new" javascript="CentralManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.CentralManager"/>
+	</create>
+	<create creator="new" javascript="CentralRefManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.CentralRefManager"/>
+	</create>
+	<create creator="new" javascript="OperadoraManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.OperadoraManager"/>
+	</create>
+	<create creator="new" javascript="PeriodoManager">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.PeriodoManager"/>
+	</create>
+	<create creator="new" javascript="Pesquisa" scope="session">
+	  <param name="class" value="br.com.visent.matraf.service.ajax.Pesquisa"/>
+	</create>
+	
+	
+	<convert converter="bean" match="br.com.visent.matraf.domain.Central"/>
+	<convert converter="bean" match="br.com.visent.matraf.domain.CentralRef"/>
+	<convert converter="bean" match="br.com.visent.matraf.domain.Operadora"/>
+	<convert converter="bean" match="br.com.visent.matraf.domain.Celula"/>
+	<convert converter="bean" match="br.com.visent.matraf.domain.GrupoCelula"/>
+	<convert converter="bean" match="br.com.visent.matraf.domain.Periodo"/>
+	<convert converter="bean" match="br.com.visent.matraf.service.ajax.PeriodoBean"/>
+
+	<!-- daqui para baixo esta o mapeamento para o historico -->
+	
+	<create creator="new" javascript="HistoricoAjax" scope="session">
+	  <param name="class" value="Historico.service.HistoricoAjax"/>
+	</create>
+	
+	<!-- daqui para baixo esta o mapeamento para o Seguranca de acesso -->
+	
+	<create creator="new" javascript="RelatorioAjax" scope="session">
+	  <param name="class" value="br.com.visent.segurancaAcesso.service.RelatorioAjax"/>
+	</create>
+	<create creator="new" javascript="ConfigAjax" scope="session">
+	  <param name="class" value="br.com.visent.segurancaAcesso.service.ConfigAjax"/>
+	</create>
+	<create creator="new" javascript="EmailAjax" scope="session">
+	  <param name="class" value="br.com.visent.segurancaAcesso.service.EmailAjax"/>
+	</create>
+	<convert converter="bean" match="br.com.visent.segurancaAcesso.domain.Config"/>
+	<convert converter="bean" match="br.com.visent.segurancaAcesso.domain.Filtro"/>
+	<convert converter="bean" match="br.com.visent.segurancaAcesso.domain.RegistroAcesso"/>
+	<convert converter="bean" match="br.com.visent.segurancaAcesso.domain.RegistroUso"/>
+	
+	<!-- daqui para baixo esta o mapeamento para o Portal -->
+	<create creator="new" javascript="OpLogonAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpLogonAjax"/>
+	</create>
+	
+	<create creator="new" javascript="OpUsuariosAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpUsuariosAjax"/>
+	</create>	
+	
+	<create creator="new" javascript="OpDataReprocessamentoSalvarAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpDataReprocessamentoSalvarAjax"/>
+	</create>
+	
+	<create creator="new" javascript="OpRelVolumetriaAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpRelVolumetriaAjax"/>
+	</create>
+	
+	<create creator="new" javascript="OpRelSequenciaAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpRelSequenciaAjax"/>
+	</create>
+	
+	<create creator="new" javascript="OpVisualizaAlarmesPlataformaAjax" scope="session">
+	  <param name="class" value="Portal.Operacoes.OpVisualizaAlarmesPlataformaAjax"/>
+	</create>
+	<create creator="new" javascript="OpListaAgendaAjax">
+	  <param name="class" value="Portal.Operacoes.OpListaAgendaAjax"/>
+	</create>
+	
+	<create creator="new" javascript="OpListaHistoricoAjax">
+	  <param name="class" value="Portal.Operacoes.OpListaHistoricoAjax"/>
+	</create>
+	
+	<convert converter="bean" match="Portal.Utils.PerfilCfgDef"/>
+	<convert converter="bean" match="Portal.Utils.UsuarioDef"/>
+	<convert converter="bean" match="Portal.Utils.OperadoraCfgDef"/>
+	<convert converter="bean" match="Portal.Dto.RecursoVolumetria"/>
+	<convert converter="bean" match="Portal.Dto.Bilhetador"/>
+	
+  </allow>
+</dwr>

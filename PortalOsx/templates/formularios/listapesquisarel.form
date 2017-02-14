@@ -1,0 +1,30 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem do resultado da pesquisa de relatorios
+# Observar a sintaxe correta!
+# Autor: Paulo Roberto Correa Dutra
+# Última Altera&ccedil;&atilde;o: 18/12/2003
+#
+
+table,545,0,0,0
+   tr
+      td,left, ,2, , , 
+         $ARG;
+      /td
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         image,/PortalOsx/imagens/voltar.gif,onClick="history.back(); return false;"
+      /td
+   /tr
+/table

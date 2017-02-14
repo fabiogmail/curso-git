@@ -1,0 +1,4 @@
+<p>Antes de cadastrar usu&aacute;rios no sistema, o Administrador dever&aacute; definir o perfil que os usu&aacute;rios ir&atilde;o pertencer.</p>
+<p>Para incluir um usu&aacute;rio, defina seu nome no campo Novo Usu&aacute;rio, em seguida, selecione o Perfil que ele ir&aacute; compor, clique no bot&atilde;o Incluir para finalizar a opera&ccedil;&atilde;o.</p>
+<p>Para excluir um usu&aacute;rio existente, selecione o usu&aacute;rio desejado no campo Usu&aacute;rios e, em seguida, clique no bot&atilde;o Excluir.</p>
+<p>ATEN&Ccedil;&Atilde;O: o usu&aacute;rio “administrador” n&atilde;o pode ser exclu&iacute;do. Tampouco poder&aacute; criar um novo usu&aacute;rio para o perfil “admin”.</p>

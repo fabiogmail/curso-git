@@ -1,0 +1,32 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem de perfis configurados
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 15/03/2002
+#
+
+table,545,0,0,0
+   form,form1,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao,exportaUsuarios
+      hidden,tipo,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,right, , , , 
+      	image,/PortalOsx/imagens/exportar.gif,onClick="document.form1.submit();"
+      	 $ARG;
+      	 $ARG;
+      /td
+   tr
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table

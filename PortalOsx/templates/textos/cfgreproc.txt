@@ -1,0 +1,3 @@
+<p>Os Reprocessadores s&atilde;o agrupados em configura&ccedil;&otilde;es, de forma a distribuir o processamento dos arquivos.</p>
+<p>Para incluir uma configura&ccedil;&atilde;o de reprocessador, &eacute; necess&aacute;rio definir um nome, no campo "Nova Configura&ccedil;&atilde;o", selecionar os bilhetatadores/centrais que ser&atilde;o reprocessados por esta configura&ccedil;&atilde;o e, em seguida selecionar o reprocessador e o Servidor que esta configura&ccedil;&atilde;o far&aacute; parte, e clicar no bot&atilde;o incluir.</p>
+<p>Para excluir ou alterar uma configura&ccedil;&atilde;o existente, selecione-a no campo Configura&ccedil;&otilde;es e, em seguida, clique no bot&atilde;o Excluir ou Alterar, respectivamente.</p>

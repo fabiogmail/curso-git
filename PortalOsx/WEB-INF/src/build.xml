@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+
+<project name="PortalOsx" default="backup"  basedir=".">
+
+   <property name="app.name"       	   value="PortalOsx"/>
+   <property name="tomcat.home"    	   value="Tomcat5.0" />	
+   <property name="development.home"   value="E:/Portais/Trunk" />
+   <property name="PortalOsx.home"     value="${development.home}/PortalOsx/" />
+   <property name="src.PortalOsx"  	   value="${PortalOsx.home}/WEB-INF/src" />
+   <property name="bin.PortalOsx"  	   value="${PortalOsx.home}/WEB-INF/classes" />
+   <property name="lib.PortalOsx"  	   value="${PortalOsx.home}/lib" />
+   <property name="lib.Web"  	       value="${PortalOsx.home}/WEB-INF/lib" />
+   <property name="build.CDRView2"     value="${development.home}/ClienteJava/src/CDRView2" />
+   <property name="dir.Backup"         value="${development.home}/Backup"/>
+   <!-- Nome tem que ser igual ao diretorio a ser excluido  -->
+   <property name="cliente"            value="oi"/>
+
+   <!--import file="${build.CDRView2}/build.xml" /-->
+   
+	<target name="pre-build" description="Limpando arquivos compilados">
+		<echo>Limpando arquivos compilados</echo>
+		<delete dir="${bin.PortalOsx}" failonerror="false"></delete>
+		<delete file="${development.home}/${app.name}.war" failonerror="false"></delete>
+	</target>
+	
+   <target name="init" depends="pre-build">
+   <mkdir dir="${bin.PortalOsx}/"/>      
+       <tstamp>
+	   		<format property="HOJE" pattern=" - d-MMM-yyyy - hh:mm aa" locale="pt"/>	   		
+	   </tstamp>    
+	   <echo message="BuildPortal ${HOJE}" /> 	   
+   </target>
+   
+   <target name="compilePortal" depends="init"  description="Compilando fontes do Portal">
+		<echo>Compilando o PortalOsx </echo>
+   		<javac debug="on" srcdir="${src.PortalOsx}"  destdir="${bin.PortalOsx}">   
+       	    <include name="**/*.java"/>
+     		<classpath>
+	            <fileset dir="${lib.PortalOsx}">
+	               <include name="**/*.jar"/>
+	               <include name="${tomcat.home}/common/lib/*.jar"/>				   
+	               <include name="${tomcat.home}/shared/lib/*.jar"/>				   
+	            </fileset>
+				<fileset dir="${lib.Web}">
+					<include name="**/*.jar"/>
+				</fileset>  
+	         </classpath>
+ 	    </javac>
+ 	    <echo>Fontes PortalOsx Compilados</echo>
+   </target>
+   
+   <target name="montaClasspathWar" depends="compilePortal" description="coloca os jars dentro de WEB-INF/lib">
+		<dirset dir="${PortalOsx.home}" />
+		<mkdir dir="${PortalOsx.home}/WEB-INF/lib" />
+		<copy todir="${PortalOsx.home}/WEB-INF/lib">
+			<fileset dir="${lib.PortalOsx}">
+				<include name="*.jar" />
+				<exclude name="servlet.jar" />
+			</fileset>
+		</copy>
+   		<copy todir="${bin.PortalOsx}">
+   	   		<fileset dir="${src.PortalOsx}">
+   	   			<include name="*.xml" />
+   	   		</fileset>
+   	   	</copy>
+   		<copy todir="${bin.PortalOsx}/Portal/Dao/Hibernate/Conf">
+   	   		<fileset dir="${src.PortalOsx}/Portal/Dao/Hibernate/Conf">
+   	   	   		<include name="*.xml" />
+   	   	   	</fileset>
+   	   	</copy>
+   	   	<copy todir="${bin.PortalOsx}/br/com/visent/segurancaAcesso/hibernate">
+   	   		<fileset dir="${src.PortalOsx}/br/com/visent/segurancaAcesso/hibernate">
+   	   	   		<include name="*.xml" />
+   	   	   	</fileset>
+   	   	</copy>
+   		<copy todir="${bin.PortalOsx}/br/com/visent/matraf/dao/hibernate/conf">
+   	   		<fileset dir="${src.PortalOsx}/br/com/visent/matraf/dao/hibernate/conf">
+   	   	   		<include name="*.xml" />
+   	   	   	</fileset>
+   	   	</copy>
+   <copy todir="${bin.PortalOsx}">
+	   		<fileset dir="${src.PortalOsx}">
+	   			<include name="*.properties" />
+	   		</fileset>
+	   	</copy>
+   </target>
+   
+   <target name="criaWarPortal" depends="montaClasspathWar" description="Criando WAR">
+
+   		<war destfile="${development.home}/${app.name}.war" basedir="${PortalOsx.home}" webxml="${PortalOsx.home}/WEB-INF/web.xml"  update="false" >				   			
+			
+			<exclude name="**/*.OLD" />  			   			
+		   	<exclude name="**/src/**" />
+   			<exclude name="**/*.bak" />  			   			   			
+   			<exclude name="**/*.bat" />  
+   			<exclude name="**/*.db" />	
+   			<exclude name="**/*.jude" />	
+  			<exclude name="**/*.java" />
+  			<exclude name="**/*.classpath" />
+  			<exclude name="**/*.project" />
+  			<exclude name="**/*.tomcatplugin" />
+			<exclude name="**/*.cvs*" />
+			<exclude name="**/cvs/**" />
+			<exclude name="**/*.settings" />
+			<exclude name="**/*.vssver" />	
+			<exclude name="**/work/**" />		
+			<exclude name="**/*.war" />		
+			<exclude name="**/*.csv" />	
+			
+   			<include name="**/css/**" />
+   			<include name="**/download/**" />
+			<include name="**/documentacao/**" />
+   			<include name="**/exportacao/**" />
+   			<include name="**/imagens/**" />   			
+   			<include name="**/plugin/**" />
+   			<include name="**/templates/**" /> 
+			<include name="**/reports/**" />
+   			<include name="**/*.class" />   			   			
+   			<include name="**/*.jsp" /> 			
+   			<include name="**/lib/**" />   			   			   			   			
+   			<include name="**/WEB-INF/classes/DefsWeb.xml" />
+			<include name="**/WEB-INF/classes/hibernate.cfg.xml" />
+			<include name="**/WEB-INF/classes/hibernateSeguranca.cfg.xml" />
+   			<include name="**/WEB-INF/classes/hibernateReceita.cfg.xml" />
+			<include name="**/WEB-INF/classes/dbDeteccao.properties" />
+			<include name="**/WEB-INF/classes/br/com/visent/segurancaAcesso/hibernate/**" />
+   			<include name="**/WEB-INF/classes/Portal/Dao/Hibernate/Conf/**" />
+			<include name="**/WEB-INF/classes/br/com/visent/matraf/dao/hibernate/conf/**" /> 
+   			<include name="**/WEB-INF/web.xml" /> 
+			<include name="**/WEB-INF/dwr.xml" />
+			<include name="**/WEB-INF/footerExport.txt" />  
+			<include name="**/WEB-INF/headerExport.txt" />     
+  			<include name="**/*.html" /> 
+  			<include name="**/*.htm" /> 
+			<include name="**/*.tld" />
+			
+   		</war>
+   </target> 
+   
+   <target name="clean" depends="criaWarPortal" description="Limpa os arquivos temporarios">
+		<delete verbose="on" >
+			<fileset dir="${PortalOsx.home}/WEB-INF/lib">
+				<exclude name="**/antlr-2.7.6rc1.jar" />
+				<exclude name="**/asm.jar" />
+				<exclude name="**/asm-attrs.jar" />
+				<exclude name="**/cglib-2.1.3.jar" />
+				<exclude name="**/commons-collections-2.1.1.jar" />
+				<exclude name="**/commons-logging-1.0.4.jar" />
+				<exclude name="**/ditchnet-tabs-taglib.jar" />
+				<exclude name="**/dloadtag.jar" />
+				<exclude name="**/dom4j-1.6.1.jar" />
+				<exclude name="**/dwr.jar" />
+				<exclude name="**/hibernate3.jar" />
+				<exclude name="**/jstl.jar" />
+				<exclude name="**/jta.jar" />
+				<exclude name="**/log4j-1.2.11.jar" />
+				<exclude name="**/mysql-connector-java-5.0.7-bin.jar" />
+				<exclude name="**/standard.jar" />
+				<exclude name="**/commons-beanutils-1.5.jar" />
+				<exclude name="**/commons-digester-1.7.jar" />
+				<exclude name="**/commons-javaflow-20060411.jar" />
+				<exclude name="**/itext-1.3.1.jar" />
+				<exclude name="**/jasperreports-1.3.0.jar" />
+				<exclude name="**/jasperreports-1.3.0-applet.jar" />
+				<exclude name="**/jasperreports-1.3.0-javaflow.jar" />
+				<exclude name="**/poi-2.0-final-20040126.jar" />
+				<exclude name="**/mail.jar" />
+				<exclude name="**/activation.jar" />
+				<exclude name="**/jxl.jar" />
+				<exclude name="**/dbdeteccao.jar" />
+				<exclude name="**/commons-collections-3.2.1.jar" />
+				<exclude name="**/CVS/**"></exclude>
+			</fileset>
+		</delete>
+   </target>
+   
+   <target name="backup" depends="clean" description="Criando WAR">
+   	    <echo> Criando Arquivo de Backup </echo>   	  
+   	    <mkdir dir="backup" description="Diretorio de Backup" />
+   	    <tstamp>
+         	<format locale="us" property="DATA" pattern="dd-MM-yyyy" />
+        </tstamp>  
+        
+   		<war destfile="${dir.Backup}/${app.name} - ${DATA}.war" basedir="${PortalOsx.home}" webxml="${PortalOsx.home}/WEB-INF/web.xml" update="false" > 
+			<exclude name="**/*.class" />  		
+			<fileset  dir="${development.home}/" >
+				<include name="${app.name}.war" />
+			</fileset>
+		</war>
+		<echo>
+			${app.name}.war gerado em: ${development.home}/
+		</echo>
+   </target>  
+   
+</project>

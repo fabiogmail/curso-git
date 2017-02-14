@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Sele&ccedil;&atilde;o de Per&iacute;odos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" src="/PortalOsx/templates/js/historicotrafegoperiodos.js" type="text/JavaScript"></script>
+</head>
+
+<body>
+<form name="periodos" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td><font color="#000066" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="/PortalOsx/imagens/periodo.gif" width="86" height="14"></font></td>
+    </tr>
+    <tr> 
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Selecione os per&iacute;odos que deseja visualizar no relat&oacute;rio:</font></td>
+    </tr>
+    <tr> 
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><table width="100%" border="0" cellspacing="3" cellpadding="0">
+          <tr> 
+            <td width="49%" align="center"><strong><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Dispon&iacute;veis:</font></strong></td>
+            <td width="51%" align="right"><strong><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Apresentados:</font></strong></td>
+          </tr>
+          <tr> 
+             <td colspan="2">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                   <tr>
+                     <td align="center"><select name="periodo1" class="lista" size="10" multiple>
+                         $ARG;
+                       </select>
+                     </td>
+
+                     <td align="center">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                           <tr>
+                             <td align="center">
+                                <input type="button" name="button" value=" >> " class="button" onClick="return Adiciona()">
+                             </td>
+                           </tr>
+                           <tr>
+                             <td align="center">
+                                &nbsp;
+                             </td>
+                           </tr>
+                           <tr>
+                             <td align="center">
+                                &nbsp;
+                             </td>
+                           </tr>
+                           <tr>
+                             <td align="center">
+                                <input type="button" name="button" value=" << " class="button" onClick="return Remove()">
+                             </td>
+                           </tr>
+                        </table>
+                     </td>
+
+                     <td align="center"><select name="periodo2" class="lista" size="10" multiple>
+                         $ARG;
+                       </select>
+                     </td>
+                   </tr>
+                </table>
+             </td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+  <p>
+    <input type="button" name="Submit" value="Atualizar" class="button" onClick="return SetaPeriodos()">
+  </p>
+</form>
+</body>
+</html>

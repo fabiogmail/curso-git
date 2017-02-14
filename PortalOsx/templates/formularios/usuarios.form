@@ -1,0 +1,94 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para inclus&atilde;o/exclus&atilde;o de usu&aacute;rios
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 29/01/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaUsuariosNomes,$ARG;
+      hidden,ListaUsuariosIds,$ARG;"
+      hidden,ListaPerfis,$ARG;
+      hidden,Relacionamento,$ARG;
+      hidden,mensagem,$ARG;
+   tr
+      td,left, , ,150, 
+         <b>Usu&aacute;rios: &nbsp;</b>
+      /td
+      td,left, , ,150, 
+         select,ListaUsuarios,1, ,onChange="Processa(3)"
+         /select
+      /td
+      td,left, , ,272, 
+         <b>Perfil: &nbsp;</b>
+         select,ListaPerfisSel,1, , 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , ,36 
+         <b>Novo Usu&aacute;rio: &nbsp;</b>
+      /td
+      td,left, , , ,36 
+         text,usuario, ,30,30, 
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,incUsuario
+            hidden,usuario, 
+            hidden,perfil, 
+  #          hidden,ordem,
+            image,/PortalOsx/imagens/incluir.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, , ,60, 
+         form,form3,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,excUsuario
+            hidden,usuario, 
+            image,/PortalOsx/imagens/excluir.gif,onClick="return Processa(2)"
+         /form
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+/table

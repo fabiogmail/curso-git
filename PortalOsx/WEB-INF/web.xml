@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+
+    <display-name>Portal CDRView</display-name>
+    <description>
+      Portal OSx Telecom/CDRView
+    </description>
+    
+	<!--
+	<listener>
+		<listener-class>br.com.visent.matraf.util.HibernateListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>br.com.visent.segurancaAcesso.util.HibernateListener</listener-class>
+	</listener>
+	-->	
+	<listener>
+		<listener-class>Portal.Dao.Util.HibernateListener</listener-class>
+	</listener>
+	
+	
+	<servlet>
+      <servlet-name>dwr-invoker</servlet-name>
+      <display-name>DWR Servlet</display-name>
+      <servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+      <init-param>
+         <param-name>debug</param-name>
+         <param-value>true</param-value>
+      </init-param>
+    </servlet>
+  
+ 	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>net.sf.jasperreports.j2ee.servlets.ImageServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Exportar</servlet-name>
+		<servlet-class>br.com.visent.segurancaAcesso.util.Exporta</servlet-class>
+	</servlet>
+  
+    <servlet>
+        <servlet-name>Portal</servlet-name>
+        <servlet-class>Portal.cPortal</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>PortalStartup</servlet-name>
+        <servlet-class>Portal.PortalStartup</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+	<servlet>
+        <servlet-name>DownloadExport</servlet-name>
+        <servlet-class>Portal.Operacoes.OpDownloadExport</servlet-class>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>ExportaRel</servlet-name>
+        <servlet-class>Portal.Utils.Exporta</servlet-class>
+    </servlet>
+    
+    <servlet>
+		<servlet-name>listagemCadastroDinamico</servlet-name>
+		<servlet-class>Portal.Utils.ListagemCadastroDinamico</servlet-class>
+	</servlet>
+    
+	<servlet-mapping>
+	  <servlet-name>dwr-invoker</servlet-name>
+      <url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DownloadExport</servlet-name>
+        <url-pattern>/PortalOsx/OpDownloadExport</url-pattern>
+    </servlet-mapping>
+
+	<servlet-mapping>
+        <servlet-name>Portal</servlet-name>
+        <url-pattern>/PortalOsx/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/servlets/image</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Exportar</servlet-name>
+		<url-pattern>/servlets/Exportar</url-pattern>
+	</servlet-mapping>
+    
+	<servlet-mapping>
+        <servlet-name>Portal</servlet-name>      
+		<url-pattern>/servlet/Portal.cPortal</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ExportaRel</servlet-name>      
+		<url-pattern>/servlet/ExportaRel</url-pattern>
+    </servlet-mapping>
+    
+	<servlet-mapping>
+		<servlet-name>listagemCadastroDinamico</servlet-name>
+		<url-pattern>/servlets/listarCadDinamico</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<session-config>    
+		    <session-timeout>-1</session-timeout> 
+	</session-config>
+	
+    <taglib>
+       <taglib-uri>/WEB-INF/download.tld</taglib-uri>
+       <taglib-location>/WEB-INF/download.tld</taglib-location>
+    </taglib>
+</web-app>

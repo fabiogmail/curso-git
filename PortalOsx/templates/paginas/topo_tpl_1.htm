@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="/PortalOsx/css/style.css">
+<script type="text/javascript" language="javascript" charset="ISO-8859-1">
+
+var bSai = true;
+var bFecharInterno = false;
+
+function Sai()
+{
+   var pag ="/PortalOsx/servlet/Portal.cPortal?operacao=logout";
+   var NomeJanela = "AuxLogout";
+   
+   if ("$ARG;" == "especial")
+   {
+	  if (bSai == true)
+      {
+		if (!bFecharInterno) {
+         top.close();
+        }
+		document.logout.submit();
+   		alert("Voce foi desconectado do sistema.");
+      }
+
+   }
+   else
+   {
+     	if (!bFecharInterno) {
+         top.close();
+        }
+		document.logout.submit();
+		alert("Voce foi desconectado do sistema.");
+
+   }
+}
+
+function AbreDeteccao(Operacao)
+{
+   var variaveis = Operacao.split("@");
+   var host = variaveis[0];
+   var NomeJanela = "Aux"+variaveis[1];
+   URLStr = "//"+host+"/Deteccao/indexRedireciona.jsp?login=$ARG;";
+   auxiliar = window.open(URLStr,NomeJanela,'resizable=yes,status=no,toolbar=yes,scrollbars=yes,width=820,height=610'); //470x210
+   auxiliar.focus();
+}
+
+
+function AbreCDRViewSeries(Operacao)
+{
+   var variaveis = Operacao.split("@");
+   var host = variaveis[0];
+   var NomeJanela = "Aux"+variaveis[1];
+   URLStr = "http://"+host+"/SerieHistorica/indexPortal.jsp?login=$ARG;&perfil=$ARG;";
+   /*auxiliar = */ window.open(URLStr,NomeJanela); //470x210
+   //auxiliar.focus();
+}
+
+function AbreEasyView(Operacao)
+{
+   var variaveis = Operacao.split("@");
+   var host = variaveis[0];
+   var NomeJanela = "Aux"+variaveis[1];
+   URLStr = "http://"+host+"/easyview/acessoSistema?login=$ARG;";
+
+   /*auxiliar = */ window.open(URLStr,NomeJanela); //470x210
+   //auxiliar.focus();
+}
+function SetaFlag()
+{
+   bSai = false;
+   document.location = "/PortalOsx/servlet/Portal.cPortal?operacao=$ARG;";
+}
+function setaJanela() {
+   bFecharInterno = true;
+}
+
+function AbreJanela(Operacao)
+{
+   var NomeJanela = "Aux"+Operacao;
+
+   if (Operacao == "cliente")
+      URLStr = "/PortalOsx/templates/paginas/clienteindex.htm";
+   else if (Operacao == "cliente2")
+      URLStr = "/PortalOsx/templates/paginas/cliente2index.jsp";
+   else if (Operacao == "cliente3")
+      URLStr = "/PortalOsx/templates/paginas/cliente3index.jsp";
+   else if (Operacao == "listaAlarmes") 
+   	  URLStr = "/PortalOsx/templates/jsp/visualizaAlarmesPlataforma.jsp";
+   else
+      URLStr = "/PortalOsx/templates/paginas/alarmeindex.jsp";
+
+   auxiliar = window.open(URLStr,NomeJanela,'resizable=yes,status=no,menubar=no,scrollbars=no,width=860,height=600'); //470x210
+   auxiliar.focus();
+}
+
+function AbreMatraf(Operacao)
+{
+   var NomeJanela = "Aux"+Operacao;
+   URLStr = "/PortalOsx/templates/matraf/matrafNovo.html";
+   auxiliar = window.open(URLStr,NomeJanela,'resizable=yes,status=no,toolbar=yes,scrollbars=yes,width=820,height=610'); //470x210
+   auxiliar.focus();
+}
+
+
+function AbreAnatel(Operacao)
+{
+   var NomeJanela = "Aux"+Operacao;
+   URLStr = "/PortalOsx/templates/jsp/anatel.jsp";
+   auxiliar = window.open(URLStr,NomeJanela,'resizable=yes,status=no,toolbar=yes,scrollbars=yes,width=820,height=610'); //470x210
+   auxiliar.focus();
+}
+
+
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onUnload="Sai()">
+
+<form name="logout" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="operacao" value="logout">
+
+
+<table width="780" border="0" cellspacing="0" cellpadding="0">
+
+<!-- Formul�rio para LOGOUT -->
+
+  <tr>
+    <td height="1" bgcolor="#FFFFFF"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td height="74" bgcolor="0D1237"><img src="/PortalOsx/imagens/logo.gif" width="316" height="74" border="0"><img src="/PortalOsx/imagens/meio.gif" width="288" height="74"><img src="/PortalOsx/imagens/direita.gif" width="176" height="74"></td>
+  </tr>
+  <tr>
+    <td height="1" bgcolor="#FFFFFF"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="9E9E9E">
+    <td height="24">
+      <table width="780" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="20">&nbsp;</td>
+          <td width="713">Bem-vindo <b>$ARG;</b>!</td>
+          <td width="47">
+             <img src="/PortalOsx/imagens/botoes.gif" width="40" height="18" usemap="#Map" border="0">
+             <map name="Map">
+                <area shape="rect" coords="1,2,18,19"  href="/PortalOsx/templates/paginas/$ARG;/ajuda.htm" alt="Documenta&ccedil;&atilde;o online" title="Documenta&ccedil;&atilde;o online"  target="frmMain">
+                <area shape="rect" coords="21,2,38,16" href="javascript:"              alt="Logout"                            title="Logout"                            onClick="setaJanela();top.close()" >
+             </map>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr bgcolor="#FFFFFF">
+    <td height="1"><img src="/PortalOsx/imagens/1x1.gif" width="1" height="1"></td>
+  </tr>
+  <tr bgcolor="FFCC00">
+    <td height="24">
+      <table width="780" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="16">&nbsp;</td>
+          <td width="651">
+            <table width="62" border="0" cellspacing="0" cellpadding="0" align="left">
+              <tr bgcolor="FFDB48">
+                <td height="20" valign="center"><b>&nbsp;$ARG;:</b></td>
+              </tr>
+            </table>
+            &nbsp;&nbsp;
+          <script type="text/javascript" language="JavaScript1.2" src="/PortalOsx/templates/js/coolmenus3.js">

@@ -1,0 +1,57 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para listagem de relat&oacute;rios exportados
+# Observar a sintaxe correta!
+# Autor: Erick Rodrigo
+# Última Altera&ccedil;&atilde;o: 16/08/2007
+
+
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisArg,$ARG;
+      hidden,ListaPerfisIdArg,$ARG;
+      hidden,ListaPermissoesArg,$ARG;
+      hidden,MensagemArg,$ARG;
+   tr
+      td,left,middle, ,105, 
+         <b>Perfil: &nbsp;</b>
+      /td
+      td,left,middle, ,440, 
+         select,ListaPerfis,1, ,onChange="AtualizaTipoRel()" 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   tr>
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,65, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao, 
+            hidden,perfil,  
+            image,/PortalOsx/imagens/listar.gif,onClick="return Processa(1)"
+         /form
+      /td
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/table

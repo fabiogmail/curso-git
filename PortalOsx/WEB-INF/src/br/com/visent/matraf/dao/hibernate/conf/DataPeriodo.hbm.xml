@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="br.com.visent.matraf.domain.DataPeriodo" table="DATA_PERIODO">
+		
+		 <id name="id" column="ID_DATA_PERIODO" type="int">
+            <generator class="native"/>
+        </id>
+
+		<many-to-one name="relatorio" 
+			class="br.com.visent.matraf.domain.Relatorio"
+			column="ID_RELATORIO" lazy="false"/> 
+				
+		<many-to-one name="periodo" 
+			class="br.com.visent.matraf.domain.Periodo" 
+			column="ID_PERIODO" lazy="false"/> 
+				
+		<property name="dataTabela" column="DATA_TABELA"/>
+		
+		<bag name="listaCentral" table="DATA_PERIODO_CENTRAL" lazy="false">
+			<key column="ID_DATA_PERIODO"/>
+			<many-to-many class="br.com.visent.matraf.domain.Central" column="ID_CENTRAL"/>
+		</bag>			
+					 
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para inclus&atilde;o/altera&ccedil;&atilde;o de dias extras na base de dados
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 26/06/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaDatasServ,$ARG;
+      hidden,mensagem,$ARG;
+   /form
+   tr
+      td,left,top, ,273, 
+         table, ,0,0,0
+            tr
+               td,left, ,2,273, 
+                  form,form2,post, 
+                     <b>Data: &nbsp;</b>
+                     text,data,dd/mm/aaaa,15,15, 
+                  /form
+               /td
+            /tr
+            tr
+               td,left, , , , 
+                  table, ,0,0,0
+                        td,left, , ,60, 
+                            image,/PortalOsx/imagens/incluir.gif,onclick="javascript:Processa(1)"
+                        /td
+                        td,left, , ,60, 
+                           image,/PortalOsx/imagens/excluir.gif,onclick="javascript:Processa(2)"
+                        /td
+                  /table
+               /td
+            /tr
+         /table
+      /td
+      td,left, , ,273, 
+         table, ,0,0,0
+            td,left,top, ,60, 
+               <b>Datas: &nbsp;</b>
+            /td
+            td,left, , ,60, 
+               form,form3,post, 
+                  select,ListaDatas,13,multiple, 
+                  /select
+               /form
+            /td
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         form,form4,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,bdExtraSalva
+            hidden,novalistadatas, 
+            image,/PortalOsx/imagens/salvar.gif,onClick="Processa(3)"
+         /form
+      /td
+   /tr
+   /form
+/table

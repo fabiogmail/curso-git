@@ -1,0 +1,1 @@
+<p>O Administrador pode verificar as vers&otilde;es dos aplicativos e bases de dados instalados.</p>

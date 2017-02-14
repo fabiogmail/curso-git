@@ -1,0 +1,3 @@
+<p>O Administrador pode visualizar os Bilhetadores/Centrais cadastrados no Sistema. </p>
+<p>Para ordenar a lista de Bilhetadores/Centrais, o administrador poder&aacute; ordenar de forma crescente, por meio das colunas, "Bilhetador", "Apelido", "Tecnologia", "Regional", "Status" e "Servidor".</p>
+<p>ATEN&Ccedil;&Atilde;O: apenas os Bilhetadores/Centrais aqui listados podem ser utilizados para gera&ccedil;&atilde;o de relat&oacute;rios no CDRView Cliente, bem como nas configura&ccedil;&otilde;es dos parsers e conversores.</p>

@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<PortalOsx>
+	<cliente value="Claro" /> 
+ 	<!--  sub-cliente value="Null"/>-->
+	<conf>
+		<comum>
+			<!-- E-mail do administrador do sistema -->
+			<email-admin value="osx@visent.com.br" />
+			<!-- Quantidade de elementos em uma listagem por p?gina(parcial) -->
+			<elementos-pagina value="10" />
+			<!-- Timeout por inatividade em segundos -->
+			<session-timeout value = "120" />
+			<elementos-pagina-reagendamento value="20"/>
+	    </comum> 
+		
+		<servidores>
+		   
+		   <no central   = "true"
+				hostname = "i30"
+				ip       = "192.168.200.66"
+				porta    = "80"
+				portaRMI = "1099">
+				
+				<!-- Diret?rio dos arquivos de configura??o/informa??o (N?o informar o nome do cliente) -->
+			   <diretorios>
+				   <tomcat-home      value = "E:/Portais/Trunk/PortalOsx"/>
+				   <base-cdrview     value = "E:/execs/exec-Claro/"/>
+				   <gruposcnf-regras value = "E:/execs/exec-Claro/Claro/cfgsis/agncdr/grpcfg"/>
+				   <periodos-alarmes value = "E:/execs/exec-Claro/Claro/cfgsis/agncdr"/>
+			   </diretorios>
+	
+			   <!-- Forma de conexao com o ServUtil (Direta=1, IOR=2) -->
+			   <servidor nome    = "ServUtil"
+						 host    = "192.168.200.66"
+						 conexao = "1"
+						 porta   = "6969"
+						 objeto  = "ServUtil" /> 
+						 
+			   <!-- Forma de conexao com o ServCtrl (N?o Conecta = 0, Direta=1, IOR=2) -->						 						 
+			   <servidor nome    = "ServCtrl"
+						 host    = "192.168.200.66"
+						 conexao = "1"
+						 porta   = "6767"
+						 objeto  = "ServCtrl" /> 
+						 
+			   <!-- Forma de conexao com o servAlr (N?o Conecta = 0, Direta=1, IOR=2) -->
+			   <servidor nome    = "ServAlr"
+						 host    = "192.168.200.66"
+						 conexao = "0"
+						 porta   = "6666"
+						 objeto  = "ServAlr" /> 
+		</no>
+					
+		   
+		</servidores>
+	
+	</conf>
+
+</PortalOsx>
+

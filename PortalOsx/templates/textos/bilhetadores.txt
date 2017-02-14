@@ -1,0 +1,3 @@
+<p>No CDRView, os arquivos de CDR s&atilde;o associados &agrave;s Centrais ou Bilhetadores que os geram, sendo necess&aacute;rio, portanto, o cadastramento pr&eacute;vio destes.</p>
+<p>Para incluir um novo bilhetador entre em contato com o suporte da Visent com as seguintes informa&ccedil;&otilde;es: Nome do Bilhetador, Apelido e Tecnologia.</p>
+<p>Para excluir ou alterar um Bilhetador/Central existente, selecione-o no campo Bilhetadores e, em seguida, clique no bot&atilde;o Excluir ou Alterar, respectivamente.</p>

@@ -1,0 +1,97 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+# 
+# Todas as linhas iniciadas pelo caracter '#' ser&atilde;o ignoradas
+# Todos os espaços contidos entre as opções dos menus ser&atilde;o ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+
+MP,top1,Configura&ccedil;&atilde;o
+ SM,sub10,top1,Bilhetadores
+  SML,sub100,sub10,Inclus&atilde;o / Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=bilhetadores
+  SM,sub101,sub10,Listagem
+   SML,sub1010,sub101,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaBilhetadores&tipo=parcial
+   SML,sub1011,sub101,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaBilhetadores&tipo=total
+ SM,sub11,top1,Parsers
+  SML,sub110,sub11,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgParsers
+  SML,sub111,sub11,Listagem,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgParsers
+  SML,sub112,sub11,Verifica&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilParsers
+ SM,sub12,top1,Conversores
+  SML,sub123,sub12,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgConversores
+  SML,sub124,sub12,Listagem,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgConversores
+  SML,sub125,sub12,Verifica&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilConversores
+
+MP,top2,Manuten&ccedil;&atilde;o
+ SM,sub20,top2,CDRView
+  SM,sub200,sub20,SGDT
+   SML,sub2000,sub200,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosCtrl
+   SML,sub2001,sub200,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=0  
+   SML,sub2002,sub200,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=0    
+   SML,sub2003,sub200,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=analise
+  SM,sub201,sub20,SOLQ
+    SML,sub2010,sub201,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=deteccao
+    SM,sub2011,sub201,AgnCDR
+     SML,sub20110,sub2011,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaAgnCDR&tipo=Inicia
+     SML,sub20111,sub2011,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaAgnCDR&tipo=Termina
+    SM,sub2012,sub201,Servidor de Alarmes
+     SML,sub20120,sub2012,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia
+     SML,sub20121,sub2012,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina
+   SML,sub2013,sub201,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=deteccao
+  SM,sub202,sub20,Web
+   SML,sub2020,sub202,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=util
+   SML,sub2021,sub202,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=web
+   SM,sub2022,sub202,Agenda
+    SML,sub20220,sub2022,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=4
+    SML,sub20221,sub2022,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=4
+   SM,sub2023,sub202,Historico
+    SML,sub20230,sub2023,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=5    
+    SML,sub20231,sub2023,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=5   
+ SM,sub21,top2,Parsers
+  SM,sub210,sub21,Processos
+   SML,sub2101,sub210,Lista Iniciados,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=parser
+   SML,sub2102,sub210,Lista Parados,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=parser
+  SML,sub211,sub21,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaParsers
+  SML,sub212,sub21,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsers&tipo=startup
+  SML,sub213,sub21,ShutDown,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsers&tipo=shutdown
+  SML,sub214,sub21,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logParsers
+ SM,sub22,top2,Conversores
+  SM,sub220,sub22,Processos
+   SML,sub2201,sub220,Lista Iniciados,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=conversor
+   SML,sub2202,sub220,Lista Parados,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=conversor
+  SML,sub221,sub22,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaConversores
+  SML,sub222,sub22,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=startup
+  SML,sub223,sub22,ShutDown,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=shutdown
+  SML,sub224,sub22,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logConversores
+ SML,sub23,top2,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Inicia
+ SML,sub24,top2,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Termina
+
+MP,top3,Ferramentas
+ SM,sub30,top3,Alarmes Plataforma
+  SM,sub300,sub30,Configura&ccedil;&atilde;o
+   SML,sub3000,sub300,Espa&ccedil;o M&iacute;nimo,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeEspacoDisco
+   SML,sub3001,sub300,Espa&ccedil;o Excedido,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeEspacoMaximo
+   SML,sub3002,sub300,Conversores,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeConversor
+   SML,sub3003,sub300,Arquivos A Consumir,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeDirIn
+  SML,sub301,sub30,Visualiza&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=listaAlarmes
+ SML,sub31,top3,Parametriza&ccedil;&atilde;o do SOLQ,/PortalOsx/servlet/Portal.cPortal?operacao=alarmesATGR
+ SML,sub32,top3,Configurar DDD-X,/PortalOsx/servlet/Portal.cPortal?operacao=bdExtra
+
+MP,top4,Informa&ccedil;&otilde;es
+ SML,sub40,top4,Sistema,/PortalOsx/servlet/Portal.cPortal?operacao=status
+# SML,sub41,top4,Utiliza&ccedil;&atilde;o BD,/PortalOsx/servlet/Portal.cPortal?operacao=infoBDUtilizacao
+ SML,sub42,top4,Agenda,/PortalOsx/servlet/Portal.cPortal?operacao=statusAgn&tipo=Agenda
+ SML,sub43,top4,S&eacute;ries Hist&oacute;ricas,/PortalOsx/servlet/Portal.cPortal?operacao=statusAgn&tipo=Historico

@@ -1,0 +1,4 @@
+<p>Tem a fun&ccedil;&atilde;o de manter no Sistema os CDRs de at&eacute; 12 datas, independente da base de dados ativa. O objetivo inicial foi manter na base os &uacute;ltimos 12 dias do DDD-X. </p>
+<p>O Administrador poder&aacute; definir at&eacute; 12 datas que ser&atilde;o mantidas na base de dados.</p>
+<p>Para incluir uma data, preencha o campo Data e clique no bot&atilde;o Incluir e, em seguida, no botão Salvar. Para excluir uma data, selecione a data desejada na lista de Datas e clique no bot&atilde;o Excluir e, em seguida, no botão Salvar.</p>
+<p><b>ATEN&Ccedil;&Atilde;O:</b> Ap&oacute;s o t&eacute;rmino da cria&ccedil;&atilde;o da lista, clique no bot&atilde;o Salvar.</p>

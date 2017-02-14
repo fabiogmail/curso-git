@@ -1,0 +1,4 @@
+<p>A lista de Usu&aacute;rios Cadastrados apresenta os usu&aacute;rios j&aacute; configurados no Sistema pelo Administrador.</p>
+<p>A listagem parcial apresenta a lista de usu&aacute;rios de forma parcial, ou seja, apenas 10 usu&aacute;rios por p&aacute;gina.</p>
+<p>A listagem total apresenta em uma &uacute;nica p&aacute;gina, todos os usu&aacute;rios configurados no Sistema.</p>
+<p>Para ordenar a lista de usu&aacute;rios, o administrador poder&aacute; ordenar de forma crescente, por meio das colunas “Perfil” e “Acesso”.</p>

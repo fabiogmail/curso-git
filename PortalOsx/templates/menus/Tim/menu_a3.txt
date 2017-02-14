@@ -1,0 +1,40 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+# 
+# Todas as linhas iniciadas pelo caracter '#' ser&atilde;o ignoradas
+# Todos os espaços contidos entre as opções dos menus ser&atilde;o ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+MP,top0,Seguran&ccedil;a
+ SM,sub00,top0,Usu&aacute;rios
+  SML,sub000,sub00,Inclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosInserir
+  SML,sub003,sub00,Altera&ccedil;&atilde;o / Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosEditar
+  #SM,sub001,sub00,Listagem
+   #SML,sub0010,sub001,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuarios&tipo=parcial
+   #SML,sub0011,sub001,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuarios&tipo=total
+  SML,sub002,sub00,Listagem,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosListar
+ SM,sub01,top0,Perfis
+  SML,sub010,sub01,Inclus&atilde;o / Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=perfis
+  SM,sub011,sub01,Listagem
+   SML,sub0110,sub011,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaPerfis&tipo=parcial
+   SML,sub0111,sub011,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaPerfis&tipo=total
+ SM,sub02,top0,Controle de Acesso
+  SML,sub020,sub02,CDRView An&aacute;lise,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuariosCDRView
+  SML,sub021,sub02,CDRView Web,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuariosPortal
+ SML,sub03,top0,Auditoria,/PortalOsx/servlet/Portal.cPortal?operacao=logAcesso
+
+

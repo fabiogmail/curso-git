@@ -1,0 +1,88 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para log de acesso
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 15/08/2002
+#
+
+form,form1,post,/PortalOsx/servlet/Portal.cPortal
+   hidden,operacao,visLog
+   hidden,ListaConfiguracoesNomes,$ARG;
+#Aten&ccedil;&atilde;o: o IDPROCESSO para CONVERSOR &eacute; 20
+   hidden,idprocesso,20
+   hidden,processo, 
+   hidden,dia, 
+table,545,0,0,0
+   tr
+      td,left, , ,273, 
+         <b>Configura&ccedil;&atilde;o: &nbsp;</b>
+         select,ListaConfiguracoes,1, , 
+         /select
+      /td
+      td,left, , , , 
+         <b>Dia da Semana: &nbsp;</b>
+         select,DiaDaSemana,1, , 
+            option, ,Domingo
+            option, ,Segunda
+            option, ,Ter&ccedil;a
+            option, ,Quarta
+            option, ,Quinta
+            option, ,Sexta
+            option, ,S&aacute;bado
+         /select
+      /td
+   /tr
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , , , 
+         <b>In&iacute;cio: &nbsp;</b>
+         text,HoraIni,00:00:00,10,10,onBlur="VerificaHora('inicial')"
+      /td
+      td,left, , , , , 
+         <b>Fim: &nbsp;</b>
+         text,HoraFim,23:59:59,10,10,onBlur="VerificaHora('final')"
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, , , 
+         &nbsp;
+      /td
+   /tr
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,75, , 
+         image,/PortalOsx/imagens/limpar.gif,onClick="return Processa(2)"
+      /td
+      td,left, , ,75, , 
+         image,/PortalOsx/imagens/listar.gif,onClick="return Processa(1)"
+      /td
+      td,left, , , , , 
+         &nbsp;
+      /td
+   /tr
+/table
+/form

@@ -1,0 +1,4 @@
+<p>Esta op&ccedil;&atilde;o &eacute; um recurso de gerenciamento de usu&aacute;rios conectados ao sistema CDRView, onde possibilita desconecta-los do sistema.</p>
+<p>Para desconectar um usu&aacute;rio, marque no &iacute;cone correspondente na coluna Desconecta e, em seguida, clique no bot&atilde;o Desconectar.</p>
+<p>Para ordenar a lista de usu&aacute;rios, o administrador poder&aacute; ordenar de forma crescente, por meio das colunas, “Usu&aacute;rio”, “Perfil”  e “Logon”.</p>
+<p>ATEN&Ccedil;&Atilde;O: o usu&aacute;rio desconectado pelo Administrador receber&aacute; uma mensagem informando que “Voc&ecirc; foi desconectado do CDRView Web pelo administrador” Verifique se o sistema encontra-se em manuten&ccedil;&atilde;o.</p>

@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>Selec&ccedil;&atilde;o de Per&iacute;odos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" type="text/JavaScript">
+<!--
+function AbreJanela(event, Tipo, Features)
+{
+   var NovaJanela;
+   var CoordX, CoordY;
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   CoordX = event.screenX;
+   CoordY = event.screenY;
+
+
+   if (Tipo == "indicadores")
+   {
+      CoordX -= 200;
+      CoordY -= 450;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=pagindicadores&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Indicadores', Features);
+   }
+   else if (Tipo == "periodos")
+   {
+      CoordX -= 170;
+      CoordY -= 190;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=pagperiodos&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Periodos', Features);
+   }
+   else if (Tipo == "relatorio")
+   {
+      CoordX = 0;
+      CoordY = 0;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=pagrelatorio&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Relatorio', Features);
+   }
+   else if (Tipo == "configuracao")
+   {
+      CoordX -= 20;
+      CoordY -= 360;
+      URLStr = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=pagconfiguracao&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+      Features += ",left=" + CoordX + ",top=" + CoordY;
+      NovaJanela = window.open(URLStr, 'Configuracao', Features);
+   }
+
+   NovaJanela.focus();
+   return false;
+}
+
+function SetaZoom(Tipo)
+{
+   //
+   // Seta o tipo de zoom no campo "zoom" do formul&aacute;rio "gr&aacute;fico"
+   // do documento de apresenta&ccedil;&atilde;o do gr&aacute;fico
+   //
+   window.parent.parent.frames[0].document.forms[0].zoom.value = Tipo;
+   //alert(window.parent.parent.frames[0].document.forms.length);
+}
+
+function Navegacao(TipoOperacao)
+{
+   AlteraLocation("navegacao", TipoOperacao);
+   AlteraLocationValoresMedios();
+}
+
+function DesfazZoom()
+{   
+   AlteraLocation("undozoom", "_");
+   AlteraLocationValoresMedios();   
+      
+   window.setTimeout("AlteraLocationRecursos()", 5000);
+	
+}
+
+function AlteraLocation(Operacao, TipoOperacao)
+{
+
+   var Perfil = document.icones.perfil.value;;
+   var TipoRel = document.icones.tiporel.value;;
+   var IdRel = document.icones.idrel.value;;
+   var NomeArquivo = document.icones.arquivo.value;;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   JanelaGrafico = window.parent.parent.frames[0];
+   JanelaGrafico.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao="+Operacao+"&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao+"&tipo="+TipoOperacao;
+   return true;
+}
+
+function AlteraLocationValoresMedios()
+{
+
+   var Perfil = document.icones.perfil.value;;
+   var TipoRel = document.icones.tiporel.value;;
+   var IdRel = document.icones.idrel.value;;
+   var NomeArquivo = document.icones.arquivo.value;;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   //
+   // Altera o "location" da janela de valores m&eacute;dios para atualizar os mesmos
+   //
+   JanelaValoresMedios = window.parent.frames[1];
+   JanelaValoresMedios.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=valoresmedios&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+}
+
+function AlteraLocationBenchmarking()
+{
+   var Perfil = document.icones.perfil.value;;
+   var TipoRel = document.icones.tiporel.value;;
+   var IdRel = document.icones.idrel.value;;
+   var NomeArquivo = document.icones.arquivo.value;;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   //
+   // Altera o "location" da janela de valores m&eacute;dios para atualizar os mesmos
+   //
+   JanelaBenchmarking = window.parent.frames[0];
+   JanelaBenchmarking.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=benchmarking&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+}
+
+function AlteraLocationRecursos()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   //
+   // Altera o "location" da janela de valores m&eacute;dios para atualizar os mesmos
+   //
+   JanelaRecursos = window.parent.parent.parent.frames[0];
+   JanelaRecursos.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=toporelatorioesquerda&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+}
+
+function Home()
+{
+   AlteraLocation("home", "")
+   AlteraLocationRecursos();
+   AlteraLocationValoresMedios();
+   AlteraLocationBenchmarking();
+}
+
+function RemoveHistorico()
+{
+   var Perfil = document.icones.perfil.value;
+   var TipoRel = document.icones.tiporel.value;
+   var IdRel = document.icones.idrel.value;
+   var NomeArquivo = document.icones.arquivo.value;
+   var NomeRelatorio = document.icones.nomerel.value;
+   var DataGeracao = document.icones.datageracao.value;
+
+   window.location = "/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelHistorico&suboperacao=removehistorico&perfil="+Perfil+"&tiporel="+TipoRel+"&idrel="+IdRel+"&arquivo="+NomeArquivo+"&nomerel="+NomeRelatorio+"&datageracao="+DataGeracao;
+
+   for (i = 0; i < 700; i ++)
+      for (j = 0; j < 700; j++);
+}
+//-->
+</script>
+<style type="text/css">divUpControl{
+	position:absolute;
+	width:68px;
+	left:431px;
+	top:317px;
+	z-index:1;
+	text-align: right;
+	height: 19px;
+}
+#divDownControl{
+	position:absolute;
+	width:17px;
+	left:379px;
+	top:11px;
+	z-index:1;
+	text-align: right;
+	height: 47px;
+}
+#divContainer{
+	position:absolute;
+	width:550px;
+	height:41px;
+	overflow:hidden;
+	top:9px;
+	left:18px;
+	clip:rect(0,560,41,0);
+	visibility: visible;
+}
+#divContent{
+	position:absolute;
+	top:0;
+	left:0;
+}
+</style>
+</head>
+
+<body bgcolor="#BBBDBB" text="#000000" onUnLoad="RemoveHistorico()">
+
+<div id="Layer1" style="position:absolute; left:0px; top:2px; width:105px; height:46px; z-index:2">
+   <img src="/PortalOsx/imagens/icones.gif" border="0" usemap="#Map2">
+
+<form name="icones" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+<input type="hidden" name="operacao" value="apresentaRelHistorico">
+<input type="hidden" name="suboperacao" value="">
+   <map name="Map2">
+	   <area shape="rect" coords="7  , 5 , 26 , 23" href="#" alt="Relat&oacute;rio" onClick="AbreJanela(event,'relatorio','menubar=yes,resizable=yes,status=no,scrollbars=yes,width=600,height=500')">
+	   <area shape="rect" coords="29 , 5 , 48 , 23" href="#" alt="Configura&ccedil;&atilde;o de impress&atilde;o" onClick="AbreJanela(event,'configuracao','resizable=yes,status=no,scrollbars=no,width=220,height=275')">
+	   <area shape="rect" coords="51 , 5 , 138, 23" href="#" alt="Indicadores" onClick="AbreJanela(event,'indicadores','status=no,resizable=yes,scrollbars=yes,width=750,height=315')">
+	   <area shape="rect" coords="141, 5 , 201, 23" href="#" alt="Per&iacute;odo" onClick="AbreJanela(event,'periodos', 'status=no,scrollbars=no,width=320,height=140')">
+	   <area shape="rect" coords="7  , 26, 32 , 49" href="#" alt="Volta ao in&iacute;cio" onClick="Home()">
+	   <area shape="rect" coords="35 , 26, 60 , 49" href="#" alt="Zoom no eixo X" onClick="SetaZoom('X')">
+	   <area shape="rect" coords="63 , 26, 88 , 49" href="#" alt="Zoom no eixo Y" onClick="SetaZoom('Y')">
+	   <area shape="rect" coords="91 , 26, 117, 49" href="#" alt="Zoom nos eixos XY" onClick="SetaZoom('XY')">
+	   <area shape="rect" coords="119, 26, 146, 49" href="#" alt="Desfaz zoom" onClick="DesfazZoom()">
+	   <area shape="rect" coords="147, 26, 172, 49" href="#" alt="Navaga&ccedil;&atilde;o para esquerda" onClick="Navegacao('<')">
+	   <area shape="rect" coords="176, 26, 201, 49" href="#" alt="Navaga&ccedil;&atilde;o para direita" onClick="Navegacao('>')">
+   </map>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<p>O Administrador pode visualizar os Perfis Cadastrados no Sistema e bloquear/desbloquear o acesso dos mesmos.</p>
+<p>A listagem parcial apresenta a lista de perfil de forma parcial, ou seja, apenas 10 perfis por p&aacute;gina.</p>
+<p>A listagem total apresenta em uma &uacute;nica p&aacute;gina, todos os perfis configurados no Sistema.</p>
+<p>Para bloquear/desbloquear um perfil, marque-o para bloqueio/desbloqueio clicando no &iacute;cone correspondente na coluna Bloqueia e, em seguida, clique no bot&atilde;o Bloquear/Desbloquear.</p>
+<p>Para ordenar a lista de perfis, o administrador poder&aacute; ordenar de forma crescente, por meio das colunas, “Perfil” e “Acesso”.</p>
+<p>ATEN&Ccedil;&Atilde;O: o perfil "admin" n&atilde;o pode ser bloqueado.</p>

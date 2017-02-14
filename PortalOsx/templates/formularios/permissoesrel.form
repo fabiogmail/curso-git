@@ -1,0 +1,131 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para alteracao das Permissoes de Visualiza&ccedil;ao de Relatorios
+# Observar a sintaxe correta!
+# Autor: Paulo Roberto Corrêa Dutra
+# Última Altera&ccedil;&atilde;o: 17/11/2003
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisArg,$ARG;
+      hidden,ListaPerfisIdArg,$ARG;
+      hidden,ListaPermissoesArg,$ARG;
+      hidden,ListaTipoRelArg,$ARG;
+      hidden,MensagemArg,$ARG;
+   tr
+      td,left, , ,140, 
+         <p>
+         <b>Tipo de Relat&oacute;rio:</b>
+      /td
+      td,left, ,2, , 
+#         select,ListaTipoRel,4,multiple,onChange="MontaRelacionamentos()"
+         select,ListaTipoRel,1, ,onChange="MontaRelacionamentos()"
+         /select
+      /td
+      td,left, , ,55, 
+         <p>
+         <b>Perfil:</b>
+      /td
+      td,left, ,2,140, 
+         select,ListaPerfis,1, ,onChange="MontaRelacionamentos()"
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,6, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,6, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , ,1
+         <p>
+         <b>Perfis Dispon&iacute;veis:</b>
+      /td
+      td,center, ,2, ,1
+         &nbsp;
+      /td 
+      td,center, ,3, ,1
+         <p align="left">
+         <b>Perfis Permitidos:</b>
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         <p>
+         select,ListaPerfisDisponiveis,5,multiple, 
+         /select
+      /td
+      td,center, ,2, ,1
+         &nbsp;
+         table, ,0, , , 
+            tr
+               td,center, , , , 
+                  &nbsp;
+                  &nbsp;
+                  button,button1,   >>   , class="button" onClick="return AdicionaPermissao()"
+               /td
+            /tr
+            tr
+               td,center, , , , 
+                  &nbsp;
+               /td
+            /tr
+            tr
+               td,center, , , , 
+                  &nbsp;
+               /td
+            /tr
+            tr
+               td,center, , , , 
+                  &nbsp;
+                  &nbsp;
+                  button,button1,   <<   , class="button" onClick="return RemovePermissao()"
+               /td
+            /tr
+         /table
+         &nbsp;
+      /td
+      td,left, ,3, ,1
+         <p>
+         &nbsp;
+         select,ListaPerfisPermitidos,5,multiple, 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,6, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,6, , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   tr
+      td,left, , ,60, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,alterarPermissao
+            hidden,Chave, 
+            hidden,ListaPerfisPermitidos, 
+            image,/PortalOsx/imagens/alterar.gif,onClick="return AtualizaPermissao()"
+         /form
+      /td
+   /tr
+/table

@@ -1,0 +1,70 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para inicializa&ccedil;&atilde;o do Alarme Cliente: Servidor Fora do Ar
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 21/10/2002
+#
+
+table,300,0,0,0
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         <img src=/PortalOsx/imagens/erro.gif>
+      /td
+      td,left, , , , 
+         Erro ao contactar o Servidor de Alarmes!<br>
+         $ARG;<br>
+         Contacte o administrador do sistema.<br>
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,2, ,  
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,center, ,2, ,  
+         form,fecha,post,/PortalOsx/servlet/Portal.cPortal
+         hidden,operacao,fechacdrview
+         image,/PortalOsx/imagens/fechar.gif,onclick="javascript:Processa(0)"
+         /form
+      /td
+   /tr
+   /form
+/table

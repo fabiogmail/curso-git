@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" charset="ISO-8859-1" src="/PortalOsx/templates/js/rolagem.js" type="text/JavaScript"></script>
+<style type="text/css">
+#divUpControl{
+	position:absolute;
+	width:67px;
+	left:203px;
+	top:40px;
+	z-index:1;
+	text-align: right;
+	height: 19px;
+}
+#divDownControl{
+	position:absolute;
+	width:16px;
+	left:180px;
+	top:48px;
+	z-index:1;
+	text-align: right;
+	height: 19px;
+}
+#divContainer{
+   position:absolute;
+	width:148px;
+	height:142px;
+	overflow:hidden;
+	top:35px;
+	left:20px;
+	clip:rect(0,195,142,0);
+	visibility:visible
+}
+#divContent{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 146px;
+	height: 168px;
+}
+</style>
+</head>
+
+<body bgcolor="#BBBDBB" leftmargin="7" topmargin="0" marginwidth="7" marginheight="40" onLoad="InitialiseScrollableArea()">
+<table width="193" height="190" border="0" cellpadding="0" cellspacing="0" bgcolor="#D8D8D8">
+  <tr>
+    <td width="12">&nbsp;</td>
+    <td width="182" valign="top"><img src="/PortalOsx/imagens/benchmarking.gif" width="108" height="33"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<!-- begin absolutely positioned scrollable area object-->
+<div id="divContainer">
+  <div id="divContent">
+                       <font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+                       $ARG;<br>
+                                                                     <br>
+	$ARG;
+                       </font>
+   </div>
+</div>
+<!-- end absolutely positioned scrollable area object -->
+<div id="divDownControl">
+  <p><img src="/PortalOsx/imagens/rolagemgrande.gif" width="11" height="115" border="0" usemap="#Map">
+    <map name="Map">
+      <area shape="rect" coords="2,0,18,9" href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()">
+      <area shape="rect" coords="1,105,14,114" href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()">
+    </map>
+  </p>
+</div>
+</body>
+</html>

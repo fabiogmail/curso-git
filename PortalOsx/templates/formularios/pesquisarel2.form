@@ -1,0 +1,716 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio de Pesquisa Avancada de Relatorios
+# Observar a sintaxe correta!
+# Autor: Paulo Roberto Correa Dutra
+# Última Altera&ccedil;&atilde;o: 18/12/2003
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisArg,$ARG;
+      hidden,ListaPerfisIdArg,$ARG;
+      hidden,ListaTipoRelArg,$ARG;
+      hidden,MensagemArg,$ARG;
+   tr
+      td,left,midle,3, , 
+         <b>Nome do Relat&oacute;rio: &nbsp;</b>
+         text,NomeRel, , , ,class="inputtext"
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,middle, ,105, 
+         <b>Perfil: &nbsp;</b>
+      /td
+      td,left,middle, ,105, 
+         <b>Tipo de Relat&oacute;rio: &nbsp;</b> 
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,middle, ,440, 
+         select,ListaPerfis,5,multiple,class="lista" 
+         /select
+      /td
+      td,left,middle, ,440, 
+         select,ListaTipoRel,5,multiple,class="lista" 
+         /select
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                  th,#000033
+                     td,left, , ,50%, 
+                        <font color="#FFFFFF"><b> Data de Gera&ccedil;&atilde;o:</b></font>
+                     /td
+                  /th
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left, , , , 
+                  table,100%,0,0,0
+                     tr
+                        td,left,middle, , , 
+                          <b>In&iacute;cio:</b>&nbsp;
+                          select,DG_diainicio,1, ,class="lista"
+                              option, ,01
+                              option, ,02
+                              option, ,03
+                              option, ,04
+                              option, ,05
+                              option, ,06
+                              option, ,07
+                              option, ,08
+                              option, ,09
+                              option, ,10
+                              option, ,11
+                              option, ,12
+                              option, ,13
+                              option, ,14
+                              option, ,15
+                              option, ,16
+                              option, ,17
+                              option, ,18
+                              option, ,19
+                              option, ,20
+                              option, ,21
+                              option, ,22
+                              option, ,23
+                              option, ,24
+                              option, ,25
+                              option, ,26
+                              option, ,27
+                              option, ,28
+                              option, ,29
+                              option, ,30
+                              option, ,31
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DG_mesinicio,1, ,class="lista"
+                              option,01,Janeiro
+                              option,02,Fevereiro
+                              option,03,Mar&ccedil;o
+                              option,04,Abril
+                              option,05,Maio
+                              option,06,Junho
+                              option,07,Julho
+                              option,08,Agosto
+                              option,09,Setembro
+                              option,10,Outubro
+                              option,11,Novembro
+                              option,12,Dezembro
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DG_anoinicio,1, ,class="lista"
+                              option, ,2000
+                              option, ,2001
+                              option, ,2002
+                              option, ,2003
+                              option, ,2004
+                              option, ,2005
+                              option, ,2006
+                              option, ,2007
+                              option, ,2008
+                              option, ,2009
+                              option, ,2010
+                              option, ,2011
+                          /select
+                        /td    
+                     /tr
+                  /table
+               /td
+               td,left, , , , 
+                  table,100%,0,0,0
+                     tr
+                        td,left,middle, , , 
+                          <b>Fim:</b>&nbsp;
+                          select,DG_diafim,1, ,class="lista"
+                              option, ,01
+                              option, ,02
+                              option, ,03
+                              option, ,04
+                              option, ,05
+                              option, ,06
+                              option, ,07
+                              option, ,08
+                              option, ,09
+                              option, ,10
+                              option, ,11
+                              option, ,12
+                              option, ,13
+                              option, ,14
+                              option, ,15
+                              option, ,16
+                              option, ,17
+                              option, ,18
+                              option, ,19
+                              option, ,20
+                              option, ,21
+                              option, ,22
+                              option, ,23
+                              option, ,24
+                              option, ,25
+                              option, ,26
+                              option, ,27
+                              option, ,28
+                              option, ,29
+                              option, ,30
+                              option, ,31
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DG_mesfim,1, ,class="lista"
+                              option,01,Janeiro
+                              option,02,Fevereiro
+                              option,03,Mar&ccedil;o
+                              option,04,Abril
+                              option,05,Maio
+                              option,06,Junho
+                              option,07,Julho
+                              option,08,Agosto
+                              option,09,Setembro
+                              option,10,Outubro
+                              option,11,Novembro
+                              option,12,Dezembro
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DG_anofim,1, ,class="lista"
+                              option, ,2000
+                              option, ,2001
+                              option, ,2002
+                              option, ,2003
+                              option, ,2004
+                              option, ,2005
+                              option, ,2006
+                              option, ,2007
+                              option, ,2008
+                              option, ,2009
+                              option, ,2010
+                              option, ,2011
+                          /select
+                        /td    
+                     /tr
+                  /table
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+    tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                  th,#000033
+                     td,left, , ,50%, 
+                        <font color="#FFFFFF"><b> Data de Coleta:</b></font>
+                     /td
+                  /th
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left, , , , 
+                  table,100%,0,0,0
+                     tr
+                        td,left,middle, , , 
+                          <b>In&iacute;cio:</b>&nbsp;
+                          select,DC_diainicio,1, ,class="lista"
+                              option, ,01
+                              option, ,02
+                              option, ,03
+                              option, ,04
+                              option, ,05
+                              option, ,06
+                              option, ,07
+                              option, ,08
+                              option, ,09
+                              option, ,10
+                              option, ,11
+                              option, ,12
+                              option, ,13
+                              option, ,14
+                              option, ,15
+                              option, ,16
+                              option, ,17
+                              option, ,18
+                              option, ,19
+                              option, ,20
+                              option, ,21
+                              option, ,22
+                              option, ,23
+                              option, ,24
+                              option, ,25
+                              option, ,26
+                              option, ,27
+                              option, ,28
+                              option, ,29
+                              option, ,30
+                              option, ,31
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DC_mesinicio,1, ,class="lista"
+                              option,01,Janeiro
+                              option,02,Fevereiro
+                              option,03,Mar&ccedil;o
+                              option,04,Abril
+                              option,05,Maio
+                              option,06,Junho
+                              option,07,Julho
+                              option,08,Agosto
+                              option,09,Setembro
+                              option,10,Outubro
+                              option,11,Novembro
+                              option,12,Dezembro
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DC_anoinicio,1, ,class="lista"
+                              option, ,2000
+                              option, ,2001
+                              option, ,2002
+                              option, ,2003
+                              option, ,2004
+                              option, ,2005
+                              option, ,2006
+                              option, ,2007
+                              option, ,2008
+                              option, ,2009
+                              option, ,2010
+                              option, ,2011
+                          /select
+                        /td    
+                     /tr
+                  /table
+               /td
+               td,left, , , , 
+                  table,100%,0,0,0
+                     tr
+                        td,left,middle, , , 
+                          <b>Fim:</b>&nbsp;
+                          select,DC_diafim,1, ,class="lista"
+                              option, ,01
+                              option, ,02
+                              option, ,03
+                              option, ,04
+                              option, ,05
+                              option, ,06
+                              option, ,07
+                              option, ,08
+                              option, ,09
+                              option, ,10
+                              option, ,11
+                              option, ,12
+                              option, ,13
+                              option, ,14
+                              option, ,15
+                              option, ,16
+                              option, ,17
+                              option, ,18
+                              option, ,19
+                              option, ,20
+                              option, ,21
+                              option, ,22
+                              option, ,23
+                              option, ,24
+                              option, ,25
+                              option, ,26
+                              option, ,27
+                              option, ,28
+                              option, ,29
+                              option, ,30
+                              option, ,31
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DC_mesfim,1, ,class="lista"
+                              option,01,Janeiro
+                              option,02,Fevereiro
+                              option,03,Mar&ccedil;o
+                              option,04,Abril
+                              option,05,Maio
+                              option,06,Junho
+                              option,07,Julho
+                              option,08,Agosto
+                              option,09,Setembro
+                              option,10,Outubro
+                              option,11,Novembro
+                              option,12,Dezembro
+                          /select
+                          <b>&nbsp;/</b>&nbsp;&nbsp;
+                          select,DC_anofim,1, ,class="lista"
+                              option, ,2000
+                              option, ,2001
+                              option, ,2002
+                              option, ,2003
+                              option, ,2004
+                              option, ,2005
+                              option, ,2006
+                              option, ,2007
+                              option, ,2008
+                              option, ,2009
+                              option, ,2010
+                              option, ,2011
+                          /select
+                        /td    
+                     /tr
+                  /table
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                  th,#000033
+                     td,left, , ,50%, 
+                        <font color="#FFFFFF"><b>Per&iacute;odo da Coleta:</b></font>
+                     /td
+                  /th
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                 <b>In&iacute;cio:</b>&nbsp;
+                 select,horainicio,1, ,class="lista" 
+                     option, ,00
+                     option, ,01
+                     option, ,02
+                     option, ,03
+                     option, ,04
+                     option, ,05
+                     option, ,06
+                     option, ,07
+                     option, ,08
+                     option, ,09
+                     option, ,10
+                     option, ,11
+                     option, ,12
+                     option, ,13
+                     option, ,14
+                     option, ,15
+                     option, ,16
+                     option, ,17
+                     option, ,18
+                     option, ,19
+                     option, ,20
+                     option, ,21
+                     option, ,22
+                     option, ,23
+                 /select
+                 <b>&nbsp;:</b>&nbsp;&nbsp;
+                 select,minutoinicio,1, ,class="lista" 
+                     option, ,00
+                     option, ,01
+                     option, ,02
+                     option, ,03
+                     option, ,04
+                     option, ,05
+                     option, ,06
+                     option, ,07
+                     option, ,08
+                     option, ,09
+                     option, ,10
+                     option, ,11
+                     option, ,12
+                     option, ,13
+                     option, ,14
+                     option, ,15
+                     option, ,16
+                     option, ,17
+                     option, ,18
+                     option, ,19
+                     option, ,20
+                     option, ,21
+                     option, ,22
+                     option, ,23
+                     option, ,24
+                     option, ,25
+                     option, ,26
+                     option, ,27
+                     option, ,28
+                     option, ,29
+                     option, ,30
+                     option, ,31
+                     option, ,32
+                     option, ,33
+                     option, ,34
+                     option, ,35
+                     option, ,36
+                     option, ,37
+                     option, ,38
+                     option, ,39
+                     option, ,40
+                     option, ,41
+                     option, ,42
+                     option, ,43
+                     option, ,44
+                     option, ,45
+                     option, ,46
+                     option, ,47
+                     option, ,48
+                     option, ,49
+                     option, ,50
+                     option, ,51
+                     option, ,52
+                     option, ,53
+                     option, ,54
+                     option, ,55
+                     option, ,56
+                     option, ,57
+                     option, ,58
+                     option, ,59
+                 /select
+               /td
+            /tr
+         /table
+      /td
+      td,left, , , , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                 <b>Fim:</b>&nbsp;
+                 select,horafim,1, ,class="lista" 
+                     option, ,00
+                     option, ,01
+                     option, ,02
+                     option, ,03
+                     option, ,04
+                     option, ,05
+                     option, ,06
+                     option, ,07
+                     option, ,08
+                     option, ,09
+                     option, ,10
+                     option, ,11
+                     option, ,12
+                     option, ,13
+                     option, ,14
+                     option, ,15
+                     option, ,16
+                     option, ,17
+                     option, ,18
+                     option, ,19
+                     option, ,20
+                     option, ,21
+                     option, ,22
+                     option, ,23
+                 /select
+                 <b>&nbsp;:</b>&nbsp;&nbsp;
+                 select,minutofim,1, ,class="lista" 
+                     option, ,00
+                     option, ,01
+                     option, ,02
+                     option, ,03
+                     option, ,04
+                     option, ,05
+                     option, ,06
+                     option, ,07
+                     option, ,08
+                     option, ,09
+                     option, ,10
+                     option, ,11
+                     option, ,12
+                     option, ,13
+                     option, ,14
+                     option, ,15
+                     option, ,16
+                     option, ,17
+                     option, ,18
+                     option, ,19
+                     option, ,20
+                     option, ,21
+                     option, ,22
+                     option, ,23
+                     option, ,24
+                     option, ,25
+                     option, ,26
+                     option, ,27
+                     option, ,28
+                     option, ,29
+                     option, ,30
+                     option, ,31
+                     option, ,32
+                     option, ,33
+                     option, ,34
+                     option, ,35
+                     option, ,36
+                     option, ,37
+                     option, ,38
+                     option, ,39
+                     option, ,40
+                     option, ,41
+                     option, ,42
+                     option, ,43
+                     option, ,44
+                     option, ,45
+                     option, ,46
+                     option, ,47
+                     option, ,48
+                     option, ,49
+                     option, ,50
+                     option, ,51
+                     option, ,52
+                     option, ,53
+                     option, ,54
+                     option, ,55
+                     option, ,56
+                     option, ,57
+                     option, ,58
+                     option, ,59
+                 /select
+               /td
+            /tr
+         /table
+      /td
+      td,left, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         table,100%,0,0,0
+            tr
+               td,left,middle, , , 
+                  th,#000033
+                     td,left, , ,50%, 
+                        <font color="#FFFFFF"><b>Filtros do Relat&oacute;rio:</b></font>
+                     /td
+                  /th
+               /td
+            /tr
+         /table
+      /td
+   /tr
+   tr
+      td,left,midle, , , 
+         <b>Bilhetador: &nbsp;</b>
+      /td
+      td,left,midle, , , 
+         <b>Origem: &nbsp;</b>
+      /td
+      td,left,midle, , , 
+         <b>Destino: &nbsp;</b>
+      /td
+   /tr
+   tr
+      td,left,midle, , , 
+         text,Bilhetadores, , , ,class="inputtext"
+      /td
+      td,left,midle, , , 
+         text,Origem, , , ,class="inputtext"
+      /td
+      td,left,midle, , , 
+         text,Destino, , , ,class="inputtext"
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,midle, , , 
+         <b>Rota de Entrada: &nbsp;</b>
+      /td
+      td,left,midle, , , 
+         <b>Rota de Sa&iacute;da: &nbsp;</b>
+      /td
+      td,left,midle, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,midle, , , 
+         text,RotaEnt, , , ,class="inputtext"
+      /td
+      td,left,midle, , , 
+         text,RotaSai, , , ,class="inputtext"
+      /td
+      td,left,midle, , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left, ,3, , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table,545,0,0,0
+   form,form2,post,/PortalOsx/servlet/Portal.cPortal
+      hidden,operacao, 
+      hidden,perfil, 
+      hidden,tiporel, 
+   /form
+   tr
+      td,left, ,2, , 
+         image,/PortalOsx/imagens/listarrelatorios.gif,onClick="return Processa(1)"
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         image,/PortalOsx/imagens/limpar.gif,onClick="return Processa(2)"
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         image,/PortalOsx/imagens/pesqsimples.gif,onClick="return Processa(3)"
+      /td
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/table

@@ -1,0 +1,2 @@
+<p>Relat&oacute;rios agendados s&atilde;o relat&oacute;rios que foram criados por um usu&aacute;rio, a partir da interface CDRView An&aacute;lise.</p> 
+<p>Para visualizar um relat&oacute;rio agendado &eacute; necess&aacute;rio definir o perfil do usu&aacute;rio que o programou e o tipo de relat&oacute;rio desejado.</p>

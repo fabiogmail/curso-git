@@ -1,0 +1,4 @@
+<p>O alarme informando que algum processo foi abortado &eacute; autom&aacute;tico e independe de configura&ccedil;&atilde;o pelo administrador.</p>
+<br>
+<p>No entanto, voc&ecirc; pode configurar se haver&aacute; aviso do alarme atrav&eacute;s de envio de SMS ou n&atilde;o para um ou mais telefones.</p>
+

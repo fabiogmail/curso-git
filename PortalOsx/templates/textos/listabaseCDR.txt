@@ -1,0 +1,1 @@
+<p>A tabela de base de CDRs apresenta informa&ccedil;&otilde;es sobre todos Bilhetadores configurados no Sistema.</p>

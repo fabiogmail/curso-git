@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Alarmes de Plataforma" pageWidth="973" pageHeight="423" columnWidth="971" leftMargin="1" rightMargin="1" topMargin="1" bottomMargin="1" scriptletClass="Customizer">
+	<style name="estilo" isDefault="false" mode="Opaque" forecolor="#000000" backcolor="#ECECEC">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean( ($P{REPORT_SCRIPTLET}.getRestoDiv(new Double($V{LINHA}.doubleValue()),new Double(2))) == 0 )]]></conditionExpression>
+			<style isDefault="false" style="estilo" mode="Opaque" forecolor="#333333" backcolor="#FFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<style name="cabecalho" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#000066" hAlign="Center" fontName="Arial" fontSize="11" isBold="true" isItalic="false"/>
+	<field name="TIPO_ALARME" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="DATA_PRIMEIRO" class="java.util.Date"/>
+	<field name="DATA_ULTIMO" class="java.util.Date"/>
+	<field name="QUANTIDADE" class="java.lang.Integer"/>
+	<field name="RECONHECIDO" class="java.lang.Boolean"/>
+	<field name="SERVIDOR" class="java.lang.String"/>
+	<field name="RECURSO" class="java.lang.String"/>
+	<field name="DESCRICAO" class="java.lang.String"/>
+	<variable name="LINHA" class="java.math.BigDecimal" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$V{LINHA}.add(new BigDecimal(1))]]></variableExpression>
+	</variable>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band/>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18">
+			<staticText>
+				<reportElement style="cabecalho" x="107" y="0" width="158" height="18"/>
+				<textElement/>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="474" y="0" width="85" height="18"/>
+				<textElement/>
+				<text><![CDATA[Data Primeiro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="559" y="0" width="85" height="18"/>
+				<textElement/>
+				<text><![CDATA[Data Último]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="425" y="0" width="49" height="18"/>
+				<textElement/>
+				<text><![CDATA[Qtd.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="0" width="107" height="18"/>
+				<textElement/>
+				<text><![CDATA[Servidor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="265" y="0" width="160" height="18"/>
+				<textElement/>
+				<text><![CDATA[Recurso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="644" y="0" width="326" height="18"/>
+				<textElement/>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField>
+				<reportElement style="estilo" x="107" y="0" width="158" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TIPO_ALARME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="474" y="0" width="85" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{DATA_PRIMEIRO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="559" y="0" width="85" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{DATA_ULTIMO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="425" y="0" width="49" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{QUANTIDADE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="0" y="0" width="107" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERVIDOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="265" y="0" width="160" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RECURSO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="estilo" x="644" y="0" width="326" height="21"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DESCRICAO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

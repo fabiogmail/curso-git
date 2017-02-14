@@ -1,0 +1,104 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,left,colspan,width,height
+
+#
+# Formul&aacute;rio para envio de mensagem
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 16/02/2002
+#
+
+table,545,0,0,0
+   form,form1,post, 
+      hidden,ListaPerfisNomes,$ARG;
+      hidden,ListaUsuariosNomes,$ARG;
+      hidden,mensagem,$ARG;
+   th,#000033
+      td,left, ,4, , 
+         <font color="#FFFFFF"><b>Destinat&aacute;rio</b></font>
+      /td
+   /th
+   tr
+      td,left, ,4, , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,left,top, ,60, 
+         <b>Perfis: &nbsp;</b>
+      /td
+      td,left,top, ,212, 
+         select,ListaPerfis,2,multiple,onBlur="Processa(1)" onChange="Processa(1)"
+         /select
+      /td
+      td,left,top, ,60, 
+         <b>Usu&aacute;rios: &nbsp;</b>
+      /td
+      td,left, , ,213, 
+         select,ListaUsuarios,2,multiple,onBlur="Processa(2)" onChange="Processa(2)"
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,4, , 
+         &nbsp;
+      /td
+   /tr
+   th,#000033
+      td,left, ,4, , 
+         <font color="#FFFFFF"><b>Assunto</b></font>
+      /td
+   /th
+   tr
+      td,left, ,4, , 
+         text,assunto, ,75,75, 
+      /td
+   /tr
+   tr
+      td,left, ,4, , 
+         &nbsp;
+      /td
+   /tr
+   th,#000033
+      td,left, ,4, , 
+         <font color="#FFFFFF"><b>Mensagem</b></font>
+      /td
+   /th
+   tr
+      td,left, ,4, , 
+         textarea,textomsg,65,8
+      /td
+   /tr
+   tr
+      td,left, ,4, , 
+         &nbsp;
+      /td
+   /tr
+/form
+/table
+
+table,545,0,0,0
+   tr
+      td,left,top, ,65, 
+         image,/PortalOsx/imagens/limpar.gif,onClick="return Processa(3)"
+      /td
+      td,left, , ,65, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,enviaMensagem
+            hidden,perfis, 
+            hidden,usuarios, 
+            hidden,assunto, 
+            hidden,mensagem, 
+            hidden,tipo,1
+            image,/PortalOsx/imagens/enviarmensagem.gif,onClick="return Processa(4)"
+         /form
+      /td
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+/table

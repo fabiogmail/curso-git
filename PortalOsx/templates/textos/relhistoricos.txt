@@ -1,0 +1,1 @@
+<p>Relat&oacute;rios de S&eacute;ries Hist&oacute;ricas s&atilde;o relat&oacute;rios programados pelo usu&aacute;rio, que s&atilde;o atualizados de acordo com a periodicidade definida por este e armazenados no Servidor.</p> <p>Para visualizar um relat&oacute;rio de S&eacute;rie Hist&oacute;rica &eacute; necess&aacute;rio definir o perfil do usu&aacute;rio que o programou.</p>

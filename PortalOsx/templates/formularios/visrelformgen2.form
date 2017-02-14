@@ -1,0 +1,31 @@
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         &nbsp;
+      /td
+   /tr
+   tr
+      td,center, , , , 
+         table, ,0,0,0
+         form,form1,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao, 
+            hidden,operacaoportal, 
+            hidden,indicadores, 
+            hidden,perfil, 
+            hidden,tiporel, 
+            hidden,idrel, 
+            hidden,arquivo, 
+         /form
+            tr
+               td,center, , , , 
+                  <a href="javascript:AbreJanela('$ARG;','$ARG;','$ARG;','$ARG;','$ARG;','$ARG;')"><img src="/PortalOsx/imagens/indicadores.gif" border="0"></a>
+               /td
+               td,center, , , , 
+                  <input type="image" src="/PortalOsx/imagens/fechar.gif" border="0" onclick="window.close()">
+               /td
+            /tr
+         /table
+      /td
+   /tr
+/table

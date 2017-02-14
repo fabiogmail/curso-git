@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Configura&ccedil;&atilde;o de Visualiza&ccedil;&atilde;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="/PortalOsx/css/style.css" type="text/css">
+<script language="JavaScript" charset="ISO-8859-1" src="/PortalOsx/templates/js/historicoconfiguracao.js" type="text/JavaScript"></script>
+</head>
+
+<body onLoad="SelecionaConfiguracaoPadrao()">
+<form name="configuracao" method="post" action="/PortalOsx/servlet/Portal.cPortal">
+<input type="hidden" name="perfil" value="$ARG;">
+<input type="hidden" name="tiporel" value="$ARG;">
+<input type="hidden" name="idrel" value="$ARG;">
+<input type="hidden" name="arquivo" value="$ARG;">
+<input type="hidden" name="nomerel" value="$ARG;">
+<input type="hidden" name="datageracao" value="$ARG;">
+
+<input type="hidden" name="tipovisualizacao" value="$ARG;">
+<input type="hidden" name="apresentacabecalho" value="$ARG;">
+<input type="hidden" name="apresentarelatorio" value="$ARG;">
+<input type="hidden" name="apresentabenchmarking" value="$ARG;">
+<input type="hidden" name="apresentavaloresmedios" value="$ARG;">
+<input type="hidden" name="apresentagrafico" value="$ARG;">
+<input type="hidden" name="apresentabotaoimprimir" value="$ARG;">
+
+<input type="hidden" name="operacao" value="apresentaRelHistorico">
+<input type="hidden" name="suboperacao" value="alteraconfiguracao">
+<input type="hidden" name="configuracao" value="">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="/PortalOsx/imagens/configuracao.gif"></td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">
+	         Configure como ser&aacute; aberto o relat&oacute;rio:
+		  </font>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="2">
+
+      <tr>
+         <td colspan="2">
+            <select name="listatipovisualizacao" class="select">
+            <option value="html">HTML</option>
+            <option value="excel">CSV</option>
+            </select>
+         </td>
+      <tr>
+
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="cabecalho"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Cabe&ccedil;alho</font></td>
+      <tr>
+
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="relatorio"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Relat&oacute;rio</font></td>
+      <tr>
+
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="benchmarking"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Benchmarking</font></td>
+      <tr>
+
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="valoresmedios"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Valores M&eacute;dios</font></td>
+      <tr>
+
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="grafico"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Gr&aacute;fico</font></td>
+      <tr>
+<!--
+      <tr>
+         <td width="3%"><input type="checkbox" name="checkbox" value="botao"></td>
+         <td height="22"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Bot&atilde;o Imprimir (HTML)</font></td>
+      <tr>
+-->
+  </table>
+  <p><input type="reset" name="limpar" value="   Limpar   " class="button">&nbsp;&nbsp;&nbsp;<input type="submit" name="submit" value="Selecionar" class="button" onClick="return SelecionaConfiguracao()"> </p>
+</form>
+</body>
+</html>

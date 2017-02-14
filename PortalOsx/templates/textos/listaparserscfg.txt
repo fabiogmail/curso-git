@@ -1,0 +1,4 @@
+<p>O Administrador pode visualizar as configura&ccedil;&otilde;es de Parsers cadastradas no Sistema. </p>
+<p>Para ordenar a lista de parsers, o administrador poder&aacute; ordenar de forma crescente, por meio das colunas, "Configura&ccedil;&atilde;o", "Servidor" e "Parser".</p>
+<p>A listagem parcial apresenta a lista de configura&ccedil;&atilde;o dos parsers de forma parcial, ou seja, apenas 10 por p&aacute;gina.</p>
+<p>A listagem total apresenta em uma &uacute;nica p&aacute;gina, todas as configura&ccedil;&otilde;es dos parsers configurados no Sistema.</p>

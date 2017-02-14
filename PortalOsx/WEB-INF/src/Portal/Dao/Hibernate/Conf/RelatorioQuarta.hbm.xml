@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Portal.Dto.RelatorioVolumetriaQuarta" table = "quarta_volumetria">
+        
+        <id name="id" column="ID_BILHETADOR" type="int" />
+        <property name="semanaUm" column="VALOR_0"/>
+		<property name="semanaDois" column="VALOR_1"/> 
+		<property name="semanaTres" column="VALOR_2"/>
+		<property name="semanaQuatro" column="VALOR_3"/>
+		<property name="valorAtual" column="VALOR_ATUAL"/> 
+		<property name="dataUltimoProc" column="DATA_ULTIMO_PROC"/>
+		
+    </class>
+</hibernate-mapping>

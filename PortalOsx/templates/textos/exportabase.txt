@@ -1,0 +1,3 @@
+<p>Atrav&eacute;s da Exporta&ccedil;&atilde;o de Base &eacute; poss&iacute;vel exportar CDRs da base de dados do CDRView.</p> 
+<p>Para exportar uma base de CDRs voc&ecirc; dever&aacute; definir alguns filtros e clicar no bot&atilde;o Exportar. Dentre os campos apresentados na tela de configura&ccedil;&atilde;o ao lado, s&atilde;o obrigat&oacute;rios o campo "Bilhetadores", "In&iacute;cio", "Fim" e "Nome do Arquivo".</p> 
+<p>ATEN&Ccedil;&Atilde;O: o Nome do Arquivo deve conter extens&atilde;o TXT ou CSV, dependendo do formato de exporta&ccedil;&atilde;o desejado.</p>

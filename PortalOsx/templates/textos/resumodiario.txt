@@ -1,0 +1,1 @@
+<p>O Resumo Di&aacute;rio apresenta a quantidade de CDRs processados por Bilhetador para cada hora de um dia.</p> <p> Para visualizar o Resumo Di&aacute;rio para um dia espec&iacute;fico, selecione a data desejada e, em seguida, clique em Visualizar Resumo.</p>

@@ -1,0 +1,4 @@
+<p>Tem a função de armazenar as datas que serão reprocessadas para que não sejam utilizadas na geração de relatórios durante a operação. </p>
+<p>O Administrador definirá todas as datas que sofrerão reprocessamento.</p>
+<p>Para incluir uma data, preencha o campo Data e clique no bot&atilde;o Incluir e, em seguida, no botão Salvar. Para excluir uma data, selecione a data desejada na lista de Datas e clique no bot&atilde;o Excluir e, em seguida, no botão Salvar.</p>
+<p><b>ATEN&Ccedil;&Atilde;O:</b> Ap&oacute;s o t&eacute;rmino da cria&ccedil;&atilde;o da lista, clique no bot&atilde;o Salvar.</p>

@@ -1,0 +1,9 @@
+<p>O Menu Acesso a Relat&oacute;rio gerencia a permiss&atilde;o de visualiza&ccedil;&atilde;o de relat&oacute;rios por perfil de usu&aacute;rio.</p>
+<p>Para configurar esta op&ccedil;&atilde;o, siga os seguintes passos:</p>
+<ul>
+<li>Selecione o Menu Perfil>Acesso a Relat&oacute;rio>Altera&ccedil;&atilde;o</li>
+<li>Selecione no campo Perfil, qual perfil receber&aacute; a permiss&atilde;o de visualiza&ccedil;&atilde;o;</li>
+<li>No campo Tipo de Relat&oacute;rio, selecione qual tipo ser&aacute; disponibilizado;</li>
+<li>E no campo Perfis Dispon&iacute;veis, selecione quais perfis estar&atilde;o autorizando este acesso.</li>
+</ul>
+<p>A lista apresentando as permiss&otilde;es de acesso aos diferentes tipos de relat&oacute;rios pode ser obtida atrav&eacute;s do menu Perfil>Acesso a Relat&oacute;rio>Listagem</p>

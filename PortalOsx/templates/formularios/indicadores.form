@@ -1,0 +1,69 @@
+# table,largura,borda,cellspacing,cellpadding
+# form,nome,method,action
+# hidden,nome,valor
+# text,nome,valor,maxsize,size,metodos
+# select,nome,size,multiple,metodos
+# td,align,valign,colspan,width,height
+
+#
+# Formul&aacute;rio para sele&ccedil;&atilde;o de indicadores de relat&oacute;rios visualizados
+# Observar a sintaxe correta!
+# Autor: Marcelo Meireles
+# Última Altera&ccedil;&atilde;o: 26/06/2002
+#
+
+table,300,0,4,0
+   form,form1,post, 
+   hidden,ListaIndicadoresDisponiveis,$ARG;
+   hidden,ListaIndicadoresSelecionados,$ARG;
+
+   th,#000033
+      td,center, , , , 
+         <font color="#FFFFFF"><b>&nbsp;Indicadores Dispon&iacute;veis&nbsp;</b></font>
+      /td
+      td,center, , , , 
+         <font color="#FFFFFF"><b>&nbsp;Indicadores Selecionados&nbsp;</b></font>
+      /td
+   /th
+   tr
+      td,center, , , , 
+         select,ListaDisponiveis,15,multiple, 
+         /select
+      /td
+      td,center, , , , 
+         select,ListaSelecionados,15,multiple, 
+         /select
+      /td
+   /tr
+   tr
+      td,left, ,2, , 
+         &nbsp;
+      /td
+   /tr
+   /form
+/table
+
+table, ,0,0,0
+   tr
+      td,center,top, ,70, 
+         image,/PortalOsx/imagens/adicionar.gif,onclick="javascript:Processa(1)"
+      /td
+      td,center,top, ,70, 
+         image,/PortalOsx/imagens/remover.gif,onclick="javascript:Processa(2)"
+      /td
+      td,center,top, ,70, 
+         form,form2,post,/PortalOsx/servlet/Portal.cPortal
+            hidden,operacao,$ARG;
+            hidden,indicadores, 
+            hidden,perfil,$ARG;
+            hidden,tiporel,$ARG;
+            hidden,idrel,$ARG;
+            hidden,arquivo,$ARG;
+         /form
+         image,/PortalOsx/imagens/processar.gif,onclick="javascript:Processa(3)"
+      /td
+      td,center,top, ,70, 
+         image,/PortalOsx/imagens/fechar.gif,onclick="window.close()"
+      /td
+   /tr
+/table

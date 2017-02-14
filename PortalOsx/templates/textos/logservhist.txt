@@ -1,0 +1,1 @@
+<p>Atrav&eacute;s do arquivo de Log de um Processo, o Administrador pode analisar os registros armazenados para o Processo.</p>

@@ -1,0 +1,261 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+# Tags para criação de menus:
+# MP  -> Menu Principal
+# SM  -> Submenu
+# SML -> Submenu tipo link
+# SMF -> Submenu tipo funcao
+#
+# Como montar o menu:
+# MP, NomeMenu, NomeOpcao
+# SM, NomeMenu, NomeMenuPai, NomeOpcao
+# SMF, NomeMenu, NomeMenuPai, NomeOpcao, Funcao
+# SML, NomeMenu, NomeMenuPai, NomeOpcao, Link(pagina ou servlet)
+#
+# Todas as linhas iniciadas pelo caracter '#' ser&atilde;o ignoradas
+# Todos os espaços contidos entre as opções dos menus ser&atilde;o ignorados,
+# dessa forma, MP, NomeMenu, NomeOpcao, NomeFramePai é o mesmo que
+# MP,NomeMenu,NomeOpcao,NomeFramePai
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+MP,top0,Seguran&ccedil;a
+ SM,sub00,top0,Usu&aacute;rios
+  SML,sub000,sub00,Inclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosInserir
+  SML,sub003,sub00,Altera&ccedil;&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosEditar
+  #SM,sub001,sub00,Listagem
+   #SML,sub0010,sub001,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuarios&tipo=parcial
+   #SML,sub0011,sub001,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuarios&tipo=total
+  SML,sub002,sub00,Listagem,/PortalOsx/servlet/Portal.cPortal?operacao=usuariosListar
+ SM,sub01,top0,Perfis
+  SML,sub010,sub01,Inclus&atilde;o / Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=perfis
+  SM,sub011,sub01,Listagem
+   SML,sub0110,sub011,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaPerfis&tipo=parcial
+   SML,sub0111,sub011,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaPerfis&tipo=total
+  SM,sub012,sub01,Acesso a Relat&oacute;rios
+   SML,sub0120,sub012,Altera&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=permissaoRelatorios&tipo=alterar
+   SML,sub0121,sub012,Listagem,/PortalOsx/servlet/Portal.cPortal?operacao=permissaoRelatorios&tipo=listagem
+  SML,sub013,sub01,Verificar Consist&ecirc;ncia,/PortalOsx/servlet/Portal.cPortal?operacao=inconsistencia
+ SM,sub02,top0,Controle de Acesso
+  SML,sub020,sub02,CDRView An&aacute;lise,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuariosCDRView
+  SML,sub021,sub02,CDRView Web,/PortalOsx/servlet/Portal.cPortal?operacao=listaUsuariosPortal
+ SM,sub03,top0,Auditoria
+  #SML,sub030,sub03,Log de Acesso,/PortalOsx/servlet/Portal.cPortal?operacao=logAcesso
+  SML,sub034,sub03,Configura&ccedil;&otilde;es,/PortalOsx/servlet/Portal.cPortal?operacao=segConfig
+  SML,sub031,sub03,Acesso,/PortalOsx/servlet/Portal.cPortal?operacao=segAcesso
+  SML,sub032,sub03,Uso,/PortalOsx/servlet/Portal.cPortal?operacao=segAcessoUso
+  SML,sub033,sub03,Notificar,/PortalOsx/servlet/Portal.cPortal?operacao=notificar
+ SML,sub04,top0,Op&ccedil;&otilde;es,/PortalOsx/servlet/Portal.cPortal?operacao=opcoesUsuarios&opcao=apresentar
+    
+
+MP,top1,Configura&ccedil;&atilde;o
+
+ SM,sub10,top1,Bilhetadores
+  SML,sub100,sub10,Inclus&atilde;o / Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=bilhetadores
+  SM,sub101,sub10,Listagem
+   SML,sub1010,sub101,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaBilhetadores&tipo=parcial
+   SML,sub1011,sub101,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaBilhetadores&tipo=total
+ SM,sub11,top1,Parsers
+  SML,sub110,sub11,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgParsers
+  SM,sub111,sub11,Listagem
+  SML,sub1110,sub111,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgParsers&tipo=parcial
+  SML,sub1111,sub111,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgParsers&tipo=total
+  SML,sub112,sub11,Verificaç&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilParsers
+ SM,sub12,top1,Conversores
+  SML,sub120,sub12,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgConversores
+  SM,sub121,sub12,Listagem
+  SML,sub1210,sub121,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgConversores&tipo=parcial
+  SML,sub1211,sub121,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgConversores&tipo=total
+  SML,sub122,sub12,Verifica&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilConversores
+ SM,sub13,top1,Reprocessadores
+  SM,sub130,sub13,CDR-X
+   SML,sub1300,sub130,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgReprocessadores
+   SM,sub1301,sub130,Listagem
+    SML,sub13010,sub1301,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgReproc&tipo=parcial
+    SML,sub13011,sub1301,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgReproc&tipo=total
+   SML,sub1302,sub130,Verifica&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilReproc
+ SM,sub14,top1,ParserGen
+  SML,sub140,sub14,Inclus&atilde;o/Exclus&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=cfgParsersGen
+  SM,sub141,sub14,Listagem
+  SML,sub1410,sub141,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgParsersGen&tipo=parcial
+  SML,sub1411,sub141,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaCfgParsersGen&tipo=total
+  SML,sub142,sub14,Verificaç&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=verificaBilParsersGen
+
+MP,top2,Manuten&ccedil;&atilde;o
+ SM,sub20,top2,CDRView
+  SM,sub200,sub20,CDRView An&aacute;lise
+   SML,sub2000,sub200,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosCtrl
+   SM,sub2001,sub200,StartUp
+    SML,sub20011,sub2001,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=0&servidor=audi
+    SML,sub20012,sub2001,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=0&servidor=APPL02
+    SML,sub20013,sub2001,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=0&servidor=APPL03
+   SM,sub2002,sub200,Shutdown
+    SML,sub20021,sub2002,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=0&servidor=audi
+    SML,sub20022,sub2002,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=0&servidor=APPL02
+    SML,sub20023,sub2002,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=0&servidor=APPL03
+   SML,sub2003,sub200,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=analise
+  SM,sub201,sub20,CDRView Detec&ccedil;&atilde;o
+    SML,sub2010,sub201,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=deteccao
+    SM,sub2011,sub201,AgnCDR
+     SML,sub20110,sub2011,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaAgnCDR&tipo=Inicia
+     SML,sub20111,sub2011,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaAgnCDR&tipo=Termina   
+    #SM,sub2012,sub201,Gera Alarmes 
+    #SML,sub20120,sub2012,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=gera
+    #SML,sub20121,sub2012,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=gera  	   
+    SM,sub2013,sub201,Servidor de Alarmes
+     SML,sub20130,sub2013,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=servidor
+     SML,sub20131,sub2013,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=servidor  	   
+    SML,sub2014,sub201,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=deteccao  	
+  SM,sub202,sub20,Web
+   SML,sub2020,sub202,Processos,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=util
+   SML,sub2021,sub202,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=log&tipo=web
+   SM,sub2022,sub202,Agenda
+    SM,sub20220,sub2022,StartUp
+      SML,sub202200,sub20220,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=25&servidor=audi
+      SML,sub202201,sub20220,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=25&servidor=APPL02
+      SML,sub202202,sub20220,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=25&servidor=APPL03
+    SM,sub20221,sub2022,Shutdown
+      SML,sub202210,sub20221,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=25&servidor=audi
+      SML,sub202211,sub20221,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=25&servidor=APPL02
+      SML,sub202212,sub20221,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=25&servidor=APPL03
+   #SM,sub2023,sub202,Historico
+    #SM,sub20230,sub2023,StartUp
+      #SML,sub202300,sub20230,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=5&servidor=audi
+     # SML,sub202301,sub20230,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=5&servidor=APPL02
+      #SML,sub202302,sub20230,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Inicia&idServ=5&servidor=APPL03
+    #SM,sub20231,sub2023,Shutdown
+     # SML,sub202310,sub20231,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=5&servidor=audi
+     # SML,sub202311,sub20231,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=5&servidor=APPL02
+      #SML,sub202312,sub20231,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServidores&tipo=Termina&idServ=5&servidor=APPL03
+ SM,sub21,top2,Parsers
+  SM,sub210,sub21,Processos
+   SM,sub2101,sub210,Lista Iniciados
+    SML,sub21011,sub2101,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=parser&listagem=parcial
+    SML,sub21012,sub2101,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=parser&listagem=total
+   SM,sub2102,sub210,Lista Parados
+    SML,sub21021,sub2102,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=parser&listagem=parcial
+    SML,sub21022,sub2102,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=parser&listagem=total
+  SML,sub211,sub21,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaParsers
+  SML,sub212,sub21,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsers&tipo=startup
+  SML,sub213,sub21,ShutDown,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsers&tipo=shutdown
+  SML,sub214,sub21,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logParsers
+  SML,sub215,sub21,Ordem de Processamento,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaOrdemProcessamento
+ SM,sub22,top2,Conversores
+  SM,sub220,sub22,Processos
+   SM,sub2201,sub220,Lista Iniciados
+    SML,sub22011,sub2201,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=conversor&listagem=parcial
+    SML,sub22012,sub2201,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=conversor&listagem=total
+   SM,sub2202,sub220,Lista Parados
+    SML,sub22021,sub2202,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=conversor&listagem=parcial
+    SML,sub22022,sub2202,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=conversor&listagem=total
+  SML,sub221,sub22,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaConversores
+  SM,sub222,sub22,StartUp
+   SML,sub2221,sub222,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=startup&servidor=audi
+   SML,sub2222,sub222,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=startup&servidor=APPL02
+   SML,sub2223,sub222,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=startup&servidor=APPL03
+  SM,sub223,sub22,ShutDown
+   SML,sub2231,sub223,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=shutdown&servidor=audi
+   SML,sub2232,sub223,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=shutdown&servidor=APPL02
+   SML,sub2233,sub223,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=startUpConversores&tipo=shutdown&servidor=APPL03
+  SML,sub224,sub22,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logConversores
+  SM,sub23,top2,Reprocessadores
+    SM,sub230,sub23,Processos
+     SM,sub2301,sub230,Lista Iniciados
+      SML,sub23011,sub2301,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=reprocessador&listagem=parcial
+      SML,sub23012,sub2301,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=reprocessador&listagem=total
+     SM,sub2302,sub230,Lista Parados
+      SML,sub23021,sub2302,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=reprocessador&listagem=parcial
+      SML,sub23022,sub2302,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=reprocessador&listagem=total
+    SML,sub231,sub23,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaReproc
+    SM,sub232,sub23,StartUp
+     SML,sub2321,sub232,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=startup&servidor=audi
+     SML,sub2322,sub232,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=startup&servidor=APPL02
+     SML,sub2323,sub232,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=startup&servidor=APPL03
+    SM,sub233,sub23,ShutDown
+     SML,sub2331,sub233,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=shutdown&servidor=audi
+     SML,sub2332,sub233,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=shutdown&servidor=APPL02
+     SML,sub2333,sub233,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=startUpReproc&tipo=shutdown&servidor=APPL03
+  SML,sub234,sub23,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logReprocessadores
+ SM,sub24,top2,ParserGen
+  SM,sub240,sub24,Processos
+   SM,sub2401,sub240,Lista Iniciados
+    SML,sub24011,sub2401,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=parserGen&listagem=parcial
+    SML,sub24012,sub2401,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessos&tipo=parserGen&listagem=total
+   SM,sub2402,sub240,Lista Parados
+    SML,sub24021,sub2402,Parcial,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=parserGen&listagem=parcial
+    SML,sub24022,sub2402,Total,/PortalOsx/servlet/Portal.cPortal?operacao=listaProcessosParados&tipo=parserGen&listagem=total
+  SML,sub241,sub24,Gerenciamento,/PortalOsx/servlet/Portal.cPortal?operacao=gerenciaParsersGen
+  SML,sub242,sub24,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsersGen&tipo=startup
+  SML,sub243,sub24,ShutDown,/PortalOsx/servlet/Portal.cPortal?operacao=startUpParsersGen&tipo=shutdown
+  SML,sub244,sub24,Logs,/PortalOsx/servlet/Portal.cPortal?operacao=logParsersGen
+ 
+ SM,sub25,top2,Volumetria / Sequencial
+   SM,sub250,sub25,GeraAlarmes
+     SM,sub2501,sub250,StartUp
+       SML,sub25011,sub2501,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=gera
+       SML,sub25012,sub2501,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=gera
+       SML,sub25013,sub2501,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=gera
+     SM,sub2502,sub250,Shutdown
+       SML,sub25021,sub2502,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=gera
+       SML,sub25022,sub2502,APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=gera
+       SML,sub25023,sub2502,APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=gera
+   SM,sub251,sub25,ServAlarmes
+     SM,sub2511,sub251,StartUp
+       SML,sub25111,sub2511,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia&cliente=claro&opcao=servidor
+     SM,sub2512,sub251,Shutdown
+       SML,sub25121,sub2512,audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina&cliente=claro&opcao=servidor  
+ SM,sub26,top2,StartUp
+   SML,sub261,sub26,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Inicia&servidor=audi
+   SML,sub262,sub26,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Inicia&servidor=APPL02
+   SML,sub263,sub26,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Inicia&servidor=APPL03
+ SM,sub27,top2,Shutdown
+   SML,sub271,sub27,Servidor audi,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Termina&servidor=audi
+   SML,sub272,sub27,Servidor APPL02,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Termina&servidor=APPL02
+   SML,sub273,sub27,Servidor APPL03,/PortalOsx/servlet/Portal.cPortal?operacao=controlaGeral&tipo=Termina&servidor=APPL03
+# SM,sub27,top2,Detec&ccedil;&atilde;o
+#  SM,sub270,sub27,Servidor de Alarmes
+#   SML,sub2701,sub270,StartUp,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Inicia
+#   SML,sub2702,sub270,Shutdown,/PortalOsx/servlet/Portal.cPortal?operacao=controlaServAlr&tipo=Termina
+   
+MP,top3,Ferramentas
+ SM,sub30,top3,Alarmes Plataforma
+  SM,sub300,sub30,Configuraç&atilde;o
+   SML,sub3000,sub300,Espa&ccedil;o M&iacute;nimo,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeEspacoDisco
+   SML,sub3001,sub300,Espa&ccedil;o Excedido,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeEspacoMaximo
+   SML,sub3002,sub300,Conversores,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeConversor
+   SML,sub3003,sub300,Arquivos A Consumir,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeDirIn
+   SML,sub3004,sub300,Processo Parado,/PortalOsx/servlet/Portal.cPortal?operacao=alarmeProcessoParado
+  SMF,sub301,sub30,Visualizaç&atilde;o,javascript:{AbreJanela("listaAlarmes");}
+ #SML,sub31,top3,Parametriza&ccedil;&atilde;o ,/PortalOsx/servlet/Portal.cPortal?operacao=alarmesATGR
+ SM,sub33,top3,Armazenamento
+   SML,sub330,sub33,CDR-Bruto, /PortalOsx/servlet/Portal.cPortal?operacao=listagemCDRBruto
+   SML,sub331,sub33,CDR-X, /PortalOsx/servlet/Portal.cPortal?operacao=bdExtra
+ SM,sub34,top3,Reprocessamento
+   SML,sub340,sub34,CDR-Bruto, /PortalOsx/servlet/Portal.cPortal?operacao=listaAgendamentoCDR&tipoCdr=1
+   SML,sub341,sub34,CDR-X, /PortalOsx/servlet/Portal.cPortal?operacao=listaAgendamentoCDR&tipoCdr=2
+ SM,sub35,top3,Garantia de Receita
+   SML,sub350,sub35,Reproc. de Contador, /PortalOsx/servlet/Portal.cPortal?operacao=dataReprocessamento
+   SML,sub351,sub35,Reproc. de CDR, /PortalOsx/servlet/Portal.cPortal?operacao=bdDataReprocessamento
+   SML,sub36,top3,Volumetria, /PortalOsx/servlet/Portal.cPortal?operacao=volumetriaChamadas  
+
+
+MP,top4,Informa&ccedil;&otilde;es
+ SML,sub40,top4,Sistema,/PortalOsx/servlet/Portal.cPortal?operacao=status
+# SML,sub41,top4,Utilizaç&atilde;o BD,/PortalOsx/servlet/Portal.cPortal?operacao=infoBDUtilizacao
+ SML,sub42,top4,Agenda,/PortalOsx/servlet/Portal.cPortal?operacao=AgendaRMI&tipo=Agenda
+ SML,sub43,top4,S&eacute;ries Hist&oacute;ricas,/PortalOsx/servlet/Portal.cPortal?operacao=AgendaRMI&tipo=Historico
+ #SML,sub44,top4,Vers&otilde;es,/PortalOsx/servlet/Portal.cPortal?operacao=listaVersoes
+ #SM,sub45,top4,Relatorios
+  #SML,sub450,sub45,RelatoriodeSequencia,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioSequencia
+  #SML,sub451,sub45,RelatoriodeVolumetria,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioVolumetria
+  
+#MP,top5,Relat&oacute;rios
+ #SM,sub50,top5,Agendados
+   #SML,sub500,sub50,Sele&ccedil;&atilde;o,/PortalOsx/servlet/Portal.cPortal?operacao=relAgendados
+   #SML,sub501,sub50,Pesquisa,/PortalOsx/servlet/Portal.cPortal?operacao=pesquisaRelatorios
+ #SML,sub51,top5,Sequencia,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioSequencia
+ #SML,sub52,top5,Volumetria,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioVolumetria
+   
+#MP,top5,Relatorios
+ #SML,sub50,top5,Relatorio de Sequencia,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioSequencia
+ #SML,sub51,top5,Relatorio de Volumetria,/PortalOsx/servlet/Portal.cPortal?operacao=apresentaRelatorioVolumetria

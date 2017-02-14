@@ -1,0 +1,2 @@
+<p>Atrav&eacute;s do arquivo de Auditoria, o Administrador pode verificar os usu&aacute;rios que se conectam ao CDRView Web.</p>
+<p>Al&eacute;m disso, tamb&eacute;m &eacute; poss&iacute;vel observar se os usu&aacute;rios se conectam a partir de m&aacute;quinas autorizadas, ou se est&atilde;o tentando acessar o Sistema de forma indevida.</p>
